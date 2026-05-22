@@ -15,9 +15,10 @@ yarn.lock
 *~
 .DS_Store
 
-# Build output (but keep .next for Vercel deployment)
+# Build output
 dist/
 build/
+.next/
 
 # Logs
 *.log
