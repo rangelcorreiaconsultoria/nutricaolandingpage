@@ -18,7 +18,7 @@ export default function AboutSection() {
                 Elimine o excesso sem privações desnecessárias. Nossa abordagem foca no equilíbrio metabólico e na eficácia biológica.
               </p>
               <p>
-                Pedro Lucena combina a precisão da ciência esportiva com um acompanhamento próximo e humano, desenhado para rotinas de alto nível.
+                Nutri na Corrida combina a precisão da ciência da nutrição esportiva com um acompanhamento próximo e humano, desenhado para corredores que querem resultados.
               </p>
             </div>
 
@@ -40,7 +40,7 @@ export default function AboutSection() {
           <div className="relative">
             <div className="aspect-square rounded-apple overflow-hidden shadow-2xl relative group">
               <Image
-                alt="Pedro Lucena - Nutricionista Especialista"
+                alt="Nutri na Corrida - Nutricionista Especialista em Corredores"
                 src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=687&auto=format&fit=crop"
                 width={400}
                 height={400}

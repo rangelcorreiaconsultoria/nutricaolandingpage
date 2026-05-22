@@ -15,8 +15,8 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: 'Pedro Lucena - Nutricionista | Alta Performance',
-  description: 'Nutricionista especialista em alta performance. Estratégias metabólicas baseadas em evidência para atletas de elite.',
+  title: 'Nutri na Corrida | Nutrição para Corredores',
+  description: 'Nutrição especializada para corredores. Estratégias alimentares baseadas em evidência para melhorar seu desempenho.',
 };
 
 export const viewport: Viewport = {

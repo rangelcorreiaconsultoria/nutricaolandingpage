@@ -33,7 +33,7 @@ export default function ProgramSection() {
             </div>
 
             <a
-              href="https://api.whatsapp.com/send/?phone=5581995124423&text=Ol%C3%A1%2C+tenho+interesse+em+entrar+na+lista+de+espera+do+Programa+Esportivo+Completo."
+              href="https://api.whatsapp.com/send/?phone=5582982150582&text=Ol%C3%A1%2C+tenho+interesse+em+entrar+na+lista+de+espera+do+Programa+Esportivo+Completo."
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block md:px-10 py-5 bg-white text-brand-dark-gray font-black uppercase tracking-widest md:w-fit w-full text-center text-xs md:text-sm rounded-full hover:shadow-lg transition-shadow mb-4"

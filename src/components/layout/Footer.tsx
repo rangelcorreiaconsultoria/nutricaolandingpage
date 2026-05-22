@@ -16,11 +16,11 @@ export default function Footer() {
             >
               <span className="text-lg font-bold text-brand-orange">→</span>
               <span className="text-xs font-bold uppercase tracking-wider leading-tight text-brand-dark-gray">
-                Pedro<br />Lucena
+                Nutri na<br />Corrida
               </span>
             </Link>
             <p className="text-sm text-text-tertiary mb-6 leading-relaxed max-w-xs">
-              Especialista em alta performance esportiva com estratégia e ciência.
+              Nutrição especializada para corredores, baseada em evidência e ciência.
             </p>
             <div className="flex gap-3">
               <a
@@ -67,20 +67,20 @@ export default function Footer() {
           {/* Contact Info */}
           <div>
             <h4 className="text-xs font-bold uppercase tracking-widest mb-4">Contato</h4>
-            <p className="text-sm mb-2">📍 Recife, Pernambuco</p>
+            <p className="text-sm mb-2">📍 Maceió, Alagoas</p>
             <p className="text-sm text-text-tertiary mb-3">Atendimento Presencial & Digital</p>
             <a
-              href="tel:+5581995124423"
+              href="tel:+5582982150582"
               className="text-sm font-bold text-brand-orange hover:text-brand-dark-gray transition-colors"
             >
-              +55 81 99512.4423
+              +55 82 98215.0582
             </a>
           </div>
         </div>
 
         {/* Footer Bottom */}
         <div className="border-t border-brand-gray/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-black uppercase tracking-widest text-text-tertiary">
-          <p>&copy; {currentYear} Pedro Lucena. Nutrição Esportiva.</p>
+          <p>&copy; {currentYear} Nutri na Corrida. Nutrição para Corredores.</p>
           <p>By Sabrina Vaz</p>
         </div>
       </div>

@@ -52,8 +52,8 @@ export default function ContactSection() {
                 contato@pedrolucena.com
               </a>
               <span className="hidden sm:block opacity-20 text-xs">•</span>
-              <a href="tel:+5581995124423" className="hover:text-brand-orange transition-colors">
-                +55 81 99512.4423
+              <a href="tel:+5582982150582" className="hover:text-brand-orange transition-colors">
+                +55 82 98215.0582
               </a>
             </div>
           </div>

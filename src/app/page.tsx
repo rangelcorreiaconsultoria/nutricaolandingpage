@@ -23,7 +23,7 @@ export default function Home() {
       </main>
       {/* WhatsApp Floating Button */}
       <a
-        href="https://api.whatsapp.com/send/?phone=5581995124423&text=Ol%C3%A1%2C+gostaria+de+informa%C3%A7%C3%B5es+sobre+a+consulta+on-line."
+        href="https://api.whatsapp.com/send/?phone=5582982150582&text=Ol%C3%A1%2C+gostaria+de+informa%C3%A7%C3%B5es+sobre+a+consulta+on-line."
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-8 right-8 z-100 w-16 h-16 bg-green-500 rounded-full flex items-center justify-center text-white shadow-2xl animate-pulse-soft hover:scale-110 active:scale-95 transition-all"
