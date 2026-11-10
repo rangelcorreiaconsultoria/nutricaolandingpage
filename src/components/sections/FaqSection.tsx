@@ -32,6 +32,7 @@ export default function FaqSection() {
               <div key={question} className="border-b border-line">
                 <h3 className="text-xl md:text-2xl">
                   <button
+                    id={`${id}-btn`}
                     type="button"
                     className="w-full flex items-center gap-6 py-6 text-left uppercase hover:text-cyan"
                     aria-expanded={isOpen}
@@ -54,7 +55,8 @@ export default function FaqSection() {
                 <div
                   id={id}
                   role="region"
-                  className={`grid transition-[grid-template-rows] duration-300 ease-out ${isOpen ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'}`}
+                  aria-labelledby={`${id}-btn`}
+                  className={`grid transition-[grid-template-rows,visibility] duration-300 ease-out ${isOpen ? 'grid-rows-[1fr] visible' : 'grid-rows-[0fr] invisible'}`}
                 >
                   <div className="overflow-hidden">
                     <div className="pl-14 pr-10 pb-6">

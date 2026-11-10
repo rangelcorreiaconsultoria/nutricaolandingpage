@@ -1,7 +1,7 @@
 export const WHATSAPP_NUMBER = '5582998215082';
 export const WHATSAPP_DISPLAY = '+55 82 99821-5082';
 
-export const ADDRESS = 'Rua Jangadeiros Alagoanos, 1481, Maceió, Brazil 57030000';
+export const ADDRESS = 'Rua Jangadeiros Alagoanos, 1481, Maceió – AL, 57030-000';
 
 export const MAPS_SEARCH_URL = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
   `Academia Gaviões, ${ADDRESS}`

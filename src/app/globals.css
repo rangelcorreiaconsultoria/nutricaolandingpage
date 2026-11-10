@@ -36,6 +36,14 @@
   a {
     @apply transition-colors duration-300;
   }
+
+  /* Anel de duas cores: legível sobre fundos claros, escuros e sobre o ciano */
+  a:focus-visible,
+  button:focus-visible {
+    outline: 2px solid #101719;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 5px #ffffff;
+  }
 }
 
 @layer components {

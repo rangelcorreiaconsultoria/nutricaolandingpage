@@ -4,20 +4,13 @@ import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
 import NewTabHint from '@/components/common/NewTabHint';
 import { MSG_AVAILABILITY, whatsappUrl } from '@/lib/contact';
-
-const navLinks = [
-  { href: '#como-comecar', label: 'Como começar' },
-  { href: '#estrutura', label: 'Estrutura' },
-  { href: '#icaro', label: 'Ícaro' },
-  { href: '#formatos', label: 'Formatos' },
-  { href: '#local', label: 'Local' },
-  { href: '#duvidas', label: 'Dúvidas' },
-];
+import { navLinks } from '@/lib/nav';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeId, setActiveId] = useState<string | null>(null);
   const headerRef = useRef<HTMLElement>(null);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
   const agendaUrl = whatsappUrl(MSG_AVAILABILITY);
 
   useEffect(() => {
@@ -49,7 +42,10 @@ export default function Header() {
     if (!isMenuOpen) return;
 
     const onKeyDown = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') setIsMenuOpen(false);
+      if (event.key === 'Escape') {
+        setIsMenuOpen(false);
+        menuButtonRef.current?.focus();
+      }
     };
     const onPointerDown = (event: PointerEvent) => {
       if (headerRef.current && !headerRef.current.contains(event.target as Node)) {
@@ -110,6 +106,7 @@ export default function Header() {
         </div>
 
         <button
+          ref={menuButtonRef}
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           className="xl:hidden p-3 -mr-3 text-ink hover:text-cyan"
           aria-label={isMenuOpen ? 'Fechar menu' : 'Abrir menu'}
