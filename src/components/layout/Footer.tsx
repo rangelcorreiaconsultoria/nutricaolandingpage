@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import NewTabHint from '@/components/common/NewTabHint';
 import { ADDRESS, MAPS_SEARCH_URL, MSG_GENERAL, WHATSAPP_DISPLAY, whatsappUrl } from '@/lib/contact';
 
 export default function Footer() {
@@ -19,14 +20,14 @@ export default function Footer() {
                 </span>
               </span>
             </Link>
-            <p className="text-sm text-text-secondary leading-relaxed max-w-xs">
+            <p className="text-base text-text-secondary leading-relaxed max-w-xs">
               CRN6 37419. Acompanhamento individualizado, baseado em ciência e avaliação criteriosa.
             </p>
           </div>
 
           <div>
             <h4 className="text-base tracking-[0.2em] mb-4">Menu</h4>
-            <ul className="space-y-2">
+            <ul>
               {[
                 { href: '#como-comecar', label: 'Como começar' },
                 { href: '#estrutura', label: 'Estrutura de trabalho' },
@@ -34,7 +35,7 @@ export default function Footer() {
                 { href: '#duvidas', label: 'Dúvidas' },
               ].map((link) => (
                 <li key={link.href}>
-                  <a href={link.href} className="text-sm text-text-secondary hover:text-cyan">
+                  <a href={link.href} className="inline-flex items-center min-h-11 text-base text-text-secondary hover:text-cyan">
                     {link.label}
                   </a>
                 </li>
@@ -48,18 +49,19 @@ export default function Footer() {
               href={MAPS_SEARCH_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="block text-sm text-text-secondary hover:text-cyan mb-3 max-w-xs"
+              className="block py-2 text-base text-text-secondary hover:text-cyan mb-1 max-w-xs"
             >
               Academia Gaviões, {ADDRESS}
+              <NewTabHint />
             </a>
             <a
               href={whatsappUrl(MSG_GENERAL)}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm font-semibold text-ink underline-cyan hover:text-cyan"
-              aria-label={`Conversar no WhatsApp: ${WHATSAPP_DISPLAY}`}
+              className="inline-flex items-center min-h-11 text-base font-semibold text-ink underline-cyan hover:text-cyan"
             >
               WhatsApp {WHATSAPP_DISPLAY}
+              <NewTabHint />
             </a>
           </div>
         </div>

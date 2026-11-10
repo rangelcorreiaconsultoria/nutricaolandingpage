@@ -19,7 +19,7 @@ const config: Config = {
         line: '#DDE3E5',
         text: {
           secondary: 'rgba(16, 23, 25, 0.68)',
-          tertiary: 'rgba(16, 23, 25, 0.5)',
+          tertiary: 'rgba(16, 23, 25, 0.65)',
         },
       },
       fontFamily: {

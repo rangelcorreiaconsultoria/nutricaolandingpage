@@ -1,3 +1,4 @@
+import NewTabHint from '@/components/common/NewTabHint';
 import { MSG_OBJECTIVES, whatsappUrl } from '@/lib/contact';
 
 export default function HeroSection() {
@@ -30,9 +31,10 @@ export default function HeroSection() {
               className="btn btn-primary w-full sm:w-auto"
             >
               Quero conversar sobre meus objetivos
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
                 <path d="M5 12h14M13 6l6 6-6 6" />
               </svg>
+              <NewTabHint />
             </a>
           </div>
         </div>
@@ -70,17 +72,18 @@ export default function HeroSection() {
             </g>
           </svg>
 
-          <dl className="grid grid-cols-1 sm:grid-cols-3 bg-ink text-white">
+          <dl className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-white/10 text-white">
             {[
-              { value: 'ISAK', label: 'Metodologia de avaliação' },
-              { value: '1 a 1', label: 'Acompanhamento individualizado' },
-              { value: 'Pajuçara', label: 'Atendimento presencial · Maceió' },
+              { value: 'CRN6 37419', label: 'Nutricionista' },
+              { value: 'ACSM', label: 'Nutrição esportiva' },
+              { value: 'ISAK', label: 'Avaliação da composição corporal' },
+              { value: 'Professor', label: 'USP · UNIT · IBRAS · Uniguaçu' },
             ].map((fact) => (
-              <div key={fact.value} className="px-6 py-6 md:px-10 md:py-8 border-b sm:border-b-0 sm:border-r border-white/10 last:border-0">
-                <dt className="font-display text-4xl md:text-5xl font-extrabold leading-none text-cyan">
+              <div key={fact.value} className="bg-ink px-6 py-6 lg:px-8 lg:py-8">
+                <dt className="font-display text-3xl lg:text-4xl font-extrabold leading-none text-cyan">
                   {fact.value}
                 </dt>
-                <dd className="mt-2 text-xs uppercase tracking-[0.15em] text-white/70">{fact.label}</dd>
+                <dd className="mt-2 text-sm uppercase tracking-[0.12em] text-white/75">{fact.label}</dd>
               </div>
             ))}
           </dl>

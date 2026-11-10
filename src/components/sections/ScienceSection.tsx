@@ -13,7 +13,7 @@ export default function ScienceSection() {
             <p>
               A experiência que construí acompanhando atletas de alto rendimento também orienta meu trabalho com pessoas que desejam emagrecer, ganhar massa muscular ou cuidar melhor da saúde.
             </p>
-            <p className="border-l-2 border-cyan pl-6 text-ink font-normal">
+            <p className="border-l-2 border-cyan pl-6 text-ink font-medium">
               O que muda são as necessidades e as estratégias. O rigor por trás de cada decisão permanece.
             </p>
           </div>

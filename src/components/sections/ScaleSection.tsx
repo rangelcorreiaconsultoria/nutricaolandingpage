@@ -20,7 +20,7 @@ export default function ScaleSection() {
             <p>
               Por isso, a avaliação da composição corporal é uma parte importante do acompanhamento.
             </p>
-            <p className="border-l-2 border-cyan pl-6 text-ink font-normal">
+            <p className="border-l-2 border-cyan pl-6 text-ink font-medium">
               Por meio de medidas padronizadas e uma interpretação criteriosa dos resultados, conseguimos acompanhar com maior precisão as mudanças na composição corporal, tomar decisões mais fundamentadas e ajustar continuamente a estratégia para acelerar a sua evolução.
             </p>
           </div>
@@ -45,11 +45,11 @@ export default function ScaleSection() {
                 </div>
               ))}
             </div>
-            <div className="mt-8 flex gap-6 text-xs uppercase tracking-[0.15em] text-text-secondary">
+            <div className="mt-8 flex gap-6 text-sm uppercase tracking-[0.15em] text-text-secondary">
               <span className="flex items-center gap-2"><span className="block w-3 h-3 bg-ink" />Massa magra</span>
               <span className="flex items-center gap-2"><span className="block w-3 h-3 bg-cyan" />Gordura</span>
             </div>
-            <p className="mt-6 text-xs text-text-tertiary">Ilustração conceitual.</p>
+            <p className="mt-6 text-sm text-text-tertiary">Ilustração conceitual.</p>
           </div>
         </div>
       </div>
