@@ -11,7 +11,7 @@ export default function Header() {
     { href: '#metodo', label: 'Método' },
     { href: '#conteudo', label: 'Conteúdo' },
     { href: '#professor', label: 'Professor' },
-    { href: '#inscricao', label: 'Inscrição' },
+    { href: '#duvidas', label: 'Dúvidas' },
   ];
 
   return (
@@ -38,6 +38,9 @@ export default function Header() {
               {link.label}
             </a>
           ))}
+          <a href="#inscricao" className="btn btn-primary px-5 py-2.5 text-base">
+            Inscreva-se
+          </a>
         </div>
 
         <button
@@ -63,6 +66,13 @@ export default function Header() {
                 {link.label}
               </a>
             ))}
+            <a
+              href="#inscricao"
+              className="btn btn-primary w-full mt-4"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Inscreva-se
+            </a>
           </div>
         )}
       </nav>

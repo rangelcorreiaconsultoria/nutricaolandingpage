@@ -6,6 +6,7 @@ import ServicesSection from '@/components/sections/ServicesSection';
 import PublicSection from '@/components/sections/PublicSection';
 import DifferencesSection from '@/components/sections/DifferencesSection';
 import ProgramSection from '@/components/sections/ProgramSection';
+import FaqSection from '@/components/sections/FaqSection';
 import ContactSection from '@/components/sections/ContactSection';
 
 export default function Home() {
@@ -19,6 +20,7 @@ export default function Home() {
         <PublicSection />
         <DifferencesSection />
         <ProgramSection />
+        <FaqSection />
         <ContactSection />
       </main>
       <a
