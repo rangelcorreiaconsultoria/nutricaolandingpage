@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import { Barlow, Barlow_Condensed } from 'next/font/google';
+import Analytics from '@/components/common/Analytics';
 import './globals.css';
 
 const barlow = Barlow({
@@ -33,7 +34,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR" className={`${barlow.variable} ${barlowCondensed.variable}`}>
-      <body className="bg-paper text-ink">{children}</body>
+      <body className="bg-paper text-ink">
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }

@@ -4,14 +4,14 @@ import { MSG_OBJECTIVES, whatsappUrl } from '@/lib/contact';
 export default function HeroSection() {
   return (
     <section id="inicio" className="relative bg-white overflow-hidden">
-      <div className="container pt-36 pb-12 md:pt-44 md:pb-16">
+      <div className="container pt-28 pb-12 md:pt-36 md:pb-16">
         <p className="section-label mb-8">Nutrição esportiva e composição corporal</p>
         <h1 className="mb-10 max-w-5xl">
           Seu esforço merece <span className="underline-cyan">resultados.</span>
         </h1>
 
         <div className="grid lg:grid-cols-12 gap-10 items-end">
-          <div className="lg:col-span-6 space-y-5 text-lg text-text-secondary leading-relaxed">
+          <div className="order-2 lg:order-1 lg:col-span-6 space-y-5 text-lg text-text-secondary leading-relaxed">
             <p>
               Seja para emagrecer, ganhar massa muscular, melhorar sua saúde ou evoluir nos treinos, seus resultados dependem de uma estratégia nutricional adequada à sua realidade.
             </p>
@@ -20,7 +20,7 @@ export default function HeroSection() {
             </p>
           </div>
 
-          <div className="lg:col-span-6 lg:pl-12">
+          <div className="order-1 lg:order-2 lg:col-span-6 lg:pl-12">
             <p className="font-display text-2xl font-semibold uppercase tracking-tight mb-6 border-l-2 border-cyan pl-5">
               Atendimento presencial na Pajuçara, em Maceió.
             </p>

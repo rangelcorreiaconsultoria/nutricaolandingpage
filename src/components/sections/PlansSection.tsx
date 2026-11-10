@@ -1,5 +1,5 @@
 import NewTabHint from '@/components/common/NewTabHint';
-import { MSG_AVAILABILITY, whatsappUrl } from '@/lib/contact';
+import { MSG_AVAILABILITY, msgPlan, whatsappUrl } from '@/lib/contact';
 
 const plans = [
   {
@@ -33,10 +33,8 @@ export default function PlansSection() {
     <section id="formatos" className="md:py-28 py-20 bg-cyan-light">
       <div className="container">
         <div className="max-w-4xl mb-16">
-          <p className="section-label mb-6">Formatos de acompanhamento</p>
-          <h2 className="text-4xl lg:text-6xl">
-            Quais os formatos de acompanhamento e onde são realizadas as consultas?
-          </h2>
+          <p className="section-label mb-6">Atendimento presencial</p>
+          <h2>Formatos de acompanhamento</h2>
         </div>
 
         <div className="grid md:grid-cols-2 gap-6 mb-14">
@@ -53,6 +51,15 @@ export default function PlansSection() {
                   </li>
                 ))}
               </ul>
+              <a
+                href={whatsappUrl(msgPlan(plan.name))}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-secondary w-full mt-8"
+              >
+                Quero o plano {plan.name}
+                <NewTabHint />
+              </a>
             </article>
           ))}
         </div>
