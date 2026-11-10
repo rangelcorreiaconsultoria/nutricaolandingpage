@@ -1,5 +1,5 @@
 import NewTabHint from '@/components/common/NewTabHint';
-import { MSG_AVAILABILITY, whatsappUrl } from '@/lib/contact';
+import { MSG_AVAILABILITY, msgPlan, whatsappUrl } from '@/lib/contact';
 
 const plans = [
   {
@@ -51,6 +51,15 @@ export default function PlansSection() {
                   </li>
                 ))}
               </ul>
+              <a
+                href={whatsappUrl(msgPlan(plan.name))}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-secondary w-full mt-8"
+              >
+                Quero o plano {plan.name}
+                <NewTabHint />
+              </a>
             </article>
           ))}
         </div>

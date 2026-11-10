@@ -25,11 +25,9 @@ export default function GenericDietSection() {
 
       <div className="container mt-14">
         <ul className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 border-t border-l border-ink/20 bg-white">
-          {factors.map((factor, i) => (
+          {factors.map((factor) => (
             <li key={factor} className="p-6 border-r border-b border-ink/20">
-              <span className="block font-display text-lg font-bold text-cyan mb-3">
-                {String(i + 1).padStart(2, '0')}
-              </span>
+              <span className="block w-6 h-1 bg-cyan mb-5" aria-hidden="true" />
               <span className="font-display text-xl font-semibold uppercase tracking-tight leading-tight">
                 {factor}
               </span>
