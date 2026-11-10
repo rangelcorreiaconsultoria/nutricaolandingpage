@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import NewTabHint from '@/components/common/NewTabHint';
 import { whatsappUrl } from '@/lib/contact';
 
 const questions = [
@@ -61,9 +62,10 @@ export default function FaqSection() {
                         href={whatsappUrl(`Olá, Ícaro! Tenho uma dúvida: ${question}`)}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="font-semibold text-ink underline-cyan hover:text-cyan"
+                        className="inline-flex items-center min-h-11 font-semibold text-ink underline-cyan hover:text-cyan"
                       >
                         Perguntar pelo WhatsApp
+                        <NewTabHint />
                       </a>
                     </div>
                   </div>

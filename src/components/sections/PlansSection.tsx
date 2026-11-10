@@ -1,3 +1,4 @@
+import NewTabHint from '@/components/common/NewTabHint';
 import { MSG_AVAILABILITY, whatsappUrl } from '@/lib/contact';
 
 const plans = [
@@ -68,6 +69,7 @@ export default function PlansSection() {
               className="btn btn-primary w-full lg:w-auto"
             >
               Verificar disponibilidade de agenda
+              <NewTabHint />
             </a>
           </div>
         </div>

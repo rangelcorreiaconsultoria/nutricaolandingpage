@@ -1,3 +1,4 @@
+import NewTabHint from '@/components/common/NewTabHint';
 import PhotoSlot from '@/components/common/PhotoSlot';
 import { ADDRESS, MAPS_EMBED_URL, MAPS_SEARCH_URL } from '@/lib/contact';
 
@@ -20,7 +21,7 @@ export default function LocationSection() {
             <p>
               Um ambiente dedicado à avaliação, ao planejamento nutricional e ao acompanhamento individualizado.
             </p>
-            <p className="border-l-2 border-cyan pl-6 text-ink font-normal">
+            <p className="border-l-2 border-cyan pl-6 text-ink font-medium">
               Aqui, cada consulta é uma oportunidade de compreender sua evolução e definir os próximos passos.
             </p>
           </div>
@@ -54,9 +55,10 @@ export default function LocationSection() {
               className="btn btn-primary w-full"
             >
               Abrir localização
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
                 <path d="M7 17 17 7M8 7h9v9" />
               </svg>
+              <NewTabHint />
             </a>
           </div>
         </div>

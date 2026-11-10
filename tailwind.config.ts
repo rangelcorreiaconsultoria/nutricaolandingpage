@@ -19,11 +19,11 @@ const config: Config = {
         line: '#DDE3E5',
         text: {
           secondary: 'rgba(16, 23, 25, 0.68)',
-          tertiary: 'rgba(16, 23, 25, 0.5)',
+          tertiary: 'rgba(16, 23, 25, 0.65)',
         },
       },
       fontFamily: {
-        sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
+        sans: ['var(--font-barlow)', 'system-ui', 'sans-serif'],
         display: ['var(--font-barlow-condensed)', 'Impact', 'sans-serif'],
       },
       animation: {

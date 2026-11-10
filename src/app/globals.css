@@ -10,11 +10,11 @@
 
   body {
     @apply font-sans antialiased;
-    font-weight: 300;
+    font-weight: 400;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-display font-extrabold uppercase tracking-tight leading-[0.95];
+    @apply font-display font-extrabold uppercase tracking-tight leading-[1.04];
   }
 
   h1 {
@@ -73,6 +73,19 @@
     text-decoration-color: #00b9cf;
     text-decoration-thickness: 0.08em;
     text-underline-offset: 0.12em;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition-duration: 0.01ms !important;
   }
 }
 
