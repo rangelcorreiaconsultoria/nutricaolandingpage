@@ -1,74 +1,50 @@
-'use client';
-
-import { useState } from 'react';
 import ServiceCard from '@/components/common/ServiceCard';
-import SchedulingModal from '@/components/common/SchedulingModal';
 
-const services = [
+const steps = [
   {
-    icon: '📷',
-    title: 'Consulta Online',
+    number: '01',
+    title: 'Marcação correta dos pontos anatômicos',
     description:
-      'Atendimento exclusivo via videoconferência, com anamnese completa e plano estratégico entregue digitalmente.',
-    href: '#contato',
-    linkText: 'Saber mais',
+      'Pequenas imprecisões na localização dos pontos podem mascarar ou simular mudanças. Aqui, a marcação é requisito de comparação entre avaliações.',
   },
   {
-    icon: '👥',
-    title: 'Consulta Presencial',
+    number: '02',
+    title: 'Sequência padronizada de medidas',
     description:
-      'Experiência completa em nosso consultório em Recife, incluindo avaliação física detalhada e bioimpedância.',
-    href: '#',
-    linkText: 'Agendar em Recife',
+      'Dobras cutâneas, perímetros e diâmetros com método ISAK, para fazer suas primeiras avaliações com menor risco de erros de execução.',
   },
   {
-    icon: '⚡',
-    title: 'Consultoria Personalizada',
+    number: '03',
+    title: 'Interpretação e decisão clínica',
     description:
-      'Acompanhamento contínuo e plano de performance integrado para atletas de elite e alto desempenho.',
-    href: '#contato',
-    linkText: 'Ver detalhes',
+      'Acompanhe mudanças ao longo do tempo, transforme medidas em decisões clínicas e demonstre a evolução real do paciente.',
   },
 ];
 
 export default function ServicesSection() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
   return (
-    <>
-      <SchedulingModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
-      <section id="servicos" className="lg:py-24 py-16 bg-brand-gray">
+    <section id="metodo" className="lg:py-28 py-20 bg-white">
       <div className="container">
-        {/* Header */}
-        <div className="grid lg:grid-cols-12 md:gap-12 gap-6 items-end md:mb-16 mb-8">
+        <div className="grid lg:grid-cols-12 gap-6 items-end mb-16">
           <div className="lg:col-span-8">
-            <h2 className="text-4xl lg:text-7xl font-bold text-brand-dark-gray leading-tight">
-              Soluções <span className="highlight">Estratégicas.</span>
+            <p className="section-label mb-6">O método</p>
+            <h2>
+              Da medição <span className="highlight">à interpretação.</span>
             </h2>
           </div>
           <div className="lg:col-span-4">
-            <p className="text-text-secondary text-lg leading-relaxed border-l border-brand-orange pl-6 mb-2">
-              Protocolos de elite desenhados para quem exige precisão absoluta em cada grama de resultado.
+            <p className="text-text-secondary text-lg leading-relaxed border-l-2 border-cyan pl-6">
+              Ciência, precisão, método e aplicação clínica em cada etapa.
             </p>
           </div>
         </div>
 
-        {/* Services Grid */}
         <div className="grid md:grid-cols-3 gap-6">
-          {services.map((service, index) => (
-            <ServiceCard
-              key={index}
-              {...service}
-              onClick={
-                service.linkText === 'Agendar em Recife'
-                  ? () => setIsModalOpen(true)
-                  : undefined
-              }
-            />
+          {steps.map((step) => (
+            <ServiceCard key={step.number} {...step} />
           ))}
         </div>
       </div>
     </section>
-    </>
   );
 }

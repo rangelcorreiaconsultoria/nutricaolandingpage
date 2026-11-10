@@ -9,25 +9,22 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        'brand': {
-          'orange': '#ff6a00',
-          'black': '#121212',
-          'gray': '#f5f5f7',
-          'dark-gray': '#1d1d1f',
-          'white': '#ffffff',
+        ink: '#101719',
+        paper: '#FFFFFF',
+        cyan: {
+          DEFAULT: '#00B9CF',
+          light: '#E5FBFD',
         },
-        'text': {
-          'primary': '#1d1d1f',
-          'secondary': 'rgba(29, 29, 31, 0.6)',
-          'tertiary': 'rgba(29, 29, 31, 0.4)',
+        mist: '#F3F5F6',
+        line: '#DDE3E5',
+        text: {
+          secondary: 'rgba(16, 23, 25, 0.68)',
+          tertiary: 'rgba(16, 23, 25, 0.5)',
         },
       },
       fontFamily: {
-        'sans': ['var(--font-inter)', 'system-ui', 'sans-serif'],
-        'display': ['var(--font-space-grotesk)', 'sans-serif'],
-      },
-      borderRadius: {
-        'apple': '1.25rem',
+        sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
+        display: ['var(--font-barlow-condensed)', 'Impact', 'sans-serif'],
       },
       animation: {
         'pulse-soft': 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
