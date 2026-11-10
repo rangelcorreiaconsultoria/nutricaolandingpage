@@ -1,47 +1,34 @@
 'use client';
 
 import { useState } from 'react';
+import { whatsappUrl } from '@/lib/contact';
 
-const faqs = [
-  {
-    question: 'Preciso já fazer avaliações para participar?',
-    answer:
-      'Não. O curso vai dos fundamentos à interpretação: serve tanto para quem quer fazer as primeiras avaliações com método quanto para quem já avalia e quer mais consistência.',
-  },
-  {
-    question: 'Por que seguir a padronização ISAK?',
-    answer:
-      'Porque comparações entre avaliações só são confiáveis quando o procedimento é o mesmo. Pequenas variações na marcação dos pontos podem mascarar ou simular mudanças.',
-  },
-  {
-    question: 'O curso fala sobre bioimpedância?',
-    answer:
-      'Sim. A bioimpedância é prática e rápida, mas hidratação, ingestão, exercício recente e fase menstrual afetam a medição. Você vai entender essas limitações e quando as dobras cutâneas são mais adequadas para o acompanhamento.',
-  },
-  {
-    question: 'Como faço minha inscrição?',
-    answer:
-      'Fale com a equipe pelo WhatsApp para receber todas as informações sobre turma, formato e valores.',
-  },
+const questions = [
+  'Preciso ser aluno da Gaviões para consultar?',
+  'Quanto custa?',
+  'Quanto tempo dura uma consulta?',
+  'Tem retorno?',
+  'Você só atende atletas?',
+  'Você também atende online?',
 ];
 
 export default function FaqSection() {
-  const [open, setOpen] = useState<number | null>(0);
+  const [open, setOpen] = useState<number | null>(null);
 
   return (
     <section id="duvidas" className="md:py-28 py-20 bg-white border-t border-line">
       <div className="container grid lg:grid-cols-12 gap-12">
         <div className="lg:col-span-4">
           <p className="section-label mb-6">Dúvidas</p>
-          <h2>Perguntas frequentes.</h2>
+          <h2>Dúvidas frequentes</h2>
         </div>
 
         <div className="lg:col-span-8 border-t border-ink">
-          {faqs.map((faq, i) => {
+          {questions.map((question, i) => {
             const isOpen = open === i;
             const id = `faq-${i}`;
             return (
-              <div key={faq.question} className="border-b border-line">
+              <div key={question} className="border-b border-line">
                 <h3 className="text-xl md:text-2xl">
                   <button
                     type="button"
@@ -53,7 +40,7 @@ export default function FaqSection() {
                     <span className="font-display text-lg font-bold text-cyan w-8 shrink-0">
                       {String(i + 1).padStart(2, '0')}
                     </span>
-                    <span className="flex-1">{faq.question}</span>
+                    <span className="flex-1">{question}</span>
                     <span
                       aria-hidden="true"
                       className={`relative w-4 h-4 shrink-0 transition-transform duration-300 ${isOpen ? 'rotate-45' : ''}`}
@@ -69,7 +56,16 @@ export default function FaqSection() {
                   className={`grid transition-[grid-template-rows] duration-300 ease-out ${isOpen ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'}`}
                 >
                   <div className="overflow-hidden">
-                    <p className="pl-14 pr-10 pb-6 text-text-secondary leading-relaxed max-w-2xl">{faq.answer}</p>
+                    <div className="pl-14 pr-10 pb-6">
+                      <a
+                        href={whatsappUrl(`Olá, Ícaro! Tenho uma dúvida: ${question}`)}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-semibold text-ink underline-cyan hover:text-cyan"
+                      >
+                        Perguntar pelo WhatsApp
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>

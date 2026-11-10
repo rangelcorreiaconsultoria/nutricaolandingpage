@@ -15,9 +15,9 @@ const barlowCondensed = Barlow_Condensed({
 });
 
 export const metadata: Metadata = {
-  title: 'Antropometria na Prática | Da Medição à Interpretação',
+  title: 'Ícaro Andrade | Nutricionista em Maceió',
   description:
-    'Curso de avaliação antropométrica com padronização ISAK para nutricionistas e estudantes. Com Ícaro Andrade.',
+    'Acompanhamento nutricional individualizado, baseado em ciência e avaliação da composição corporal pela metodologia ISAK. Atendimento presencial na Pajuçara, em Maceió.',
 };
 
 export const viewport: Viewport = {

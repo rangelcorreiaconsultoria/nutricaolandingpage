@@ -1,13 +1,16 @@
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import HeroSection from '@/components/sections/HeroSection';
-import AboutSection from '@/components/sections/AboutSection';
-import ServicesSection from '@/components/sections/ServicesSection';
-import PublicSection from '@/components/sections/PublicSection';
-import DifferencesSection from '@/components/sections/DifferencesSection';
-import ProgramSection from '@/components/sections/ProgramSection';
+import StartSection from '@/components/sections/StartSection';
+import ScienceSection from '@/components/sections/ScienceSection';
+import GenericDietSection from '@/components/sections/GenericDietSection';
+import StructureSection from '@/components/sections/StructureSection';
+import ScaleSection from '@/components/sections/ScaleSection';
+import ProfessionalSection from '@/components/sections/ProfessionalSection';
+import PlansSection from '@/components/sections/PlansSection';
+import LocationSection from '@/components/sections/LocationSection';
 import FaqSection from '@/components/sections/FaqSection';
-import ContactSection from '@/components/sections/ContactSection';
+import { MSG_OBJECTIVES, whatsappUrl } from '@/lib/contact';
 
 export default function Home() {
   return (
@@ -15,16 +18,18 @@ export default function Home() {
       <Header />
       <main className="flex-grow">
         <HeroSection />
-        <AboutSection />
-        <ServicesSection />
-        <PublicSection />
-        <DifferencesSection />
-        <ProgramSection />
+        <StartSection />
+        <ScienceSection />
+        <GenericDietSection />
+        <StructureSection />
+        <ScaleSection />
+        <ProfessionalSection />
+        <PlansSection />
+        <LocationSection />
         <FaqSection />
-        <ContactSection />
       </main>
       <a
-        href="https://api.whatsapp.com/send/?phone=5582982150582&text=Ol%C3%A1%2C+gostaria+de+informa%C3%A7%C3%B5es+sobre+o+curso+Antropometria+na+Pr%C3%A1tica."
+        href={whatsappUrl(MSG_OBJECTIVES)}
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-6 right-6 z-40 flex items-center gap-3 bg-ink text-white pl-5 pr-6 py-4 font-display text-base font-bold uppercase tracking-wider hover:bg-cyan hover:text-ink"

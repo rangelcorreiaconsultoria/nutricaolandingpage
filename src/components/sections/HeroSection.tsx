@@ -1,42 +1,38 @@
-const WHATSAPP_URL =
-  'https://api.whatsapp.com/send/?phone=5582982150582&text=Ol%C3%A1%2C+tenho+interesse+no+curso+Antropometria+na+Pr%C3%A1tica.';
-
-const facts = [
-  { value: 'ISAK', label: 'Padronização internacional' },
-  { value: '~1 cm', label: 'Pode mascarar ou simular mudanças' },
-  { value: '3', label: 'Dobras · perímetros · diâmetros' },
-];
+import { MSG_OBJECTIVES, whatsappUrl } from '@/lib/contact';
 
 export default function HeroSection() {
   return (
     <section id="inicio" className="relative bg-white overflow-hidden">
-      <div className="container grid grid-cols-1 lg:grid-cols-12 gap-10 pt-36 pb-12 md:pt-44 md:pb-16">
-        <div className="flex lg:col-span-4 lg:items-end">
-          <div>
-            <p className="section-label mb-6">Curso de avaliação antropométrica</p>
-            <p className="text-lg text-text-secondary leading-relaxed max-w-xs">
-              Formação técnica e prática, baseada na padronização ISAK, com Ícaro Andrade.
+      <div className="container pt-36 pb-12 md:pt-44 md:pb-16">
+        <p className="section-label mb-8">Nutrição esportiva e composição corporal</p>
+        <h1 className="mb-10 max-w-5xl">
+          Seu esforço merece <span className="underline-cyan">resultados.</span>
+        </h1>
+
+        <div className="grid lg:grid-cols-12 gap-10 items-end">
+          <div className="lg:col-span-6 space-y-5 text-lg text-text-secondary leading-relaxed">
+            <p>
+              Seja para emagrecer, ganhar massa muscular, melhorar sua saúde ou evoluir nos treinos, seus resultados dependem de uma estratégia nutricional adequada à sua realidade.
+            </p>
+            <p>
+              Com um acompanhamento individualizado, baseado em ciência e avaliação criteriosa, você tem um planejamento construído para seus objetivos, sua rotina e suas necessidades.
             </p>
           </div>
-        </div>
 
-        <div className="lg:col-span-8 lg:pl-8">
-          <h1 className="mb-6">
-            Antropometria <br />
-            <span className="underline-cyan">na prática</span>
-          </h1>
-          <p className="font-display text-3xl lg:text-4xl font-semibold uppercase tracking-tight text-text-secondary mb-10">
-            Da medição <span className="text-cyan">à interpretação</span>
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4">
-            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
-              Quero participar
+          <div className="lg:col-span-6 lg:pl-12">
+            <p className="font-display text-2xl font-semibold uppercase tracking-tight mb-6 border-l-2 border-cyan pl-5">
+              Atendimento presencial na Pajuçara, em Maceió.
+            </p>
+            <a
+              href={whatsappUrl(MSG_OBJECTIVES)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-primary w-full sm:w-auto"
+            >
+              Quero conversar sobre meus objetivos
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <path d="M5 12h14M13 6l6 6-6 6" />
               </svg>
-            </a>
-            <a href="#metodo" className="btn btn-secondary">
-              Conhecer o método
             </a>
           </div>
         </div>
@@ -45,44 +41,41 @@ export default function HeroSection() {
       <div className="container pb-20 md:pb-28">
         <div className="relative bg-cyan-light overflow-hidden">
           <svg
-            viewBox="0 0 1200 420"
+            viewBox="0 0 1200 300"
             preserveAspectRatio="xMaxYMid slice"
-            className="block w-full h-64 md:h-96"
+            className="block w-full h-48 md:h-72"
             fill="none"
-            role="img"
-            aria-label="Marcação de ponto anatômico com variação de 1 centímetro"
+            aria-hidden="true"
           >
             <g stroke="#00B9CF" strokeOpacity="0.18" strokeWidth="1">
-              {Array.from({ length: 25 }).map((_, i) => (
+              {Array.from({ length: 18 }).map((_, i) => (
                 <line key={`h${i}`} x1="0" x2="1200" y1={i * 17.5} y2={i * 17.5} />
               ))}
               {Array.from({ length: 70 }).map((_, i) => (
-                <line key={`v${i}`} y1="0" y2="420" x1={i * 17.5} x2={i * 17.5} />
+                <line key={`v${i}`} y1="0" y2="300" x1={i * 17.5} x2={i * 17.5} />
               ))}
             </g>
-            <g transform="translate(820 210)">
-              <circle r="150" stroke="#101719" strokeWidth="1.5" />
-              <circle r="80" stroke="#101719" strokeWidth="1" strokeDasharray="4 5" />
-              <line x1="-190" y1="0" x2="190" y2="0" stroke="#101719" strokeWidth="1.5" />
-              <line x1="0" y1="-190" x2="0" y2="190" stroke="#101719" strokeWidth="1.5" />
-              <circle r="10" fill="#00B9CF" />
-              <circle cx="80" r="10" stroke="#00B9CF" strokeWidth="2" fill="#fff" />
-              <line x1="0" y1="48" x2="80" y2="48" stroke="#101719" strokeWidth="1.5" />
-              <line x1="0" y1="40" x2="0" y2="56" stroke="#101719" strokeWidth="1.5" />
-              <line x1="80" y1="40" x2="80" y2="56" stroke="#101719" strokeWidth="1.5" />
-              <path d="M88 -10 L150 -90" stroke="#101719" strokeWidth="1.5" />
-              <path d="M140 -90 H150 V-80" stroke="#101719" strokeWidth="1.5" />
+            <g transform="translate(900 150)">
+              <circle r="110" stroke="#101719" strokeWidth="1.5" />
+              <circle r="60" stroke="#101719" strokeWidth="1" strokeDasharray="4 5" />
+              <line x1="-150" y1="0" x2="150" y2="0" stroke="#101719" strokeWidth="1.5" />
+              <line x1="0" y1="-150" x2="0" y2="150" stroke="#101719" strokeWidth="1.5" />
+              <circle r="9" fill="#00B9CF" />
             </g>
             <g stroke="#101719" strokeWidth="1.5">
-              <line x1="80" y1="370" x2="520" y2="370" />
-              {Array.from({ length: 23 }).map((_, i) => (
-                <line key={`t${i}`} x1={80 + i * 20} x2={80 + i * 20} y1="370" y2={i % 5 === 0 ? 352 : 362} />
+              <line x1="80" y1="250" x2="560" y2="250" />
+              {Array.from({ length: 25 }).map((_, i) => (
+                <line key={`t${i}`} x1={80 + i * 20} x2={80 + i * 20} y1="250" y2={i % 5 === 0 ? 232 : 242} />
               ))}
             </g>
           </svg>
 
           <dl className="grid grid-cols-1 sm:grid-cols-3 bg-ink text-white">
-            {facts.map((fact) => (
+            {[
+              { value: 'ISAK', label: 'Metodologia de avaliação' },
+              { value: '1 a 1', label: 'Acompanhamento individualizado' },
+              { value: 'Pajuçara', label: 'Atendimento presencial · Maceió' },
+            ].map((fact) => (
               <div key={fact.value} className="px-6 py-6 md:px-10 md:py-8 border-b sm:border-b-0 sm:border-r border-white/10 last:border-0">
                 <dt className="font-display text-4xl md:text-5xl font-extrabold leading-none text-cyan">
                   {fact.value}
