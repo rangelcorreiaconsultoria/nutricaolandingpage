@@ -64,13 +64,13 @@ export default function Header() {
   return (
     <header
       ref={headerRef}
-      className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-line"
+      className="fixed top-0 left-0 right-0 z-50 bg-canvas/95 backdrop-blur-md border-b border-line"
     >
       <nav className="container flex justify-between items-center py-4" aria-label="Principal">
         <Link href="#inicio" className="flex items-center gap-3">
           <span className="block w-2 h-8 bg-cyan" />
           <span className="font-display text-xl font-extrabold uppercase leading-none tracking-tight">
-            Ícaro Andrade
+            Icaro Andrade
             <br />
             <span className="font-semibold tracking-[0.2em] text-sm text-text-secondary">
               Nutricionista
@@ -87,7 +87,7 @@ export default function Header() {
                 href={link.href}
                 aria-current={isActive ? 'true' : undefined}
                 className={`font-display text-base font-semibold uppercase tracking-[0.15em] py-2 border-b-2 hover:text-cyan ${
-                  isActive ? 'text-ink border-cyan' : 'text-text-secondary border-transparent'
+                  isActive ? 'text-fg border-cyan' : 'text-text-secondary border-transparent'
                 }`}
               >
                 {link.label}
@@ -108,7 +108,7 @@ export default function Header() {
         <button
           ref={menuButtonRef}
           onClick={() => setIsMenuOpen(!isMenuOpen)}
-          className="xl:hidden p-3 -mr-3 text-ink hover:text-cyan"
+          className="xl:hidden p-3 -mr-3 text-fg hover:text-cyan"
           aria-label={isMenuOpen ? 'Fechar menu' : 'Abrir menu'}
           aria-expanded={isMenuOpen}
         >
@@ -118,7 +118,7 @@ export default function Header() {
         </button>
 
         {isMenuOpen && (
-          <div className="absolute top-full left-0 right-0 bg-white border-b border-line p-6 xl:hidden">
+          <div className="absolute top-full left-0 right-0 bg-canvas border-b border-line p-6 xl:hidden">
             {navLinks.map((link) => {
               const isActive = activeId === link.href.slice(1);
               return (
@@ -127,7 +127,7 @@ export default function Header() {
                   href={link.href}
                   aria-current={isActive ? 'true' : undefined}
                   className={`block py-3 min-h-11 font-display text-lg font-semibold uppercase tracking-[0.15em] hover:text-cyan ${
-                    isActive ? 'text-ink' : 'text-text-secondary'
+                    isActive ? 'text-fg' : 'text-text-secondary'
                   }`}
                   onClick={() => setIsMenuOpen(false)}
                 >
