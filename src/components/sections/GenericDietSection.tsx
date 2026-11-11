@@ -23,8 +23,8 @@ export default function GenericDietSection() {
           </div>
         </div>
 
-        <div className="mt-14">
-          <p className="font-display text-xl font-semibold uppercase tracking-[0.12em] text-text-secondary mb-8">
+        <div className="mt-14 flex flex-col items-center">
+          <p className="font-display text-xl font-semibold uppercase tracking-[0.12em] text-text-secondary mb-8 text-center">
             Seis fatores fazem parte de cada decisão
           </p>
           <ConvergenceDiagram />

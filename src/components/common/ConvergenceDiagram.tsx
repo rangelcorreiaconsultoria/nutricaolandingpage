@@ -31,7 +31,7 @@ export default function ConvergenceDiagram() {
   const total = factors.length;
 
   return (
-    <div ref={ref} className="grid grid-cols-[auto_1fr_auto] items-stretch max-w-4xl">
+    <div ref={ref} className="grid grid-cols-[auto_1fr_auto] items-stretch w-full max-w-3xl mx-auto">
       <ul style={{ height: total * ROW }} className="flex flex-col">
         {factors.map((factor) => (
           <li

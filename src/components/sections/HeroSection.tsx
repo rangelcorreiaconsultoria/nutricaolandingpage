@@ -1,9 +1,9 @@
-import PhotoSlot from '@/components/common/PhotoSlot';
+import Image from 'next/image';
 import NewTabHint from '@/components/common/NewTabHint';
 import { MSG_OBJECTIVES, whatsappUrl } from '@/lib/contact';
 
 const credentials = [
-  { value: 'CRN6 37419', label: 'Nutricionista' },
+  { value: 'CRN 637419', label: 'Nutricionista' },
   { value: 'ACSM', label: 'Nutrição esportiva' },
   { value: 'Professor', label: 'USP · UNIT · IBRAS · Uniguaçu' },
 ];
@@ -11,8 +11,8 @@ const credentials = [
 export default function HeroSection() {
   return (
     <section id="inicio" className="relative bg-canvas overflow-hidden">
-      <div className="container pt-28 pb-12 md:pt-36 md:pb-16">
-        <div className="grid lg:grid-cols-12 gap-x-12 gap-y-12 items-start">
+      <div className="container pt-28 pb-20 md:pt-36 md:pb-28">
+        <div className="grid lg:grid-cols-12 gap-x-12 gap-y-12 items-stretch">
           <div className="lg:col-span-7">
             <p className="section-label mb-8">Nutrição esportiva e composição corporal</p>
             <h1 className="mb-10">
@@ -45,32 +45,41 @@ export default function HeroSection() {
             </a>
           </div>
 
-          <div className="lg:col-span-5 max-w-md lg:max-w-none">
-            <PhotoSlot
-              src="/images/icaro-perfil.jpeg"
-              alt="Icaro Andrade, nutricionista"
-              priority
-              caption={
-                <>
-                  Icaro Andrade <span className="text-cyan">·</span> Nutricionista <span className="text-cyan">·</span> CRN6 37419
-                </>
-              }
-            />
+          {/* Coluna da foto: a altura acompanha a coluna do texto (a foto absorve a diferença) */}
+          <div className="lg:col-span-5 relative max-w-md lg:max-w-none">
+            <div className="lg:absolute lg:inset-0 flex flex-col">
+              <figure className="flex flex-col lg:flex-1 lg:min-h-0">
+                <div className="relative aspect-[4/5] lg:aspect-auto lg:flex-1 lg:min-h-0 bg-deep overflow-hidden">
+                  <Image
+                    src="/images/icaro-perfil.jpeg"
+                    alt="Icaro Andrade, nutricionista"
+                    fill
+                    priority
+                    sizes="(min-width: 1024px) 480px, (min-width: 640px) 50vw, 100vw"
+                    className="object-cover object-top"
+                  />
+                </div>
+                <figcaption className="mt-3 flex items-start gap-3 font-display text-sm font-bold uppercase tracking-[0.12em] leading-snug">
+                  <span className="block w-6 h-px bg-cyan mt-2.5 shrink-0" />
+                  <span>
+                    Icaro Andrade <span className="text-cyan">·</span> Nutricionista <span className="text-cyan">·</span> CRN 637419
+                  </span>
+                </figcaption>
+              </figure>
+
+              <dl className="mt-4 grid grid-cols-3 gap-px bg-white/10 text-white">
+                {credentials.map((item) => (
+                  <div key={item.value} className="bg-surface px-3 py-4 sm:px-4">
+                    <dt className="font-display text-lg sm:text-xl font-extrabold leading-none text-cyan">
+                      {item.value}
+                    </dt>
+                    <dd className="mt-2 text-[11px] uppercase tracking-[0.1em] leading-snug text-white/75">{item.label}</dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
           </div>
         </div>
-      </div>
-
-      <div className="container pb-20 md:pb-28">
-        <dl className="grid grid-cols-1 sm:grid-cols-3 gap-px bg-white/10 text-white">
-          {credentials.map((item) => (
-            <div key={item.value} className="bg-surface px-5 py-6 lg:px-8 lg:py-8">
-              <dt className="font-display text-2xl sm:text-3xl lg:text-4xl font-extrabold leading-none text-cyan">
-                {item.value}
-              </dt>
-              <dd className="mt-3 text-sm uppercase tracking-[0.12em] leading-snug text-white/75">{item.label}</dd>
-            </div>
-          ))}
-        </dl>
       </div>
     </section>
   );
