@@ -30,12 +30,10 @@ export default function GenericDietSection() {
           <ConvergenceDiagram />
         </div>
 
-        <div className="mt-14 bg-raise border-l-4 border-cyan text-white p-8 md:p-14">
-          <p className="font-display text-3xl md:text-5xl font-bold uppercase tracking-tight leading-tight max-w-4xl">
-            O acompanhamento não deve exigir que você adapte toda a sua vida à dieta.{' '}
-            <span className="text-cyan">A dieta precisa ser construída para funcionar na sua vida.</span>
-          </p>
-        </div>
+        <p className="mt-16 md:mt-20 mx-auto max-w-4xl text-center font-display text-3xl md:text-5xl font-bold uppercase tracking-tight leading-tight">
+          O acompanhamento não deve exigir que você adapte toda a sua vida à dieta.{' '}
+          <span className="text-cyan">A dieta precisa ser construída para funcionar na sua vida.</span>
+        </p>
       </div>
     </section>
   );

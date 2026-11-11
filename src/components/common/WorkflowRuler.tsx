@@ -170,10 +170,6 @@ export default function WorkflowRuler() {
             </div>
           ))}
         </div>
-
-        <p className="mt-4 text-sm uppercase tracking-[0.16em] text-text-tertiary" aria-hidden="true">
-          {active < 2 ? 'Role para avançar na régua' : 'Fim da régua'}
-        </p>
       </div>
     </div>
   );
