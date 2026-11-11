@@ -8,7 +8,7 @@ import StructureSection from '@/components/sections/StructureSection';
 import ScaleSection from '@/components/sections/ScaleSection';
 import ProfessionalSection from '@/components/sections/ProfessionalSection';
 import SpecialtiesSection from '@/components/sections/SpecialtiesSection';
-import PlansSectionfrom '@/components/sections/PlansSection';
+import PlansSection from '@/components/sections/PlansSection';
 import LocationSection from '@/components/sections/LocationSection';
 import FaqSection from '@/components/sections/FaqSection';
 
