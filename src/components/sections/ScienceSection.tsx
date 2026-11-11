@@ -2,7 +2,7 @@ import PhotoSlot from '@/components/common/PhotoSlot';
 
 export default function ScienceSection() {
   return (
-    <section className="md:py-28 py-20 bg-white">
+    <section className="md:py-28 py-20 bg-base">
       <div className="container grid lg:grid-cols-12 gap-12 items-start">
         <div className="lg:col-span-7">
           <p className="section-label mb-6">Rigor em cada decisão</p>
@@ -13,7 +13,7 @@ export default function ScienceSection() {
             <p>
               A experiência que construí acompanhando atletas de alto rendimento também orienta meu trabalho com pessoas que desejam emagrecer, ganhar massa muscular ou cuidar melhor da saúde.
             </p>
-            <p className="border-l-2 border-cyan pl-6 text-ink font-medium">
+            <p className="border-l-2 border-cyan pl-6 text-fg font-medium">
               O que muda são as necessidades e as estratégias. O rigor por trás de cada decisão permanece.
             </p>
           </div>

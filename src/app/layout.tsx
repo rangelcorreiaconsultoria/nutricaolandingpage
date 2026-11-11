@@ -16,7 +16,7 @@ const barlowCondensed = Barlow_Condensed({
 });
 
 export const metadata: Metadata = {
-  title: 'Ícaro Andrade | Nutricionista em Maceió',
+  title: 'Icaro Andrade | Nutricionista em Maceió',
   description:
     'Acompanhamento nutricional individualizado, baseado em ciência e avaliação da composição corporal pela metodologia ISAK. Atendimento presencial na Pajuçara, em Maceió.',
 };
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
-  themeColor: '#00B9CF',
+  themeColor: '#101719',
 };
 
 export default function RootLayout({
@@ -34,7 +34,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR" className={`${barlow.variable} ${barlowCondensed.variable}`}>
-      <body className="bg-paper text-ink">
+      <body className="bg-base text-fg">
         {children}
         <Analytics />
       </body>

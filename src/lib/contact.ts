@@ -16,7 +16,9 @@ export function whatsappUrl(message: string): string {
 }
 
 export const msgPlan = (plan: string) =>
-  `Olá, Ícaro! Tenho interesse no plano ${plan}. Gostaria de verificar a disponibilidade de agenda.`;
-export const MSG_GENERAL = 'Olá, Ícaro! Vim pelo seu site e gostaria de conversar.';
-export const MSG_OBJECTIVES = 'Olá, Ícaro! Quero conversar sobre meus objetivos.';
-export const MSG_AVAILABILITY = 'Olá, Ícaro! Gostaria de verificar a disponibilidade de agenda.';
+  `Olá, Icaro! Tenho interesse no plano ${plan}. Gostaria de verificar a disponibilidade de agenda.`;
+export const MSG_GENERAL = 'Olá, Icaro! Vim pelo seu site e gostaria de conversar.';
+export const MSG_OBJECTIVES = 'Olá, Icaro! Quero conversar sobre meus objetivos.';
+export const MSG_CASE = 'Olá, Icaro! Gostaria que avaliasse o meu caso.';
+export const MSG_EVALUATION = 'Olá, Icaro! Desejo realizar uma avaliação.';
+export const MSG_AVAILABILITY = 'Olá, Icaro! Gostaria de verificar a disponibilidade de agenda.';

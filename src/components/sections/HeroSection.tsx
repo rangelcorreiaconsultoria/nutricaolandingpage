@@ -3,7 +3,7 @@ import { MSG_OBJECTIVES, whatsappUrl } from '@/lib/contact';
 
 export default function HeroSection() {
   return (
-    <section id="inicio" className="relative bg-white overflow-hidden">
+    <section id="inicio" className="relative bg-base overflow-hidden">
       <div className="container pt-28 pb-12 md:pt-36 md:pb-16">
         <p className="section-label mb-8">Nutrição esportiva e composição corporal</p>
         <h1 className="mb-10 max-w-5xl">
@@ -41,7 +41,7 @@ export default function HeroSection() {
       </div>
 
       <div className="container pb-20 md:pb-28">
-        <div className="relative bg-cyan-light overflow-hidden">
+        <div className="relative bg-deep overflow-hidden">
           <svg
             viewBox="0 0 1200 300"
             preserveAspectRatio="xMaxYMid slice"
@@ -58,13 +58,13 @@ export default function HeroSection() {
               ))}
             </g>
             <g transform="translate(900 150)">
-              <circle r="110" stroke="#101719" strokeWidth="1.5" />
-              <circle r="60" stroke="#101719" strokeWidth="1" strokeDasharray="4 5" />
-              <line x1="-150" y1="0" x2="150" y2="0" stroke="#101719" strokeWidth="1.5" />
-              <line x1="0" y1="-150" x2="0" y2="150" stroke="#101719" strokeWidth="1.5" />
+              <circle r="110" stroke="#FFFFFF" strokeOpacity="0.85" strokeWidth="1.5" />
+              <circle r="60" stroke="#FFFFFF" strokeOpacity="0.85" strokeWidth="1" strokeDasharray="4 5" />
+              <line x1="-150" y1="0" x2="150" y2="0" stroke="#FFFFFF" strokeOpacity="0.85" strokeWidth="1.5" />
+              <line x1="0" y1="-150" x2="0" y2="150" stroke="#FFFFFF" strokeOpacity="0.85" strokeWidth="1.5" />
               <circle r="9" fill="#00B9CF" />
             </g>
-            <g stroke="#101719" strokeWidth="1.5">
+            <g stroke="#FFFFFF" strokeOpacity="0.85" strokeWidth="1.5">
               <line x1="80" y1="250" x2="560" y2="250" />
               {Array.from({ length: 25 }).map((_, i) => (
                 <line key={`t${i}`} x1={80 + i * 20} x2={80 + i * 20} y1="250" y2={i % 5 === 0 ? 232 : 242} />
@@ -79,7 +79,7 @@ export default function HeroSection() {
               { value: 'ISAK', label: 'Avaliação da composição corporal' },
               { value: 'Professor', label: 'USP · UNIT · IBRAS · Uniguaçu' },
             ].map((fact) => (
-              <div key={fact.value} className="bg-ink px-6 py-6 lg:px-8 lg:py-8">
+              <div key={fact.value} className="bg-surface px-6 py-6 lg:px-8 lg:py-8">
                 <dt className="font-display text-3xl lg:text-4xl font-extrabold leading-none text-cyan">
                   {fact.value}
                 </dt>

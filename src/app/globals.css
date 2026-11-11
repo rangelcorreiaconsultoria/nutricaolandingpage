@@ -6,10 +6,12 @@
   html {
     scroll-behavior: smooth;
     scroll-padding-top: 80px;
+    background-color: #101719;
+    color-scheme: dark;
   }
 
   body {
-    @apply font-sans antialiased;
+    @apply font-sans antialiased bg-base text-fg;
     font-weight: 400;
   }
 
@@ -37,12 +39,12 @@
     @apply transition-colors duration-300;
   }
 
-  /* Anel de duas cores: legível sobre fundos claros, escuros e sobre o ciano */
+  /* Anel de duas cores: legível sobre o fundo escuro e sobre o ciano */
   a:focus-visible,
   button:focus-visible {
-    outline: 2px solid #101719;
+    outline: 2px solid #ffffff;
     outline-offset: 2px;
-    box-shadow: 0 0 0 5px #ffffff;
+    box-shadow: 0 0 0 5px #101719;
   }
 }
 
@@ -56,15 +58,15 @@
   }
 
   .btn-primary {
-    @apply bg-cyan text-ink hover:bg-ink hover:text-white;
+    @apply bg-cyan text-ink hover:bg-white hover:text-ink;
   }
 
   .btn-secondary {
-    @apply bg-transparent text-ink border border-ink hover:bg-ink hover:text-white;
+    @apply bg-transparent text-fg border border-white/60 hover:bg-white hover:text-ink;
   }
 
   .section-label {
-    @apply flex items-center gap-3 font-display text-base font-bold uppercase tracking-[0.2em] text-ink;
+    @apply flex items-center gap-3 font-display text-base font-bold uppercase tracking-[0.2em] text-fg;
   }
 
   .section-label::before {
@@ -102,7 +104,7 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #f3f5f6;
+  background: #0b1113;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -110,5 +112,5 @@
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #101719;
+  background: #ffffff;
 }

@@ -4,7 +4,7 @@ import { ADDRESS, MAPS_EMBED_URL, MAPS_SEARCH_URL } from '@/lib/contact';
 
 export default function LocationSection() {
   return (
-    <section id="local" className="md:py-28 py-20 bg-white">
+    <section id="local" className="md:py-28 py-20 bg-base">
       <div className="container">
         <div className="grid lg:grid-cols-12 gap-12 mb-14">
           <div className="lg:col-span-7">
@@ -21,7 +21,7 @@ export default function LocationSection() {
             <p>
               Um ambiente dedicado à avaliação, ao planejamento nutricional e ao acompanhamento individualizado.
             </p>
-            <p className="border-l-2 border-cyan pl-6 text-ink font-medium">
+            <p className="border-l-2 border-cyan pl-6 text-fg font-medium">
               Aqui, cada consulta é uma oportunidade de compreender sua evolução e definir os próximos passos.
             </p>
           </div>
@@ -38,7 +38,7 @@ export default function LocationSection() {
             />
           </div>
 
-          <div className="lg:col-span-5 bg-mist p-8 md:p-10 flex flex-col justify-between gap-8">
+          <div className="lg:col-span-5 bg-surface p-8 md:p-10 flex flex-col justify-between gap-8">
             <div>
               <p className="font-display text-base font-bold uppercase tracking-[0.2em] mb-4">Endereço</p>
               <p className="font-display text-2xl font-semibold uppercase tracking-tight leading-snug mb-2">

@@ -7,14 +7,14 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-white border-t border-line">
+    <footer className="bg-base border-t border-line">
       <div className="container pt-16 pb-28 md:pb-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           <div>
             <Link href="#inicio" className="flex items-center gap-3 mb-6">
               <span className="block w-2 h-8 bg-cyan" />
               <span className="font-display text-xl font-extrabold uppercase leading-none tracking-tight">
-                Ícaro Andrade
+                Icaro Andrade
                 <br />
                 <span className="font-semibold tracking-[0.2em] text-sm text-text-secondary">
                   Nutricionista
@@ -54,7 +54,7 @@ export default function Footer() {
               href={whatsappUrl(MSG_GENERAL)}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center min-h-11 text-base font-semibold text-ink underline-cyan hover:text-cyan"
+              className="inline-flex items-center min-h-11 text-base font-semibold text-fg underline-cyan hover:text-cyan"
             >
               WhatsApp {WHATSAPP_DISPLAY}
               <NewTabHint />
@@ -63,7 +63,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-line pt-8 flex flex-col md:flex-row justify-between gap-4 font-display text-sm font-semibold uppercase tracking-[0.2em] text-text-tertiary">
-          <p>&copy; {currentYear} Ícaro Andrade</p>
+          <p>&copy; {currentYear} Icaro Andrade</p>
           <p>Pajuçara · Maceió</p>
         </div>
       </div>

@@ -2,7 +2,7 @@ const factors = ['Rotina', 'Composição corporal', 'Genética', 'Situação cl�
 
 export default function GenericDietSection() {
   return (
-    <section className="md:py-28 py-20 bg-cyan-light">
+    <section className="md:py-28 py-20 bg-deep">
       <div className="container grid lg:grid-cols-12 gap-12">
         <div className="lg:col-span-6">
           <p className="section-label mb-6">Estratégia individual</p>
@@ -24,9 +24,9 @@ export default function GenericDietSection() {
       </div>
 
       <div className="container mt-14">
-        <ul className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 border-t border-l border-ink/20 bg-white">
+        <ul className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 border-t border-l border-white/20 bg-raise">
           {factors.map((factor) => (
-            <li key={factor} className="p-6 border-r border-b border-ink/20">
+            <li key={factor} className="p-6 border-r border-b border-white/20">
               <span className="block w-6 h-1 bg-cyan mb-5" aria-hidden="true" />
               <span className="font-display text-xl font-semibold uppercase tracking-tight leading-tight">
                 {factor}
@@ -36,7 +36,7 @@ export default function GenericDietSection() {
         </ul>
         <p className="mt-6 text-text-secondary">Fazem parte das decisões.</p>
 
-        <div className="mt-14 bg-ink text-white p-8 md:p-14">
+        <div className="mt-14 bg-raise border-l-4 border-cyan text-white p-8 md:p-14">
           <p className="font-display text-3xl md:text-5xl font-bold uppercase tracking-tight leading-tight max-w-4xl">
             O acompanhamento não deve exigir que você adapte toda a sua vida à dieta.{' '}
             <span className="text-cyan">A dieta precisa ser construída para funcionar na sua vida.</span>

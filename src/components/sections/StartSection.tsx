@@ -1,5 +1,5 @@
 import NewTabHint from '@/components/common/NewTabHint';
-import { MSG_OBJECTIVES, whatsappUrl } from '@/lib/contact';
+import { MSG_CASE, whatsappUrl } from '@/lib/contact';
 
 const steps = [
   {
@@ -19,7 +19,7 @@ const steps = [
 
 export default function StartSection() {
   return (
-    <section id="como-comecar" className="md:py-28 py-20 bg-mist">
+    <section id="como-comecar" className="md:py-28 py-20 bg-surface">
       <div className="container">
         <div className="max-w-4xl mb-16">
           <p className="section-label mb-6">Como começar</p>
@@ -31,7 +31,7 @@ export default function StartSection() {
 
         <ol className="grid md:grid-cols-3 gap-6 mb-14">
           {steps.map((step, i) => (
-            <li key={step.title} className="bg-white p-8 border-t-2 border-ink hover:border-cyan transition-colors">
+            <li key={step.title} className="bg-raise p-8 border-t-2 border-fg hover:border-cyan transition-colors">
               <span className="block font-display text-6xl font-extrabold text-cyan leading-none mb-8">
                 {String(i + 1).padStart(2, '0')}
               </span>
@@ -42,12 +42,12 @@ export default function StartSection() {
         </ol>
 
         <a
-          href={whatsappUrl(MSG_OBJECTIVES)}
+          href={whatsappUrl(MSG_CASE)}
           target="_blank"
           rel="noopener noreferrer"
           className="btn btn-primary"
         >
-          Contar meu objetivo
+          Gostaria que avaliasse o meu caso
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
             <path d="M5 12h14M13 6l6 6-6 6" />
           </svg>

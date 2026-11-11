@@ -10,16 +10,19 @@ const config: Config = {
     extend: {
       colors: {
         ink: '#101719',
-        paper: '#FFFFFF',
+        base: '#101719',
+        surface: '#172125',
+        raise: '#1E2B30',
+        deep: '#0B1113',
+        fg: '#FFFFFF',
         cyan: {
           DEFAULT: '#00B9CF',
           light: '#E5FBFD',
         },
-        mist: '#F3F5F6',
-        line: '#DDE3E5',
+        line: 'rgba(255, 255, 255, 0.14)',
         text: {
-          secondary: 'rgba(16, 23, 25, 0.68)',
-          tertiary: 'rgba(16, 23, 25, 0.65)',
+          secondary: 'rgba(255, 255, 255, 0.74)',
+          tertiary: 'rgba(255, 255, 255, 0.58)',
         },
       },
       fontFamily: {
