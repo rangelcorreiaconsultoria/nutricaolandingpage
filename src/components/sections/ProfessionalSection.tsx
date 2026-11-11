@@ -1,15 +1,5 @@
 import PhotoSlot from '@/components/common/PhotoSlot';
 
-const specialties = [
-  { title: 'Recomposição corporal', detail: 'Emagrecimento e ganho de massa muscular' },
-  { title: 'Nutrição para performance esportiva', detail: 'Formação ACSM' },
-  { title: 'Avaliação física da composição corporal', detail: 'Avaliador ISAK e professor' },
-  {
-    title: 'Tratamento nutricional da Obesidade e doenças metabólicas',
-    detail: 'Pós-graduado e professor',
-  },
-];
-
 export default function ProfessionalSection() {
   return (
     <section id="icaro" className="md:py-28 py-20 bg-canvas">
@@ -58,26 +48,6 @@ export default function ProfessionalSection() {
                   }
                 />
               </div>
-            </div>
-
-            <div className="mt-14 pt-10 border-t border-white/15">
-              <p className="flex items-center gap-3 font-display text-base font-bold uppercase tracking-[0.2em] text-cyan mb-8">
-                <span className="block w-10 h-px bg-cyan" />
-                Especialidades
-              </p>
-              <ul className="grid sm:grid-cols-2 xl:grid-cols-4 gap-x-8 gap-y-8">
-                {specialties.map((item, i) => (
-                  <li key={item.title} className="flex flex-col border-t-2 border-cyan pt-5">
-                    <span className="font-display text-3xl font-extrabold text-cyan leading-none mb-4">
-                      {String(i + 1).padStart(2, '0')}
-                    </span>
-                    <span className="font-display text-xl font-semibold uppercase tracking-tight leading-tight text-white">
-                      {item.title}
-                    </span>
-                    <span className="mt-2 text-text-secondary leading-snug">{item.detail}</span>
-                  </li>
-                ))}
-              </ul>
             </div>
           </div>
         </div>

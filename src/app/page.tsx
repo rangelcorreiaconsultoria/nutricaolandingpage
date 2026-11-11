@@ -7,7 +7,8 @@ import GenericDietSection from '@/components/sections/GenericDietSection';
 import StructureSection from '@/components/sections/StructureSection';
 import ScaleSection from '@/components/sections/ScaleSection';
 import ProfessionalSection from '@/components/sections/ProfessionalSection';
-import PlansSection from '@/components/sections/PlansSection';
+import SpecialtiesSection from '@/components/sections/SpecialtiesSection';
+import PlansSectionfrom '@/components/sections/PlansSection';
 import LocationSection from '@/components/sections/LocationSection';
 import FaqSection from '@/components/sections/FaqSection';
 
@@ -29,6 +30,7 @@ export default function Home() {
         <StructureSection />
         <ScaleSection />
         <ProfessionalSection />
+        <SpecialtiesSection />
         <PlansSection />
         <LocationSection />
         <FaqSection />

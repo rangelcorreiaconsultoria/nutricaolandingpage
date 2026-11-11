@@ -1,4 +1,4 @@
-const factors = ['Rotina', 'Composição corporal', 'Genética', 'Situação clínica', 'Preferências', 'Objetivos'];
+import ConvergenceDiagram from '@/components/common/ConvergenceDiagram';
 
 export default function GenericDietSection() {
   return (
@@ -23,17 +23,12 @@ export default function GenericDietSection() {
           </div>
         </div>
 
-        <ul className="mt-14 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 border-t border-l border-white/20 bg-raise">
-          {factors.map((factor) => (
-            <li key={factor} className="p-6 border-r border-b border-white/20">
-              <span className="block w-6 h-1 bg-cyan mb-5" aria-hidden="true" />
-              <span className="font-display text-xl font-semibold uppercase tracking-tight leading-tight">
-                {factor}
-              </span>
-            </li>
-          ))}
-        </ul>
-        <p className="mt-6 text-text-secondary">Fazem parte das decisões.</p>
+        <div className="mt-14">
+          <p className="font-display text-xl font-semibold uppercase tracking-[0.12em] text-text-secondary mb-8">
+            Seis fatores fazem parte de cada decisão
+          </p>
+          <ConvergenceDiagram />
+        </div>
 
         <div className="mt-14 bg-raise border-l-4 border-cyan text-white p-8 md:p-14">
           <p className="font-display text-3xl md:text-5xl font-bold uppercase tracking-tight leading-tight max-w-4xl">
