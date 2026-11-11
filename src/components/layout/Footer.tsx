@@ -22,7 +22,7 @@ export default function Footer() {
               </span>
             </Link>
             <p className="text-base text-text-secondary leading-relaxed max-w-xs">
-              CRN6 37419. Acompanhamento personalizado, baseado em ciência e avaliação criteriosa.
+              CRN 637419. Acompanhamento personalizado, baseado em ciência e avaliação criteriosa.
             </p>
           </div>
 

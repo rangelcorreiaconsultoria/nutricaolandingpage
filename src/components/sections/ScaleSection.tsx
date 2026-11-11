@@ -9,7 +9,7 @@ export default function ScaleSection() {
         <p className="section-label mb-8">Composição corporal</p>
 
         <div className="grid lg:grid-cols-12 gap-x-12 gap-y-12 items-start">
-          <div className="lg:col-span-7">
+          <div className="lg:col-span-6">
             <h2 className="mb-10">
               A balança mostra seu peso.{' '}
               <span className="highlight">Não conta toda a história.</span>
@@ -40,16 +40,16 @@ export default function ScaleSection() {
             </a>
           </div>
 
-          <div className="lg:col-span-5 bg-raise p-8 md:p-10">
+          <div className="lg:col-span-6 bg-raise p-5 md:p-8">
             <p className="font-display text-base font-bold uppercase tracking-[0.2em] mb-8">
               Mesmo peso na balança
             </p>
             <Image
               src="/images/balanca.png"
               alt="Três mulheres com o mesmo peso, 60 kg, e percentuais de gordura diferentes: 15%, 20% e 30%"
-              width={900}
-              height={717}
-              sizes="(min-width: 1024px) 420px, 100vw"
+              width={1145}
+              height={912}
+              sizes="(min-width: 1024px) 540px, 100vw"
               className="w-full h-auto"
             />
           </div>
