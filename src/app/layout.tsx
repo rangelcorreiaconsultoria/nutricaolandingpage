@@ -18,7 +18,7 @@ const barlowCondensed = Barlow_Condensed({
 export const metadata: Metadata = {
   title: 'Icaro Andrade | Nutricionista em Maceió',
   description:
-    'Acompanhamento nutricional individualizado, baseado em ciência e avaliação da composição corporal pela metodologia ISAK. Atendimento presencial na Pajuçara, em Maceió.',
+    'Acompanhamento nutricional personalizado, baseado em ciência e avaliação da composição corporal pela metodologia ISAK. Atendimento presencial na Pajuçara, em Maceió.',
 };
 
 export const viewport: Viewport = {
@@ -34,7 +34,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR" className={`${barlow.variable} ${barlowCondensed.variable}`}>
-      <body className="bg-base text-fg">
+      <body className="bg-canvas text-fg">
         {children}
         <Analytics />
       </body>

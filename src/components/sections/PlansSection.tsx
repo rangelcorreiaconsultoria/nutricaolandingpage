@@ -5,7 +5,7 @@ const plans = [
   {
     name: 'Mensal',
     description:
-      'Ideal para iniciar o acompanhamento, conhecer suas necessidades e começar a colocar em prática uma estratégia individualizada.',
+      'Ideal para iniciar o acompanhamento, conhecer suas necessidades e começar a colocar em prática uma estratégia personalizada.',
     items: [
       '01 consulta presencial',
       '01 avaliação da composição corporal seguindo a metodologia ISAK',
@@ -33,7 +33,7 @@ export default function PlansSection() {
     <section id="formatos" className="md:py-28 py-20 bg-deep">
       <div className="container">
         <div className="max-w-4xl mb-16">
-          <p className="section-label mb-6">Atendimento presencial</p>
+          <p className="section-label mb-6">Planos</p>
           <h2>Formatos de acompanhamento</h2>
         </div>
 
@@ -51,29 +51,31 @@ export default function PlansSection() {
                   </li>
                 ))}
               </ul>
-              <a
-                href={whatsappUrl(msgPlan(plan.name))}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn btn-secondary w-full mt-8"
-              >
-                Quero o plano {plan.name}
-                <NewTabHint />
-              </a>
+              <div className="mt-auto pt-8">
+                <a
+                  href={whatsappUrl(msgPlan(plan.name))}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-secondary w-full"
+                >
+                  Quero o plano {plan.name}
+                  <NewTabHint />
+                </a>
+              </div>
             </article>
           ))}
         </div>
 
-        <div className="grid lg:grid-cols-12 gap-8 items-center bg-raise border border-line text-white p-8 md:p-12">
-          <p className="lg:col-span-8 text-lg leading-relaxed text-white/80">
+        <div className="grid lg:grid-cols-[1fr_auto] gap-8 items-center bg-raise border border-line text-white p-8 md:p-12">
+          <p className="text-lg leading-relaxed text-white/80 max-w-3xl">
             A minha prioridade é manter um excelente nível de serviço prestado aos meus pacientes. Por isso, opto por atender um número limitado de pessoas.
           </p>
-          <div className="lg:col-span-4 lg:text-right">
+          <div>
             <a
               href={whatsappUrl(MSG_AVAILABILITY)}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn btn-primary w-full lg:w-auto"
+              className="btn btn-primary w-full lg:w-auto lg:whitespace-nowrap"
             >
               Verificar disponibilidade de agenda
               <NewTabHint />

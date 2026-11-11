@@ -64,7 +64,7 @@ export default function Header() {
   return (
     <header
       ref={headerRef}
-      className="fixed top-0 left-0 right-0 z-50 bg-base/95 backdrop-blur-md border-b border-line"
+      className="fixed top-0 left-0 right-0 z-50 bg-canvas/95 backdrop-blur-md border-b border-line"
     >
       <nav className="container flex justify-between items-center py-4" aria-label="Principal">
         <Link href="#inicio" className="flex items-center gap-3">
@@ -118,7 +118,7 @@ export default function Header() {
         </button>
 
         {isMenuOpen && (
-          <div className="absolute top-full left-0 right-0 bg-base border-b border-line p-6 xl:hidden">
+          <div className="absolute top-full left-0 right-0 bg-canvas border-b border-line p-6 xl:hidden">
             {navLinks.map((link) => {
               const isActive = activeId === link.href.slice(1);
               return (

@@ -10,8 +10,6 @@ import ProfessionalSection from '@/components/sections/ProfessionalSection';
 import PlansSection from '@/components/sections/PlansSection';
 import LocationSection from '@/components/sections/LocationSection';
 import FaqSection from '@/components/sections/FaqSection';
-import NewTabHint from '@/components/common/NewTabHint';
-import { MSG_OBJECTIVES, whatsappUrl } from '@/lib/contact';
 
 export default function Home() {
   return (
@@ -35,16 +33,6 @@ export default function Home() {
         <LocationSection />
         <FaqSection />
       </main>
-      <a
-        href={whatsappUrl(MSG_OBJECTIVES)}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="fixed bottom-6 right-6 z-40 flex items-center gap-3 bg-cyan text-ink pl-4 pr-5 py-3 md:pl-5 md:pr-6 md:py-4 font-display text-base font-bold uppercase tracking-wider hover:bg-white hover:text-ink"
-      >
-        <span className="block w-2 h-2 bg-ink animate-pulse-soft" aria-hidden="true" />
-        WhatsApp
-        <NewTabHint />
-      </a>
       <Footer />
     </>
   );

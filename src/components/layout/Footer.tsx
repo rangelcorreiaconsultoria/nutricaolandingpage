@@ -7,11 +7,11 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-base border-t border-line">
-      <div className="container pt-16 pb-28 md:pb-16">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+    <footer className="bg-canvas border-t border-line">
+      <div className="container pt-16 pb-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-x-12 gap-y-10 items-start mb-12">
           <div>
-            <Link href="#inicio" className="flex items-center gap-3 mb-6">
+            <Link href="#inicio" className="flex items-center gap-3 h-8 mb-5">
               <span className="block w-2 h-8 bg-cyan" />
               <span className="font-display text-xl font-extrabold uppercase leading-none tracking-tight">
                 Icaro Andrade
@@ -22,12 +22,12 @@ export default function Footer() {
               </span>
             </Link>
             <p className="text-base text-text-secondary leading-relaxed max-w-xs">
-              CRN6 37419. Acompanhamento individualizado, baseado em ciência e avaliação criteriosa.
+              CRN6 37419. Acompanhamento personalizado, baseado em ciência e avaliação criteriosa.
             </p>
           </div>
 
           <div>
-            <h4 className="text-base tracking-[0.2em] mb-4">Menu</h4>
+            <h4 className="flex items-center h-8 mb-5 text-base tracking-[0.2em]">Menu</h4>
             <ul>
               {navLinks.map((link) => (
                 <li key={link.href}>
@@ -40,7 +40,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="text-base tracking-[0.2em] mb-4">Contato</h4>
+            <h4 className="flex items-center h-8 mb-5 text-base tracking-[0.2em]">Contato</h4>
             <a
               href={MAPS_SEARCH_URL}
               target="_blank"
@@ -64,8 +64,7 @@ export default function Footer() {
 
         <div className="border-t border-line pt-8 flex flex-col md:flex-row justify-between gap-4 font-display text-sm font-semibold uppercase tracking-[0.2em] text-text-tertiary">
           <p>&copy; {currentYear} Icaro Andrade</p>
-          <p>Pajuçara · Maceió</p>
-        </div>
+                  </div>
       </div>
     </footer>
   );

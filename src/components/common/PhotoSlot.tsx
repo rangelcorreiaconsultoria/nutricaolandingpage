@@ -8,6 +8,7 @@ interface PhotoSlotProps {
   className?: string;
   priority?: boolean;
   objectPosition?: string;
+  aspect?: string;
 }
 
 // Sem `src`, mostra um quadro técnico neutro; a foto real entra em /public.
@@ -18,10 +19,11 @@ export default function PhotoSlot({
   className = '',
   priority = false,
   objectPosition = 'center top',
+  aspect = 'aspect-[4/5]',
 }: PhotoSlotProps) {
   return (
     <figure className={className}>
-      <div className="relative aspect-[4/5] bg-deep overflow-hidden">
+      <div className={`relative ${aspect} bg-deep overflow-hidden`}>
         {src ? (
           <Image
             src={src}

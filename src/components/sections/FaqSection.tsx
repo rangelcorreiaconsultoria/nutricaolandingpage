@@ -17,12 +17,11 @@ export default function FaqSection() {
   const [open, setOpen] = useState<number | null>(null);
 
   return (
-    <section id="duvidas" className="md:py-28 py-20 bg-base border-t border-line">
-      <div className="container grid lg:grid-cols-12 gap-12">
-        <div className="lg:col-span-4">
-          <p className="section-label mb-6">Dúvidas</p>
-          <h2>Dúvidas frequentes</h2>
-        </div>
+    <section id="duvidas" className="md:py-28 py-20 bg-canvas border-t border-line">
+      <div className="container">
+
+        <div className="grid lg:grid-cols-12 gap-x-12 gap-y-10 items-start">
+        <h2 className="lg:col-span-4">Dúvidas frequentes</h2>
 
         <div className="lg:col-span-8 border-t border-fg">
           {questions.map((question, i) => {
@@ -75,6 +74,7 @@ export default function FaqSection() {
               </div>
             );
           })}
+        </div>
         </div>
       </div>
     </section>

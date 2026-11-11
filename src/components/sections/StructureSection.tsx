@@ -29,11 +29,10 @@ const steps = [
 
 export default function StructureSection() {
   return (
-    <section id="estrutura" className="lg:py-28 py-20 bg-base">
+    <section id="estrutura" className="lg:py-28 py-20 bg-canvas">
       <div className="container">
         <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-end mb-12">
           <div className="lg:col-span-7">
-            <p className="section-label mb-6">Estrutura de trabalho</p>
             <h2>
               Você não precisa descobrir sozinho{' '}
               <span className="highlight">o que precisa mudar.</span>
@@ -63,17 +62,17 @@ export default function StructureSection() {
           </svg>
         </a>
 
-        <ol id="fluxo-trabalho" className="grid xl:grid-cols-4 gap-y-2 xl:gap-y-0 scroll-mt-28">
+        <ol id="fluxo-trabalho" className="grid md:grid-cols-2 xl:grid-cols-4 gap-x-6 gap-y-2 md:gap-y-6 xl:gap-y-0 scroll-mt-28">
           {steps.map((step, i) => {
             const isLast = i === steps.length - 1;
             return (
               <li key={step.title} className="flex flex-col">
                 <div className="hidden xl:flex items-center mb-5" aria-hidden="true">
-                  <span className="grid place-items-center w-14 h-14 shrink-0 border-2 border-cyan bg-base font-display text-2xl font-extrabold text-cyan">
+                  <span className="grid place-items-center w-14 h-14 shrink-0 border-2 border-cyan bg-canvas font-display text-2xl font-extrabold text-cyan">
                     {String(i + 1).padStart(2, '0')}
                   </span>
                   {!isLast && (
-                    <span className="relative flex-1 h-px bg-cyan/60 mx-3">
+                    <span className="relative flex-1 h-px bg-cyan/60 ml-3 -mr-4">
                       <svg
                         className="absolute -right-1 top-1/2 -translate-y-1/2 text-cyan"
                         width="14"
@@ -89,7 +88,7 @@ export default function StructureSection() {
                   )}
                 </div>
 
-                <div className={`flex-1 bg-surface border-t-2 border-cyan p-6 ${isLast ? '' : 'xl:mr-6'}`}>
+                <div className="flex-1 bg-surface border-t-2 border-cyan p-6">
                   <span className="xl:hidden block font-display text-4xl font-extrabold text-cyan leading-none mb-4">
                     {String(i + 1).padStart(2, '0')}
                   </span>
@@ -102,7 +101,7 @@ export default function StructureSection() {
                 </div>
 
                 {!isLast && (
-                  <div className="xl:hidden flex justify-center py-3 text-cyan" aria-hidden="true">
+                  <div className="md:hidden flex justify-center py-3 text-cyan" aria-hidden="true">
                     <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                       <path d="M12 4v16M5 13l7 7 7-7" />
                     </svg>

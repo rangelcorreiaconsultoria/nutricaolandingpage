@@ -11,7 +11,7 @@
   }
 
   body {
-    @apply font-sans antialiased bg-base text-fg;
+    @apply font-sans antialiased bg-canvas text-fg;
     font-weight: 400;
   }
 
@@ -54,7 +54,7 @@
   }
 
   .btn {
-    @apply inline-flex items-center justify-center gap-3 px-8 py-4 font-display font-bold text-lg uppercase tracking-wider transition-all duration-300;
+    @apply inline-flex items-center justify-center gap-3 px-5 sm:px-8 py-4 font-display font-bold text-base sm:text-lg text-center uppercase tracking-wider transition-all duration-300;
   }
 
   .btn-primary {
