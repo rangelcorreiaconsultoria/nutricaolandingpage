@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import NewTabHint from '@/components/common/NewTabHint';
-import { whatsappUrl } from '@/lib/contact';
+import { MSG_GENERAL, whatsappUrl } from '@/lib/contact';
 
 const questions = [
   'Preciso ser aluno da Gaviões para consultar?',
@@ -21,7 +21,21 @@ export default function FaqSection() {
       <div className="container">
 
         <div className="grid lg:grid-cols-12 gap-x-12 gap-y-10 items-start">
-        <h2 className="lg:col-span-4">Dúvidas frequentes</h2>
+        <div className="lg:col-span-4 lg:sticky lg:top-28">
+          <h2 className="mb-8">Dúvidas frequentes</h2>
+          <p className="text-lg text-text-secondary leading-relaxed mb-8 max-w-sm">
+            Não encontrou a sua dúvida? Pergunte direto para mim pelo WhatsApp.
+          </p>
+          <a
+            href={whatsappUrl(MSG_GENERAL)}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-secondary w-full sm:w-auto"
+          >
+            Falar pelo WhatsApp
+            <NewTabHint />
+          </a>
+        </div>
 
         <div className="lg:col-span-8 border-t border-fg">
           {questions.map((question, i) => {
@@ -33,7 +47,7 @@ export default function FaqSection() {
                   <button
                     id={`${id}-btn`}
                     type="button"
-                    className="w-full flex items-center gap-6 py-6 text-left uppercase hover:text-cyan"
+                    className="w-full flex items-center gap-6 py-5 text-left uppercase hover:text-cyan"
                     aria-expanded={isOpen}
                     aria-controls={id}
                     onClick={() => setOpen(isOpen ? null : i)}
