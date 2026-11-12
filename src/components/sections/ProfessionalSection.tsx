@@ -14,7 +14,7 @@ const specialties = [
 ];
 
 const bio = (
-  <div className="space-y-5 text-white/75 text-lg leading-relaxed">
+  <div className="space-y-4 text-white/75 text-base lg:text-[17px] leading-relaxed">
     <p>
       Nutricionista especializado em Nutrição Esportiva pelo American College of Sports Medicine (ACSM) e em avaliação da composição corporal pela metodologia internacional ISAK.
     </p>
@@ -35,15 +35,15 @@ const specs = (
     <p className="font-display text-base font-bold uppercase tracking-[0.2em] text-cyan mb-4">Especialidades</p>
     <ul className="border-t border-line">
       {specialties.map((item) => (
-        <li key={item.title} className="group relative py-5 border-b border-line">
+        <li key={item.title} className="group relative py-3 border-b border-line">
           <span
             aria-hidden="true"
             className="absolute left-0 -bottom-px h-0.5 w-0 bg-cyan transition-[width] duration-500 group-hover:w-full"
           />
-          <h3 className="text-2xl xl:text-3xl leading-[1.1] transition-colors duration-300 group-hover:text-cyan">
+          <h3 className="text-xl xl:text-2xl leading-[1.1] transition-colors duration-300 group-hover:text-cyan">
             {item.title}
           </h3>
-          <p className="mt-2 font-display text-base font-semibold uppercase tracking-[0.12em] text-text-secondary">
+          <p className="mt-1 font-display text-sm font-semibold uppercase tracking-[0.12em] text-text-secondary">
             {item.credential}
           </p>
         </li>

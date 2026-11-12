@@ -1,5 +1,4 @@
 import NewTabHint from '@/components/common/NewTabHint';
-import PhotoSlot from '@/components/common/PhotoSlot';
 import { ADDRESS, MAPS_EMBED_URL, MAPS_SEARCH_URL } from '@/lib/contact';
 
 export default function LocationSection() {
@@ -62,12 +61,6 @@ export default function LocationSection() {
           </div>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6">
-          <PhotoSlot aspect="aspect-[4/3]" alt="Foto do consultório" />
-          <PhotoSlot aspect="aspect-[4/3]" alt="Foto do espaço de avaliação" />
-          <PhotoSlot aspect="aspect-[4/3]" alt="Foto da recepção" className="hidden md:block" />
-          <PhotoSlot aspect="aspect-[4/3]" alt="Foto da fachada" className="hidden md:block" />
-        </div>
       </div>
     </section>
   );
