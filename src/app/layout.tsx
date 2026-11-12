@@ -15,10 +15,36 @@ const barlowCondensed = Barlow_Condensed({
   variable: '--font-barlow-condensed',
 });
 
+const TITLE = 'Icaro Andrade | Nutricionista em Maceió';
+const DESCRIPTION =
+  'Acompanhamento nutricional personalizado, baseado em ciência e avaliação da composição corporal pela metodologia ISAK. Atendimento presencial na Pajuçara, em Maceió.';
+
 export const metadata: Metadata = {
-  title: 'Icaro Andrade | Nutricionista em Maceió',
-  description:
-    'Acompanhamento nutricional personalizado, baseado em ciência e avaliação da composição corporal pela metodologia ISAK. Atendimento presencial na Pajuçara, em Maceió.',
+  metadataBase: new URL('https://nutricaolandingpage.vercel.app'),
+  title: TITLE,
+  description: DESCRIPTION,
+  openGraph: {
+    type: 'website',
+    locale: 'pt_BR',
+    url: '/',
+    siteName: 'Icaro Andrade',
+    title: TITLE,
+    description: DESCRIPTION,
+    images: [
+      {
+        url: '/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Icaro Andrade, nutricionista em Maceió (CRN-6 37419)',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: TITLE,
+    description: DESCRIPTION,
+    images: ['/og-image.jpg'],
+  },
 };
 
 export const viewport: Viewport = {

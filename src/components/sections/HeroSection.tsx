@@ -3,7 +3,7 @@ import NewTabHint from '@/components/common/NewTabHint';
 import { MSG_OBJECTIVES, whatsappUrl } from '@/lib/contact';
 
 const credentials = [
-  { value: 'CRN 637419', label: 'Nutricionista' },
+  { value: 'CRN-6 37419', label: 'Nutricionista' },
   { value: 'ACSM', label: 'Nutrição esportiva' },
   { value: 'Professor', label: 'USP · UNIT · IBRAS · Uniguaçu' },
 ];
