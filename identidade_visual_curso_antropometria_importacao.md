@@ -132,11 +132,13 @@ Este documento consolida os pontos visuais identificáveis no contexto disponív
 ## 8. COPY do SITE
 
 Trecho 01:
-SEU ESFORÇO MERECE RESULTADOS. 
-Seja para emagrecer, ganhar massa muscular, melhorar sua saúde ou evoluir nos treinos, seus resultados dependem de uma estratégia nutricional adequada à sua realidade.
-Com um acompanhamento individualizado, baseado em ciência e avaliação criteriosa, você tem um planejamento construído para seus objetivos, sua rotina e suas necessidades.
-Atendimento presencial na Pajuçara, em Maceió.
+Você treina há anos. Até quando vai continuar sem o corpo que deseja?
+Você mantém uma rotina de treinos, cuida da alimentação e se dedica. Mas, quando olha no espelho, os resultados ainda não refletem todo o esforço que você faz.
+Talvez o que esteja faltando não seja mais esforço. Seja uma estratégia nutricional feita sob medida para você.
+Uma estratégia nutricional construída para o seu corpo, sua rotina e seus objetivos, com acompanhamento individualizado e ajustes ao longo do processo para que sua alimentação destrave a sua evolução.
+Atendimento presencial na Pajuçara, em Maceió. (mantido do texto anterior)
 [QUERO CONVERSAR SOBRE MEUS OBJETIVOS]
+Foto do Hero: public/images/hero.jpeg (original em image/hero-original.jpeg).
 
 Trecho 02:
 
@@ -155,12 +157,17 @@ Add foto do Fernando e do Matheus
 
 
 Trecho 04:
-VOCÊ NÃO PRECISA DE MAIS UMA DIETA GENÉRICA 
-Talvez você já tenha tentado reduzir as calorias para emagrecer, aumentar o consumo de proteínas para ganhar massa muscular ou seguir uma dieta que funcionou para outra pessoa.
-E, mesmo se esforçando, não conseguiu os resultados que esperava.
-Isso acontece porque uma boa estratégia nutricional precisa considerar muito mais do que uma lista de alimentos ou suplementos. 
-Sua rotina, composição corporal, genética, situação clínica, preferências e objetivos fazem parte das decisões.
-O acompanhamento não deve exigir que você adapte toda a sua vida à dieta. A dieta precisa ser construída para funcionar na sua vida.
+ESTRATÉGIA SOB MEDIDA
+VOCÊ NÃO PRECISA DE MAIS UMA DIETA. PRECISA SABER O QUE FAZER COM ELA.
+Hoje, qualquer pessoa consegue pedir uma dieta à inteligência artificial. E talvez você já tenha uma boa noção do que precisa comer para emagrecer ou ganhar massa muscular.
+Mas saber o que comer é apenas uma parte do processo.
+Como saber se a estratégia está funcionando? Quando aumentar ou reduzir as calorias? Quando mudar a distribuição dos nutrientes? E o que fazer quando os resultados deixam de aparecer?
+É nesse momento que o acompanhamento profissional faz diferença.
+Uma boa estratégia nutricional não é estática. Ela precisa ser constantemente avaliada e ajustada de acordo com sua evolução, seus treinos, sua rotina e seus objetivos.
+Porque o que funciona para você hoje pode não ser a melhor estratégia daqui a algumas semanas.
+O que eu considero antes de cada decisão?
+[imagem dos seis fatores: Rotina, Composição corporal, Genética, Situação clínica, Preferências, Objetivos]
+Esses fatores não são avaliados apenas na primeira consulta. Eles orientam cada ajuste ao longo do seu acompanhamento.
 __
 Trecho 05:
 
@@ -192,7 +199,7 @@ Por meio de medidas padronizadas e uma interpretação criteriosa dos resultados
 Trecho 07:
 QUEM ESTÁ POR TRÁS DO ACOMPANHAMENTO 
 Icaro Andrade │ CRN 637419
-Foto de perfil: image/ICARO PERFIL.jpeg. Legenda: Icaro Andrade │ Nutricionista, Professor e Palestrante
+Foto de perfil: public/images/trecho7.jpeg (antiga icaro-perfil.jpeg). Legenda: Icaro Andrade │ Nutricionista, Professor e Palestrante
 Nutricionista especializado em Nutrição Esportiva pelo American College of Sports Medicine (ACSM) e em avaliação da composição corporal pela metodologia internacional ISAK.
 Professor e palestrante, já contribuiu para a formação de centenas de profissionais por meio de cursos presenciais e online, além de ministrar aulas em instituições como USP, Uniguaçu, UNIT e IBRAS.
 Sua trajetória reúne experiência acadêmica, rigor científico e prática clínica, com anos de atuação no acompanhamento nutricional de atletas de alto rendimento. Ao longo desse período, participou da preparação de atletas com conquistas nacionais e internacionais, incluindo representantes do atletismo brasileiro no Campeonato Mundial de Marcha Atlética.
@@ -207,7 +214,7 @@ Especialidades (abaixo da foto de perfil):
 Trecho 08:
 QUAIS OS FORMATOS DE ACOMPANHAMENTO E ONDE SÃO REALIZADAS AS CONSULTAS?
 
-Mensal: Ideal para iniciar o acompanhamento, conhecer suas necessidades e começar a colocar em prática uma estratégia personalizada.
+Mensal: R$ 370 por mês. Ideal para iniciar o acompanhamento, conhecer suas necessidades e começar a colocar em prática uma estratégia personalizada.
 Inclui: 
 - 01 consulta presencial 
 - 01 avaliação da composição corporal seguindo a metodologia ISAK
@@ -215,7 +222,7 @@ Inclui:
 - Ajustes no seu plano sempre que necessário 
 - 30 dias de duração 
  
-Trimestral: Para quem deseja construir consistência, acompanhar a evolução ao longo de três meses e realizar ajustes progressivos na estratégia.
+Trimestral: R$ 945 pelos 3 meses (média de R$ 315 por mês, dita explicitamente no site). Para quem deseja construir consistência, acompanhar a evolução ao longo de três meses e realizar ajustes progressivos na estratégia.
 Inclui: 
 - 03 consultas presenciais 
 - 03 avaliações da composição corporal seguindo a metodologia ISAK
@@ -254,14 +261,14 @@ Você também atende online?
 **Stack e deploy:** Next.js 14 (App Router), React 18, TypeScript e Tailwind. Deploy automático na Vercel: push no `main` publica a produção; outros branches geram preview. O `package.json` exige Node 26.x (a Vercel descontinuou o 20.x).
 
 **Ordem das seções (copy na seção 8):**
-1. Hero (`#inicio`): à esquerda rótulo, título, texto, frase "Atendimento presencial na Pajuçara, em Maceió." e CTA "Quero conversar sobre meus objetivos"; à direita, numa coluna que nunca passa da altura da coluna do texto: a **foto do Icaro** (`public/images/icaro-perfil.jpeg`, carregada com prioridade; a foto absorve a diferença de altura), a legenda "Icaro Andrade · Nutricionista · CRN 637419" e, abaixo, a faixa de 3 credenciais (CRN 637419, ACSM e docência) na mesma largura da foto. Sem ISAK. O desenho técnico (régua e mira) saiu do Hero.
+1. Hero (`#inicio`): à esquerda o título "Você treina há anos. Até quando vai continuar sem o corpo que deseja?" (sem rótulo de seção), 3 parágrafos, a frase "Atendimento presencial na Pajuçara, em Maceió." e o CTA "Quero conversar sobre meus objetivos"; à direita, numa coluna que nunca passa da altura da coluna do texto: a **foto do Hero** (`public/images/hero.jpeg`, 1000x1500; original em `image/hero-original.jpeg`, fora do git), a legenda "Icaro Andrade · Nutricionista · CRN 637419" e a faixa de 3 credenciais na mesma largura da foto.
 2. Primeiro contato (`#como-comecar`): 3 cartões de conversa, sem numeração (Você me conta, Eu avalio, Decidimos em conjunto) e botão "Gostaria que avaliasse o meu caso".
 3. A mesma ciência (atletas Fernando e Matheus, com quadros de foto).
-4. Você não precisa de mais uma dieta genérica: diagrama de convergência centralizado na seção (componente cliente `ConvergenceDiagram`): título "Seis fatores fazem parte de cada decisão", os 6 fatores à esquerda com linhas finas que convergem num bloco "Sua estratégia"; as linhas acendem em ciano, uma a uma, quando o diagrama entra na tela; ao passar o mouse num fator, ele fica ciano e desliza, a linha dele engrossa e fica branca, as outras escurecem e o bloco "Sua estratégia" brilha. Logo abaixo, sem box, a frase "O acompanhamento não deve exigir que você adapte toda a sua vida à dieta. A dieta precisa ser construída para funcionar na sua vida." em destaque centralizado, como fecho da seção.
+4. Estratégia sob medida (rótulo "Estratégia sob medida"): título "Você não precisa de mais uma dieta. Precisa saber o que fazer com ela." à esquerda e 6 parágrafos à direita (IA, saber o que comer, perguntas, acompanhamento, estratégia não estática); depois a pergunta "O que eu considero antes de cada decisão?" e o diagrama de convergência centralizado dos 6 fatores (`ConvergenceDiagram`, linhas acendem ao entrar na tela e reagem ao hover), e o fecho "Esses fatores não são avaliados apenas na primeira consulta. Eles orientam cada ajuste ao longo do seu acompanhamento.". A frase antiga "O acompanhamento não deve exigir que você adapte..." saiu.
 5. Estrutura de trabalho (`#estrutura`, sem rótulo de seção): o botão ciano "Como funciona a minha estrutura de trabalho" é um bloco expansível que já traz a etapa 01 ("01 · Investigação inicial: avaliamos composição corporal, rotina e objetivos"); ao clicar, o texto completo abre como continuação do próprio bloco ciano (`WorkflowAccordion`). Abaixo, a **régua de 30 dias animada pela rolagem** (`WorkflowRuler`): em telas largas a régua fica presa na tela por cerca de 1,3 alturas de rolagem, uma barra ciano vai do dia 0 ao dia 30 e a descrição abaixo troca em 3 momentos (02 planejamento no dia 0; 03 revisão semanal nos dias 7 a 21; 04 reavaliação mensal no dia 30). Os marcos Dia 0, 7, 14, 21 e 30 são botões que rolam até o ponto. Os três textos ficam sempre no HTML (só um visível). No celular ou com "reduzir movimento" nada trava: linha do tempo vertical com cada etapa aparecendo ao entrar na tela.
 6. A balança mostra seu peso: box "Mesmo peso na balança" com a foto `public/images/balanca.png` (3 mulheres, 60 kg, 15%, 20% e 30%; imagem em tamanho original 1145x912, ocupa metade da largura no computador; cópia de segurança em `image/balanca-original.png`, fora do git) e botão "Desejo realizar uma avaliação".
-7. Quem está por trás (`#icaro`, `ProfessionalSection`): bloco em duas colunas; à esquerda nome, CRN 637419 e abas "Trajetória / Especialidades"; à direita a coluna dinâmica: em telas largas o bloco fica preso por cerca de 1,1 alturas de rolagem e, ao rolar, a bio sai e entram as **Especialidades** (4 atuações, sem numeração, linha ciano ao passar o mouse). No celular ou com "reduzir movimento" aparecem uma abaixo da outra. A faixa separada de Especialidades deixou de existir.
-8. Formatos (`#formatos`, rótulo "Planos"): Mensal e Trimestral, botão "Quero o plano ..." em cada cartão e botão "Verificar disponibilidade de agenda".
+7. Quem está por trás (`#icaro`, `ProfessionalSection`): bloco em duas colunas; à esquerda nome, CRN 637419, abas "Trajetória / Especialidades" e a **foto do trecho 07** (`public/images/trecho7.jpeg`, antiga icaro-perfil) com legenda "Icaro Andrade │ Nutricionista, Professor e Palestrante"; à direita a coluna dinâmica: em telas largas o bloco fica preso por cerca de 1,1 alturas de rolagem e, ao rolar, a bio sai e entram as **Especialidades** (4 atuações, sem numeração, linha ciano ao passar o mouse). No celular ou com "reduzir movimento" aparecem uma abaixo da outra. A faixa separada de Especialidades deixou de existir.
+8. Formatos (`#formatos`, rótulo "Planos"): Mensal (**R$ 370 por mês**) e Trimestral (**R$ 945 pelos 3 meses, com a frase explícita "média de R$ 315 por mês"**), preço em destaque ciano no topo de cada cartão, botão "Quero o plano ..." em cada cartão e botão "Verificar disponibilidade de agenda".
 9. O local (`#local`): endereço, mapa do Google, botão "Abrir localização" e quatro quadros de foto.
 10. Dúvidas frequentes (`#duvidas`, sem rótulo de seção): 6 perguntas; cada uma leva ao WhatsApp, pois ainda não há respostas.
 
@@ -310,4 +317,5 @@ Você também atende online?
 - **2026-11-11 (Hero com foto):** foto do Icaro movida para o Hero, à direita do título e do CTA, no lugar do desenho técnico (que era só decoração), com legenda curta; "Atendimento presencial na Pajuçara" passou para a coluna do título, junto do CTA; faixa de credenciais continua abaixo; o espaço vazio acima das credenciais foi removido; a seção "Quem está por trás" ficou sem foto, em duas colunas (nome / texto).
 - **2026-11-11 (Hero, régua e especialidades):** credenciais do Hero abaixo da foto, na mesma largura, sem passar da altura da coluna do texto; CRN corrigido para **CRN 637419** em todo o site e neste arquivo; diagrama dos 6 fatores centralizado; botão "Como funciona" virou bloco expansível com a etapa 01; régua de 30 dias animada pela rolagem com descrições 02 a 04 (marcos clicáveis, fallback vertical); Especialidades voltaram para "Quem está por trás" como coluna dinâmica que troca com a bio ao rolar.
 - **2026-11-11 (hover e fecho):** fatores do diagrama ganharam animação ao passar o mouse; a frase "O acompanhamento não deve exigir..." saiu do box separado e virou o fecho da própria seção de estratégia; removidas as legendas "Role para avançar na régua" e "Fim da régua".
+- **2026-11-12 (nova copy):** trecho 01 substituído ("Você treina há anos...") e foto do Hero trocada por `hero.jpeg`; trecho 04 substituído ("Você não precisa de mais uma dieta. Precisa saber o que fazer com ela.") mantendo o diagrama dos 6 fatores; foto `trecho7.jpeg` voltou ao trecho 07; preços nos planos (R$ 370 mensal; R$ 945 trimestral, média de R$ 315 por mês). Mantidos do texto anterior: frase "Atendimento presencial na Pajuçara" e o CTA no Hero.
 - **2026-11-11 (balança):** foto "Mesmo peso na balança" ampliada: o box passou a ocupar metade da largura (6 de 12 colunas) com menos preenchimento interno, e a imagem voltou ao tamanho original (1145x912).

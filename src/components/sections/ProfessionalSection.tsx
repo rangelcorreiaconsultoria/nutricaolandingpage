@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { useScrollPin } from '@/components/common/useScrollPin';
 
 const specialties = [
@@ -61,8 +62,8 @@ export default function ProfessionalSection() {
     }`;
 
   const content = (
-    <div className="grid lg:grid-cols-12 gap-x-12 gap-y-8 items-start w-full">
-      <div className="lg:col-span-5">
+    <div className={`grid lg:grid-cols-12 gap-x-12 gap-y-8 w-full ${pinned ? 'h-full items-stretch' : 'items-start'}`}>
+      <div className={`lg:col-span-5 ${pinned ? 'flex flex-col min-h-0' : ''}`}>
         <p className="flex items-center gap-3 font-display text-base font-bold uppercase tracking-[0.2em] text-cyan mb-8">
           <span className="block w-10 h-px bg-cyan" />
           Quem está por trás do acompanhamento
@@ -82,6 +83,26 @@ export default function ProfessionalSection() {
             </button>
           </div>
         )}
+
+        <figure className={`mt-8 w-56 xl:w-64 ${pinned ? 'flex flex-col flex-1 min-h-0' : 'max-w-full'}`}>
+          <div
+            className={`relative bg-deep overflow-hidden ${pinned ? 'flex-1 min-h-[150px]' : 'aspect-[4/5]'}`}
+          >
+            <Image
+              src="/images/trecho7.jpeg"
+              alt="Icaro Andrade, nutricionista, professor e palestrante"
+              fill
+              sizes="256px"
+              className="object-cover object-top"
+            />
+          </div>
+          <figcaption className="mt-3 flex items-start gap-3 font-display text-xs font-bold uppercase tracking-[0.12em] leading-snug">
+            <span className="block w-5 h-px bg-cyan mt-2 shrink-0" />
+            <span>
+              Icaro Andrade <span className="text-cyan">│</span> Nutricionista, Professor e Palestrante
+            </span>
+          </figcaption>
+        </figure>
       </div>
 
       {pinned ? (
@@ -119,7 +140,7 @@ export default function ProfessionalSection() {
           <div ref={outerRef} style={{ height: 'calc(100vh - 6rem + 110vh)' }}>
             <div
               ref={innerRef}
-              className="sticky top-24 h-[calc(100vh-6rem)] bg-surface border border-line flex items-center px-14 xl:px-20"
+              className="sticky top-24 h-[calc(100vh-6rem)] bg-surface border border-line flex items-center px-14 xl:px-20 py-10"
             >
               {bar}
               {content}
