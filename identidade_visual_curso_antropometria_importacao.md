@@ -153,7 +153,7 @@ A MESMA CIÊNCIA. DIFERENTES OBJETIVOS.
 A experiência que construí acompanhando atletas de alto rendimento também orienta meu trabalho com pessoas que desejam emagrecer, ganhar massa muscular ou cuidar melhor da saúde.
 O que muda são as necessidades e as estratégias. O rigor por trás de cada decisão permanece.
 Atletas que já confiaram no meu trabalho ↓
-Add foto do Fernando e do Matheus 
+4 atletas com foto e legenda abaixo (public/images): Edson Aguiar (Atleta da seleção brasileira de Marcha Atlética); Vinicius Bello (3º lugar geral Amador IRONMAN 70.3 RJ e CWB); Bruno Silva (Atleta CDE e Campeão da Meia Maratona do Recife); Andre Jesus (Capitão AdidasRunners SÃO PAULO).
 
 
 Trecho 04:
@@ -263,7 +263,7 @@ Você também atende online?
 **Ordem das seções (copy na seção 8):**
 1. Hero (`#inicio`): à esquerda o título "Você treina há anos. Até quando vai continuar sem o corpo que deseja?" (sem rótulo de seção), 3 parágrafos, a frase "Atendimento presencial na Pajuçara, em Maceió." e o CTA "Quero conversar sobre meus objetivos"; à direita, numa coluna que nunca passa da altura da coluna do texto: a **foto do Hero** (`public/images/hero.jpeg`, 1000x1500; original em `image/hero-original.jpeg`, fora do git), a legenda curta "Icaro Andrade" e a faixa de 3 credenciais na mesma largura da foto.
 2. Primeiro contato (`#como-comecar`): 3 cartões de conversa, sem numeração (Você me conta, Eu avalio, Decidimos em conjunto) e botão "Gostaria que avaliasse o meu caso".
-3. A mesma ciência (atletas Fernando e Matheus, com quadros de foto).
+3. A mesma ciência (rótulo "Rigor em cada decisão"): título e texto em duas colunas; abaixo, "Atletas que já confiaram no meu trabalho" com 4 fotos (Edson Aguiar, Vinicius Bello, Bruno Silva, Andre Jesus; arquivos `edsonaguiar.jpeg`, `viniciusbelo.jpeg`, `brunosilva.jpeg`, `andrejesus.jpeg`), nome e descrição abaixo de cada uma. Efeito ao passar o mouse: a foto sai do tom dessaturado para a cor, dá um leve zoom, uma barra ciano cresce na base e o nome fica ciano (no celular a foto já aparece em cor).
 4. Estratégia sob medida (rótulo "Estratégia sob medida"): título "Você não precisa de mais uma dieta. Precisa saber o que fazer com ela." à esquerda e 6 parágrafos à direita (IA, saber o que comer, perguntas, acompanhamento, estratégia não estática); depois a pergunta "O que eu considero antes de cada decisão?" e o diagrama de convergência centralizado dos 6 fatores (`ConvergenceDiagram`, linhas acendem ao entrar na tela e reagem ao hover), e o fecho "Esses fatores não são avaliados apenas na primeira consulta. Eles orientam cada ajuste ao longo do seu acompanhamento.". A frase antiga "O acompanhamento não deve exigir que você adapte..." saiu.
 5. Estrutura de trabalho (`#estrutura`, sem rótulo de seção): o botão ciano "Como funciona a minha estrutura de trabalho" é um bloco expansível que já traz a etapa 01 ("01 · Investigação inicial: avaliamos composição corporal, rotina e objetivos"); ao clicar, o texto completo abre como continuação do próprio bloco ciano (`WorkflowAccordion`). Abaixo, a **régua de 30 dias animada pela rolagem** (`WorkflowRuler`): em telas largas a régua fica presa na tela por cerca de 1,3 alturas de rolagem, uma barra ciano vai do dia 0 ao dia 30 e a descrição abaixo troca em 3 momentos (02 planejamento no dia 0; 03 revisão semanal nos dias 7 a 21; 04 reavaliação mensal no dia 30). Os marcos Dia 0, 7, 14, 21 e 30 são botões que rolam até o ponto. Os três textos ficam sempre no HTML (só um visível). No celular ou com "reduzir movimento" nada trava: linha do tempo vertical com cada etapa aparecendo ao entrar na tela.
 6. A balança mostra seu peso: box "Mesmo peso na balança" com a foto `public/images/balanca.png` (3 mulheres, 60 kg, 15%, 20% e 30%; imagem em tamanho original 1145x912, ocupa metade da largura no computador; cópia de segurança em `image/balanca-original.png`, fora do git) e botão "Desejo realizar uma avaliação".
@@ -299,7 +299,7 @@ Você também atende online?
 **Componentes de apoio:** `PhotoSlot` (foto otimizada com `next/image`; sem `src`, mostra um quadro técnico), `NewTabHint`, `Analytics`.
 
 **Pendências conhecidas:**
-- Fotos: Fernando, Matheus e 4 do consultório (hoje aparecem como quadros vazios).
+- Fotos: 4 do consultório (hoje aparecem como quadros vazios).
 - Respostas das 6 dúvidas frequentes.
 - Imagem de compartilhamento (Open Graph) e dados estruturados de negócio local.
 - Definir `NEXT_PUBLIC_GA_ID` na Vercel.
@@ -319,4 +319,5 @@ Você também atende online?
 - **2026-11-11 (hover e fecho):** fatores do diagrama ganharam animação ao passar o mouse; a frase "O acompanhamento não deve exigir..." saiu do box separado e virou o fecho da própria seção de estratégia; removidas as legendas "Role para avançar na régua" e "Fim da régua".
 - **2026-11-12 (nova copy):** trecho 01 substituído ("Você treina há anos...") e foto do Hero trocada por `hero.jpeg`; trecho 04 substituído ("Você não precisa de mais uma dieta. Precisa saber o que fazer com ela.") mantendo o diagrama dos 6 fatores; foto `trecho7.jpeg` voltou ao trecho 07; preços nos planos (R$ 370 mensal; R$ 945 trimestral, média de R$ 315 por mês). Mantidos do texto anterior: frase "Atendimento presencial na Pajuçara" e o CTA no Hero.
 - **2026-11-12 (legendas e coluna do Icaro):** legenda da foto do Hero reduzida a "Icaro Andrade"; no trecho 07 o título "Icaro Andrade / CRN 637419" foi retirado, as abas Trajetória e Especialidades foram para a coluna da direita (fonte menor) e a foto ocupa quase toda a coluna da esquerda.
+- **2026-11-12 (atletas):** trecho 03 ganhou as 4 fotos de atletas com legendas e efeito de hover (substituem os quadros Fernando e Matheus).
 - **2026-11-11 (balança):** foto "Mesmo peso na balança" ampliada: o box passou a ocupar metade da largura (6 de 12 colunas) com menos preenchimento interno, e a imagem voltou ao tamanho original (1145x912).
