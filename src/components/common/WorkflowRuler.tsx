@@ -101,8 +101,13 @@ function Reveal({ children }: { children: ReactNode }) {
 
 export default function WorkflowRuler() {
   const { outerRef, innerRef, pinned, progress, scrollTo } = useScrollPin();
-  const day = progress * 30;
+  // A régua enche até 80% do trecho preso; os últimos 20% seguram a régua cheia
+  // com a etapa 04 à vista antes de a seção soltar.
+  const FILL_END = 0.8;
+  const fill = Math.min(1, progress / FILL_END);
+  const day = fill * 30;
   const active = stageForDay(day);
+  const activeMarkDay = marks.reduce((acc, m) => (day >= m.day - 0.01 ? m.day : acc), 0);
 
   if (!pinned) {
     // Celular ou "reduzir movimento": linha do tempo vertical, sem travar a rolagem.
@@ -122,7 +127,7 @@ export default function WorkflowRuler() {
     <div
       ref={outerRef}
       id="fluxo-trabalho"
-      style={{ height: 'calc(100vh - 6rem + 130vh)' }}
+      style={{ height: 'calc(100vh - 6rem + 100vh)' }}
     >
       <div ref={innerRef} className="sticky top-24 h-[calc(100vh-6rem)] flex flex-col justify-center">
         <div className="relative h-24 mb-10">
@@ -136,7 +141,7 @@ export default function WorkflowRuler() {
             }}
           />
           <div className="absolute inset-x-0 top-[22px] h-[3px] bg-cyan/25" />
-          <div className="absolute left-0 top-[22px] h-[3px] bg-cyan" style={{ width: `${progress * 100}%` }} />
+          <div className="absolute left-0 top-[22px] h-[3px] bg-cyan" style={{ width: `${fill * 100}%` }} />
 
           {marks.map((m) => {
             const reached = day >= m.day - 0.01;
@@ -145,8 +150,9 @@ export default function WorkflowRuler() {
               <button
                 key={m.day}
                 type="button"
-                onClick={() => scrollTo(m.day / 30)}
+                onClick={() => scrollTo((m.day / 30) * FILL_END)}
                 aria-label={`Ir para o ${m.label}`}
+                aria-current={m.day === activeMarkDay ? 'step' : undefined}
                 className={`absolute top-0 flex flex-col gap-3 pt-4 pb-2 min-w-11 ${edge}`}
                 style={{ left: `${(m.day / 30) * 100}%` }}
               >
@@ -163,7 +169,7 @@ export default function WorkflowRuler() {
           })}
         </div>
 
-        <div className="min-h-[18rem]">
+        <div className="min-h-[14rem]">
           {stages.map((stage, i) => (
             <div key={stage.num} className={i === active ? 'block' : 'sr-only'}>
               <Description stage={stage} index={i} />

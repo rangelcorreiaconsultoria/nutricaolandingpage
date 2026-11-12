@@ -63,7 +63,7 @@ export default function ProfessionalSection() {
 
   const content = (
     <div className={`grid lg:grid-cols-12 gap-x-12 gap-y-8 w-full ${pinned ? 'h-full items-stretch' : 'items-start'}`}>
-      <h2 className="sr-only">Icaro Andrade, CRN 637419</h2>
+      <h2 className="sr-only">Icaro Andrade, CRN-6 37419</h2>
 
       <div className={`lg:col-span-5 ${pinned ? 'flex flex-col min-h-0' : ''}`}>
         <p className="flex items-center gap-3 font-display text-base font-bold uppercase tracking-[0.2em] text-cyan mb-6">
