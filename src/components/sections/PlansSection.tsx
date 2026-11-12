@@ -4,6 +4,8 @@ import { MSG_AVAILABILITY, msgPlan, whatsappUrl } from '@/lib/contact';
 const plans = [
   {
     name: 'Mensal',
+    price: 'R$ 370',
+    priceNote: <>por mês</>,
     description:
       'Ideal para iniciar o acompanhamento, conhecer suas necessidades e começar a colocar em prática uma estratégia personalizada.',
     items: [
@@ -16,6 +18,12 @@ const plans = [
   },
   {
     name: 'Trimestral',
+    price: 'R$ 945',
+    priceNote: (
+      <>
+        pelos 3 meses · média de <strong className="text-cyan font-semibold">R$ 315 por mês</strong>
+      </>
+    ),
     description:
       'Para quem deseja construir consistência, acompanhar a evolução ao longo de três meses e realizar ajustes progressivos na estratégia.',
     items: [
@@ -41,6 +49,12 @@ export default function PlansSection() {
           {plans.map((plan) => (
             <article key={plan.name} className="bg-raise p-8 md:p-10 border-t-2 border-fg hover:border-cyan transition-colors flex flex-col">
               <h3 className="text-5xl mb-5">{plan.name}</h3>
+              <p className="mb-6 pb-6 border-b border-line">
+                <span className="block font-display text-5xl md:text-6xl font-extrabold leading-none text-cyan">
+                  {plan.price}
+                </span>
+                <span className="block mt-3 text-base md:text-lg text-white/80">{plan.priceNote}</span>
+              </p>
               <p className="text-text-secondary leading-relaxed mb-8">{plan.description}</p>
               <p className="font-display text-base font-bold uppercase tracking-[0.2em] mb-4">Inclui</p>
               <ul className="divide-y divide-line border-t border-line">

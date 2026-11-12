@@ -19,7 +19,7 @@ export function useScrollPin() {
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-    const mq = window.matchMedia('(min-width: 1024px) and (prefers-reduced-motion: no-preference)');
+    const mq = window.matchMedia('(min-width: 1024px) and (min-height: 740px) and (prefers-reduced-motion: no-preference)');
     const update = () => setPinned(mq.matches);
     update();
     mq.addEventListener('change', update);

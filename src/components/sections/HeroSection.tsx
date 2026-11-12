@@ -14,17 +14,20 @@ export default function HeroSection() {
       <div className="container pt-28 pb-20 md:pt-36 md:pb-28">
         <div className="grid lg:grid-cols-12 gap-x-12 gap-y-12 items-stretch">
           <div className="lg:col-span-7">
-            <p className="section-label mb-8">Nutrição esportiva e composição corporal</p>
-            <h1 className="mb-10">
-              Seu esforço merece <span className="underline-cyan">resultados.</span>
+            <h1 className="mb-10 text-4xl sm:text-5xl lg:text-6xl xl:text-7xl">
+              Você treina há anos. Até quando vai continuar sem{' '}
+              <span className="underline-cyan">o corpo que deseja?</span>
             </h1>
 
             <div className="max-w-2xl space-y-5 text-lg text-text-secondary leading-relaxed mb-10">
               <p>
-                Seja para emagrecer, ganhar massa muscular, melhorar sua saúde ou evoluir nos treinos, seus resultados dependem de uma estratégia nutricional adequada à sua realidade.
+                Você mantém uma rotina de treinos, cuida da alimentação e se dedica. Mas, quando olha no espelho, os resultados ainda não refletem todo o esforço que você faz.
+              </p>
+              <p className="text-white font-medium">
+                Talvez o que esteja faltando não seja mais esforço. Seja uma estratégia nutricional feita sob medida para você.
               </p>
               <p>
-                Com um acompanhamento individualizado, baseado em ciência e avaliação criteriosa, você tem um planejamento construído para seus objetivos, sua rotina e suas necessidades.
+                Uma estratégia nutricional construída para o seu corpo, sua rotina e seus objetivos, com acompanhamento individualizado e ajustes ao longo do processo para que sua alimentação destrave a sua evolução.
               </p>
             </div>
 
@@ -51,7 +54,7 @@ export default function HeroSection() {
               <figure className="flex flex-col lg:flex-1 lg:min-h-0">
                 <div className="relative aspect-[4/5] lg:aspect-auto lg:flex-1 lg:min-h-0 bg-deep overflow-hidden">
                   <Image
-                    src="/images/icaro-perfil.jpeg"
+                    src="/images/hero.jpeg"
                     alt="Icaro Andrade, nutricionista"
                     fill
                     priority
@@ -62,7 +65,7 @@ export default function HeroSection() {
                 <figcaption className="mt-3 flex items-start gap-3 font-display text-sm font-bold uppercase tracking-[0.12em] leading-snug">
                   <span className="block w-6 h-px bg-cyan mt-2.5 shrink-0" />
                   <span>
-                    Icaro Andrade <span className="text-cyan">·</span> Nutricionista <span className="text-cyan">·</span> CRN 637419
+                    Icaro Andrade
                   </span>
                 </figcaption>
               </figure>

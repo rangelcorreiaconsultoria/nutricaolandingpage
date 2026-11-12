@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { useScrollPin } from '@/components/common/useScrollPin';
 
 const specialties = [
@@ -13,7 +14,7 @@ const specialties = [
 ];
 
 const bio = (
-  <div className="space-y-5 text-white/75 text-lg leading-relaxed">
+  <div className="space-y-4 text-white/75 text-base lg:text-[17px] leading-relaxed">
     <p>
       Nutricionista especializado em Nutrição Esportiva pelo American College of Sports Medicine (ACSM) e em avaliação da composição corporal pela metodologia internacional ISAK.
     </p>
@@ -34,15 +35,15 @@ const specs = (
     <p className="font-display text-base font-bold uppercase tracking-[0.2em] text-cyan mb-4">Especialidades</p>
     <ul className="border-t border-line">
       {specialties.map((item) => (
-        <li key={item.title} className="group relative py-5 border-b border-line">
+        <li key={item.title} className="group relative py-3 border-b border-line">
           <span
             aria-hidden="true"
             className="absolute left-0 -bottom-px h-0.5 w-0 bg-cyan transition-[width] duration-500 group-hover:w-full"
           />
-          <h3 className="text-2xl xl:text-3xl leading-[1.1] transition-colors duration-300 group-hover:text-cyan">
+          <h3 className="text-xl xl:text-2xl leading-[1.1] transition-colors duration-300 group-hover:text-cyan">
             {item.title}
           </h3>
-          <p className="mt-2 font-display text-base font-semibold uppercase tracking-[0.12em] text-text-secondary">
+          <p className="mt-1 font-display text-sm font-semibold uppercase tracking-[0.12em] text-text-secondary">
             {item.credential}
           </p>
         </li>
@@ -56,24 +57,42 @@ export default function ProfessionalSection() {
   const stage = progress >= 0.45 ? 1 : 0;
 
   const tab = (active: boolean) =>
-    `font-display text-base font-bold uppercase tracking-[0.16em] py-3 border-b-2 transition-colors ${
+    `font-display text-sm font-bold uppercase tracking-[0.16em] py-2 border-b-2 transition-colors ${
       active ? 'text-cyan border-cyan' : 'text-text-secondary border-transparent hover:text-white'
     }`;
 
   const content = (
-    <div className="grid lg:grid-cols-12 gap-x-12 gap-y-8 items-start w-full">
-      <div className="lg:col-span-5">
-        <p className="flex items-center gap-3 font-display text-base font-bold uppercase tracking-[0.2em] text-cyan mb-8">
+    <div className={`grid lg:grid-cols-12 gap-x-12 gap-y-8 w-full ${pinned ? 'h-full items-stretch' : 'items-start'}`}>
+      <h2 className="sr-only">Icaro Andrade, CRN 637419</h2>
+
+      <div className={`lg:col-span-5 ${pinned ? 'flex flex-col min-h-0' : ''}`}>
+        <p className="flex items-center gap-3 font-display text-base font-bold uppercase tracking-[0.2em] text-cyan mb-6">
           <span className="block w-10 h-px bg-cyan" />
           Quem está por trás do acompanhamento
         </p>
-        <h2 className="text-white mb-3">
-          Icaro <span className="text-cyan">Andrade</span>
-        </h2>
-        <p className="font-display text-xl font-semibold uppercase tracking-[0.2em] text-white/70">CRN 637419</p>
 
-        {pinned && (
-          <div className="mt-10 flex gap-8">
+        <figure className={`w-full ${pinned ? 'flex flex-col flex-1 min-h-0' : 'max-w-md'}`}>
+          <div className={`relative bg-deep overflow-hidden ${pinned ? 'flex-1 min-h-[200px]' : 'aspect-[4/5]'}`}>
+            <Image
+              src="/images/trecho7.jpeg"
+              alt="Icaro Andrade, nutricionista, professor e palestrante"
+              fill
+              sizes="(min-width: 1024px) 480px, 100vw"
+              className="object-cover object-top"
+            />
+          </div>
+          <figcaption className="mt-3 flex items-start gap-3 font-display text-sm font-bold uppercase tracking-[0.12em] leading-snug">
+            <span className="block w-6 h-px bg-cyan mt-2.5 shrink-0" />
+            <span>
+              Icaro Andrade <span className="text-cyan">│</span> Nutricionista, Professor e Palestrante
+            </span>
+          </figcaption>
+        </figure>
+      </div>
+
+      {pinned ? (
+        <div className="lg:col-span-7 flex flex-col min-h-0">
+          <div className="flex gap-6 mb-8">
             <button type="button" onClick={() => scrollTo(0)} className={tab(stage === 0)} aria-current={stage === 0}>
               Trajetória
             </button>
@@ -81,24 +100,21 @@ export default function ProfessionalSection() {
               Especialidades
             </button>
           </div>
-        )}
-      </div>
-
-      {pinned ? (
-        <div className="lg:col-span-7 grid">
-          <div
-            className={`col-start-1 row-start-1 transition-all duration-500 ${
-              stage === 0 ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-6 pointer-events-none'
-            }`}
-          >
-            {bio}
-          </div>
-          <div
-            className={`col-start-1 row-start-1 transition-all duration-500 ${
-              stage === 1 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6 pointer-events-none'
-            }`}
-          >
-            {specs}
+          <div className="grid">
+            <div
+              className={`col-start-1 row-start-1 transition-all duration-500 ${
+                stage === 0 ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-6 pointer-events-none'
+              }`}
+            >
+              {bio}
+            </div>
+            <div
+              className={`col-start-1 row-start-1 transition-all duration-500 ${
+                stage === 1 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6 pointer-events-none'
+              }`}
+            >
+              {specs}
+            </div>
           </div>
         </div>
       ) : (
@@ -119,7 +135,7 @@ export default function ProfessionalSection() {
           <div ref={outerRef} style={{ height: 'calc(100vh - 6rem + 110vh)' }}>
             <div
               ref={innerRef}
-              className="sticky top-24 h-[calc(100vh-6rem)] bg-surface border border-line flex items-center px-14 xl:px-20"
+              className="sticky top-24 h-[calc(100vh-6rem)] bg-surface border border-line flex items-center px-14 xl:px-20 py-10"
             >
               {bar}
               {content}

@@ -9,8 +9,8 @@ export default function Footer() {
   return (
     <footer className="bg-canvas border-t border-line">
       <div className="container pt-16 pb-16">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-x-12 gap-y-10 items-start mb-12">
-          <div>
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-x-12 gap-y-10 items-start mb-12">
+          <div className="md:col-span-4">
             <Link href="#inicio" className="flex items-center gap-3 h-8 mb-5">
               <span className="block w-2 h-8 bg-cyan" />
               <span className="font-display text-xl font-extrabold uppercase leading-none tracking-tight">
@@ -26,9 +26,9 @@ export default function Footer() {
             </p>
           </div>
 
-          <div>
+          <div className="md:col-span-4">
             <h4 className="flex items-center h-8 mb-5 text-base tracking-[0.2em]">Menu</h4>
-            <ul>
+            <ul className="grid grid-cols-2 md:grid-cols-1 lg:grid-cols-2 gap-x-6">
               {navLinks.map((link) => (
                 <li key={link.href}>
                   <a href={link.href} className="inline-flex items-center min-h-11 text-base text-text-secondary hover:text-cyan">
@@ -39,7 +39,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div>
+          <div className="md:col-span-4">
             <h4 className="flex items-center h-8 mb-5 text-base tracking-[0.2em]">Contato</h4>
             <a
               href={MAPS_SEARCH_URL}
