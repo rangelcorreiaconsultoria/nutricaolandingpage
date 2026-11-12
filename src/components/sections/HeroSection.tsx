@@ -65,7 +65,7 @@ export default function HeroSection() {
                 <figcaption className="mt-3 flex items-start gap-3 font-display text-sm font-bold uppercase tracking-[0.12em] leading-snug">
                   <span className="block w-6 h-px bg-cyan mt-2.5 shrink-0" />
                   <span>
-                    Icaro Andrade <span className="text-cyan">·</span> Nutricionista <span className="text-cyan">·</span> CRN 637419
+                    Icaro Andrade
                   </span>
                 </figcaption>
               </figure>
