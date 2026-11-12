@@ -52,14 +52,14 @@ export default function HeroSection() {
           <div className="lg:col-span-5 relative max-w-md lg:max-w-none">
             <div className="lg:absolute lg:inset-0 flex flex-col">
               <figure className="flex flex-col lg:flex-1 lg:min-h-0">
-                <div className="relative aspect-[4/5] lg:aspect-auto lg:flex-1 lg:min-h-0 bg-deep overflow-hidden">
+                <div className="relative aspect-[2/3] lg:aspect-auto lg:flex-1 lg:min-h-0 overflow-hidden">
                   <Image
                     src="/images/hero.jpeg"
                     alt="Icaro Andrade, nutricionista"
                     fill
                     priority
                     sizes="(min-width: 1024px) 480px, (min-width: 640px) 50vw, 100vw"
-                    className="object-cover object-top"
+                    className="object-cover lg:object-contain object-center"
                   />
                 </div>
                 <figcaption className="mt-3 flex items-start gap-3 font-display text-sm font-bold uppercase tracking-[0.12em] leading-snug">
