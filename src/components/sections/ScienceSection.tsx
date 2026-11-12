@@ -25,7 +25,7 @@ const athletes = [
 
 export default function ScienceSection() {
   return (
-    <section className="md:py-28 py-20 bg-canvas">
+    <section className="md:py-28 py-20 bg-surface">
       <div className="container">
         <p className="section-label mb-8">Rigor em cada decisão</p>
 

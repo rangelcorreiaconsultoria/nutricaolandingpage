@@ -23,9 +23,9 @@ export default function Home() {
       <Header />
       <main id="main" tabIndex={-1} className="flex-grow focus:outline-none">
         <HeroSection />
-        <StartSection />
         <ScienceSection />
         <GenericDietSection />
+        <StartSection />
         <StructureSection />
         <ScaleSection />
         <ProfessionalSection />
