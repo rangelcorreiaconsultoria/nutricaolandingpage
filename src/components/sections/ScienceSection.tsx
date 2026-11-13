@@ -51,8 +51,13 @@ export default function ScienceSection() {
         </p>
 
         <ul className="grid grid-cols-2 lg:grid-cols-4 gap-x-4 gap-y-10 lg:gap-x-6">
-          {athletes.map((athlete) => (
-            <li key={athlete.name} className="group">
+          {athletes.map((athlete, i) => (
+            <li
+              key={athlete.name}
+              data-reveal
+              style={{ '--reveal-delay': `${i * 120}ms` } as React.CSSProperties}
+              className="group"
+            >
               <figure>
                 <div className="relative aspect-[4/5] bg-deep overflow-hidden">
                   <Image

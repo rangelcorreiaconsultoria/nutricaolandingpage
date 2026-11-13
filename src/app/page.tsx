@@ -10,6 +10,8 @@ import ProfessionalSection from '@/components/sections/ProfessionalSection';
 import PlansSection from '@/components/sections/PlansSection';
 import LocationSection from '@/components/sections/LocationSection';
 import FaqSection from '@/components/sections/FaqSection';
+import ScrollTape from '@/components/common/ScrollTape';
+import RevealObserver from '@/components/common/RevealObserver';
 
 export default function Home() {
   return (
@@ -34,6 +36,8 @@ export default function Home() {
         <FaqSection />
       </main>
       <Footer />
+      <ScrollTape />
+      <RevealObserver />
     </>
   );
 }

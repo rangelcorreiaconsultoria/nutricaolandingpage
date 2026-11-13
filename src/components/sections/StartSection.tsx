@@ -1,3 +1,7 @@
+'use client';
+
+import { useCallback, useState } from 'react';
+import ChatPhone from '@/components/common/ChatPhone';
 import NewTabHint from '@/components/common/NewTabHint';
 import { MSG_CASE, whatsappUrl } from '@/lib/contact';
 
@@ -20,7 +24,17 @@ const steps = [
   },
 ];
 
+// Os balões do celular repetem os títulos dos passos, sem texto novo.
+const messages = steps.map((step, i) => ({ text: `${step.lead} ${step.title}`, fromMe: i === 0 }));
+
 export default function StartSection() {
+  const [hover, setHover] = useState<number | null>(null);
+  const [shown, setShown] = useState(0);
+  const onProgress = useCallback((n: number) => setShown(n), []);
+
+  // Sem o mouse em cima de um passo, o destaque acompanha a última mensagem que chegou.
+  const active = hover ?? (shown > 0 ? shown - 1 : null);
+
   return (
     <section id="como-comecar" className="md:py-28 py-20 bg-surface">
       <div className="container">
@@ -32,16 +46,31 @@ export default function StartSection() {
           </h2>
         </div>
 
-        <ul className="grid md:grid-cols-3 gap-6 mb-14">
-          {steps.map((step) => (
-            <li key={step.lead} className="bg-raise p-8 border-l-4 border-cyan">
-              <h3 className="text-3xl mb-4">
-                <span className="text-cyan">{step.lead}</span> {step.title}
-              </h3>
-              <p className="text-text-secondary leading-relaxed">{step.description}</p>
-            </li>
-          ))}
-        </ul>
+        <div className="grid lg:grid-cols-12 gap-x-12 gap-y-12 items-center mb-14">
+          <ul className="lg:col-span-7 space-y-4" onMouseLeave={() => setHover(null)}>
+            {steps.map((step, i) => {
+              const isActive = active === i;
+              return (
+                <li
+                  key={step.lead}
+                  onMouseEnter={() => setHover(i)}
+                  className={`p-6 md:p-8 border-l-4 transition-all duration-300 ${
+                    isActive ? 'bg-raise border-cyan lg:translate-x-2' : 'bg-raise/60 border-white/15'
+                  }`}
+                >
+                  <h3 className="text-2xl md:text-3xl mb-3">
+                    <span className="text-cyan">{step.lead}</span> {step.title}
+                  </h3>
+                  <p className="text-text-secondary leading-relaxed">{step.description}</p>
+                </li>
+              );
+            })}
+          </ul>
+
+          <div className="lg:col-span-5">
+            <ChatPhone messages={messages} active={active} onProgress={onProgress} />
+          </div>
+        </div>
 
         <a
           href={whatsappUrl(MSG_CASE)}

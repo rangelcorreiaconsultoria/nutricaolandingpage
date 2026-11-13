@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import ScaleReveal from '@/components/common/ScaleReveal';
 import NewTabHint from '@/components/common/NewTabHint';
 import { MSG_EVALUATION, whatsappUrl } from '@/lib/contact';
 
@@ -44,14 +44,7 @@ export default function ScaleSection() {
             <p className="font-display text-base font-bold uppercase tracking-[0.2em] mb-8">
               Mesmo peso na balança
             </p>
-            <Image
-              src="/images/balanca.png"
-              alt="Três mulheres com o mesmo peso, 60 kg, e percentuais de gordura diferentes: 15%, 20% e 30%"
-              width={1145}
-              height={912}
-              sizes="(min-width: 1024px) 540px, 100vw"
-              className="w-full h-auto"
-            />
+            <ScaleReveal />
           </div>
         </div>
       </div>

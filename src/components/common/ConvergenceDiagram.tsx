@@ -33,7 +33,7 @@ export default function ConvergenceDiagram() {
   // Depois que a animação de entrada termina, o hover responde sem atraso.
   useEffect(() => {
     if (!lit) return;
-    const t = setTimeout(() => setSettled(true), 1600);
+    const t = setTimeout(() => setSettled(true), 2200);
     return () => clearTimeout(t);
   }, [lit]);
 
@@ -74,20 +74,28 @@ export default function ConvergenceDiagram() {
         {factors.map((factor, i) => {
           const y = ((i + 0.5) / total) * 100;
           const active = hover === i;
+          const d = `M0 ${y} C 55 ${y}, 45 50, 100 50`;
           return (
-            <path
-              key={factor}
-              d={`M0 ${y} C 55 ${y}, 45 50, 100 50`}
-              fill="none"
-              vectorEffect="non-scaling-stroke"
-              strokeWidth={active ? 3.5 : 1.5}
-              stroke={!lit ? 'rgba(255,255,255,0.18)' : active ? '#FFFFFF' : '#00B9CF'}
-              strokeOpacity={anyHover && !active ? 0.25 : 1}
-              style={{
-                transition: 'stroke 0.4s ease, stroke-width 0.3s ease, stroke-opacity 0.3s ease',
-                transitionDelay: lit && !settled ? `${i * 120}ms` : '0ms',
-              }}
-            />
+            <g key={factor}>
+              <path d={d} fill="none" vectorEffect="non-scaling-stroke" strokeWidth={1.5} stroke="rgba(255,255,255,0.14)" />
+              {/* Linha que se desenha da esquerda para o centro quando o diagrama entra na tela */}
+              <path
+                d={d}
+                fill="none"
+                pathLength={1}
+                strokeDasharray="1 1"
+                strokeDashoffset={lit ? 0 : 1}
+                vectorEffect="non-scaling-stroke"
+                strokeWidth={active ? 3.5 : 1.5}
+                stroke={active ? '#FFFFFF' : '#00B9CF'}
+                strokeOpacity={anyHover && !active ? 0.25 : 1}
+                style={{
+                  transition:
+                    'stroke-dashoffset 0.9s cubic-bezier(0.22, 1, 0.36, 1), stroke 0.4s ease, stroke-width 0.3s ease, stroke-opacity 0.3s ease',
+                  transitionDelay: lit && !settled ? `${i * 120}ms` : '0ms',
+                }}
+              />
+            </g>
           );
         })}
       </svg>
@@ -97,7 +105,7 @@ export default function ConvergenceDiagram() {
           className={`px-4 py-3 sm:px-6 sm:py-4 font-display text-base sm:text-xl font-extrabold uppercase tracking-[0.08em] leading-tight text-center border-2 transition-all duration-500 ${
             lit ? 'bg-cyan text-ink border-cyan' : 'bg-transparent text-white border-white/30'
           } ${anyHover ? 'scale-105 shadow-[0_0_28px_rgba(0,185,207,0.55)]' : ''}`}
-          style={{ transitionDelay: lit && !settled ? '700ms' : '0ms' }}
+          style={{ transitionDelay: lit && !settled ? '1200ms' : '0ms' }}
         >
           Sua
           <br />

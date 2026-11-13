@@ -2,6 +2,8 @@
 
 import Image from 'next/image';
 import { useScrollPin } from '@/components/common/useScrollPin';
+import NewTabHint from '@/components/common/NewTabHint';
+import { whatsappUrl } from '@/lib/contact';
 
 const specialties = [
   { title: 'Recomposição corporal', credential: 'Emagrecimento e ganho de massa muscular' },
@@ -35,17 +37,39 @@ const specs = (
     <p className="font-display text-base font-bold uppercase tracking-[0.2em] text-cyan mb-4">Especialidades</p>
     <ul className="border-t border-line">
       {specialties.map((item) => (
-        <li key={item.title} className="group relative py-3 border-b border-line">
-          <span
-            aria-hidden="true"
-            className="absolute left-0 -bottom-px h-0.5 w-0 bg-cyan transition-[width] duration-500 group-hover:w-full"
-          />
-          <h3 className="text-xl xl:text-2xl leading-[1.1] transition-colors duration-300 group-hover:text-cyan">
-            {item.title}
-          </h3>
-          <p className="mt-1 font-display text-sm font-semibold uppercase tracking-[0.12em] text-text-secondary">
-            {item.credential}
-          </p>
+        <li key={item.title} className="border-b border-line">
+          <a
+            href={whatsappUrl(`Olá, Icaro! Tenho interesse em: ${item.title}.`)}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group relative flex items-center gap-4 py-3"
+          >
+            <span
+              aria-hidden="true"
+              className="absolute left-0 -bottom-px h-0.5 w-0 bg-cyan transition-[width] duration-500 group-hover:w-full group-focus-visible:w-full"
+            />
+            <span className="flex-1">
+              <h3 className="text-xl xl:text-2xl leading-[1.1] transition-colors duration-300 group-hover:text-cyan group-focus-visible:text-cyan">
+                {item.title}
+              </h3>
+              <span className="block mt-1 font-display text-sm font-semibold uppercase tracking-[0.12em] text-text-secondary">
+                {item.credential}
+              </span>
+            </span>
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.25"
+              aria-hidden="true"
+              className="shrink-0 text-cyan opacity-60 lg:opacity-0 lg:-translate-x-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0 group-focus-visible:opacity-100 group-focus-visible:translate-x-0"
+            >
+              <path d="M5 12h14M13 6l6 6-6 6" />
+            </svg>
+            <NewTabHint />
+          </a>
         </li>
       ))}
     </ul>
@@ -109,6 +133,8 @@ export default function ProfessionalSection() {
               {bio}
             </div>
             <div
+              // Ao chegar pelo teclado num link de especialidade, rola até a aba dele.
+              onFocus={() => stage !== 1 && scrollTo(0.8)}
               className={`col-start-1 row-start-1 transition-all duration-500 ${
                 stage === 1 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6 pointer-events-none'
               }`}

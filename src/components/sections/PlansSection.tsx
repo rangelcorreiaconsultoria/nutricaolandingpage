@@ -46,8 +46,14 @@ export default function PlansSection() {
         </div>
 
         <div className="grid md:grid-cols-2 gap-6 mb-14">
-          {plans.map((plan) => (
-            <article key={plan.name} className="bg-raise p-8 md:p-10 border-t-2 border-fg hover:border-cyan transition-colors flex flex-col">
+          {plans.map((plan, i) => (
+            <div
+              key={plan.name}
+              data-reveal
+              style={{ '--reveal-delay': `${i * 150}ms` } as React.CSSProperties}
+              className="flex"
+            >
+            <article className="flex-1 bg-raise p-8 md:p-10 border-t-2 border-fg hover:border-cyan transition-colors flex flex-col">
               <h3 className="text-5xl mb-5">{plan.name}</h3>
               <p className="mb-6 pb-6 border-b border-line">
                 <span className="block font-display text-5xl md:text-6xl font-extrabold leading-none text-cyan">
@@ -77,6 +83,7 @@ export default function PlansSection() {
                 </a>
               </div>
             </article>
+            </div>
           ))}
         </div>
 
