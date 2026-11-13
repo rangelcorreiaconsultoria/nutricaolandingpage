@@ -2,14 +2,15 @@
 
 import Image from 'next/image';
 import { useState } from 'react';
+import { track } from '@/lib/analytics';
 
-// Cada foto (1145×912, fundo transparente) tem a pessoa centralizada.
+// Cada foto (WebP 1145×912, fundo transparente) tem a pessoa centralizada.
 // As imagens ficam um pouco mais largas que o palco para as três se sobreporem levemente.
 const IMG_WIDTH = 105; // % da largura do palco
 const people = [
-  { fat: 15, src: '/images/balanca-15.png', center: 27 },
-  { fat: 20, src: '/images/balanca-20.png', center: 50 },
-  { fat: 30, src: '/images/balanca-30.png', center: 73 },
+  { fat: 15, src: '/images/balanca-15.webp', center: 27 },
+  { fat: 20, src: '/images/balanca-20.webp', center: 50 },
+  { fat: 30, src: '/images/balanca-30.webp', center: 73 },
 ];
 
 // Três mulheres sobre a mesma balança. Tocar numa traz ela para frente
@@ -17,10 +18,14 @@ const people = [
 export default function ScaleReveal() {
   const [revealed, setRevealed] = useState([false, false, false]);
   const [focus, setFocus] = useState<number | null>(null);
+  // Os "?" pulsam só até o primeiro toque; depois disso não precisam mais chamar atenção.
+  const [touched, setTouched] = useState(false);
 
   const select = (i: number) => {
+    if (!revealed[i]) track('balanca_revelar', { mulher: i + 1, percentual: people[i].fat });
     setRevealed((r) => r.map((v, j) => (j === i ? !v : v)));
     setFocus(i);
+    setTouched(true);
   };
 
   return (
@@ -89,7 +94,7 @@ export default function ScaleReveal() {
                   {p.fat}%
                 </span>
               ) : (
-                <span className="animate-pulse-soft">?</span>
+                <span className={touched ? '' : 'animate-pulse-soft'}>?</span>
               )}
             </span>
           </button>

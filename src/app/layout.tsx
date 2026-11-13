@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import { Barlow, Barlow_Condensed } from 'next/font/google';
 import Analytics from '@/components/common/Analytics';
+import { MAPS_SEARCH_URL, WHATSAPP_NUMBER } from '@/lib/contact';
 import './globals.css';
 
 const barlow = Barlow({
@@ -47,6 +48,41 @@ export const metadata: Metadata = {
   },
 };
 
+// Dados estruturados (schema.org) para o Google entender o negócio local.
+// Horário de atendimento não está no site, por isso fica de fora até ser informado.
+const SITE_URL = 'https://nutricaolandingpage.vercel.app';
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'MedicalBusiness',
+  '@id': `${SITE_URL}/#negocio`,
+  name: 'Icaro Andrade | Nutricionista',
+  description: DESCRIPTION,
+  url: SITE_URL,
+  image: `${SITE_URL}/og-image.jpg`,
+  telephone: `+${WHATSAPP_NUMBER}`,
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'Rua Jangadeiros Alagoanos, 1481 (Academia Gaviões)',
+    addressLocality: 'Maceió',
+    addressRegion: 'AL',
+    postalCode: '57030-000',
+    addressCountry: 'BR',
+  },
+  areaServed: { '@type': 'City', name: 'Maceió' },
+  hasMap: MAPS_SEARCH_URL,
+  founder: {
+    '@type': 'Person',
+    name: 'Icaro Andrade',
+    jobTitle: 'Nutricionista',
+    hasCredential: {
+      '@type': 'EducationalOccupationalCredential',
+      credentialCategory: 'Registro profissional',
+      name: 'CRN-6 37419',
+      recognizedBy: { '@type': 'Organization', name: 'Conselho Regional de Nutricionistas da 6ª Região' },
+    },
+  },
+};
+
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
@@ -61,6 +97,10 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" className={`${barlow.variable} ${barlowCondensed.variable}`}>
       <body className="bg-canvas text-fg">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, '\\u003c') }}
+        />
         {children}
         <Analytics />
       </body>

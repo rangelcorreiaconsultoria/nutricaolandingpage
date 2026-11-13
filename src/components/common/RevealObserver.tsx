@@ -2,9 +2,9 @@
 
 import { useEffect } from 'react';
 
-const SELECTOR = '[data-reveal], main section h2:not(.sr-only), main .section-label';
+const SELECTOR = '[data-reveal]';
 
-// Faz títulos e blocos marcados com `data-reveal` surgirem ao entrar na tela.
+// Faz os blocos de conteúdo marcados com `data-reveal` surgirem ao entrar na tela.
 // Só esconde o que ainda está abaixo da dobra, então nada pisca no carregamento;
 // sem JavaScript ou com "reduzir movimento", tudo aparece normalmente.
 export default function RevealObserver() {

@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import { useScrollPin } from '@/components/common/useScrollPin';
 import NewTabHint from '@/components/common/NewTabHint';
+import { track } from '@/lib/analytics';
 import { whatsappUrl } from '@/lib/contact';
 
 const specialties = [
@@ -42,6 +43,7 @@ const specs = (
             href={whatsappUrl(`Olá, Icaro! Tenho interesse em: ${item.title}.`)}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => track('especialidade_click', { especialidade: item.title })}
             className="group relative flex items-center gap-4 py-3"
           >
             <span

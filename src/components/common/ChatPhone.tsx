@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import { track } from '@/lib/analytics';
 
 export interface ChatMessage {
   text: string;
@@ -53,6 +54,11 @@ export default function ChatPhone({ messages, active, onProgress }: ChatPhonePro
   useEffect(() => {
     onProgress?.(shown);
   }, [shown, onProgress]);
+
+  // Registra quem assistiu a conversa até a última mensagem (só quando ela foi animada).
+  useEffect(() => {
+    if (started && shown === messages.length) track('chat_completo');
+  }, [started, shown, messages.length]);
 
   // "Digitando..." só antes das respostas do Icaro.
   const typing = started && shown > 0 && shown < messages.length && !messages[shown].fromMe;
