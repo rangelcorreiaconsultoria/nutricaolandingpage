@@ -8,27 +8,34 @@ const credentials = [
   { value: 'Professor', label: 'USP · UNIT · IBRAS · Uniguaçu' },
 ];
 
-// Credenciais como selos separados, flutuando sobre as bordas da foto.
-// `positions` traz a posição de cada selo (mesma ordem de `credentials`).
-function CredentialTags({ positions }: { positions: string[] }) {
+// Credenciais como três selos separados, em linha na parte de baixo da foto,
+// sobre um degradê escuro que integra os selos à imagem.
+function CredentialTags({ className = '' }: { className?: string }) {
   return (
-    <dl>
-      {credentials.map((item, i) => (
-        <div
-          key={item.value}
-          className={`absolute z-10 max-w-[60%] border border-white/15 border-l-2 border-l-cyan bg-canvas/80 backdrop-blur-md px-3 py-2 shadow-[0_12px_30px_rgba(0,0,0,0.45)] ${positions[i]}`}
-        >
-          <dt className="font-display text-sm font-extrabold leading-none text-cyan">{item.value}</dt>
-          <dd className="mt-1 text-[10px] uppercase tracking-[0.1em] leading-snug text-white/75">{item.label}</dd>
-        </div>
-      ))}
-    </dl>
+    <>
+      <div
+        aria-hidden="true"
+        className="absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-canvas/95 via-canvas/60 to-transparent pointer-events-none"
+      />
+      <dl className={'absolute z-10 grid grid-cols-3 gap-1.5 lg:gap-2 ' + className}>
+        {credentials.map((item) => (
+          <div
+            key={item.value}
+            className="border border-white/15 border-l-2 border-l-cyan bg-canvas/80 backdrop-blur-md px-2 py-1.5 lg:px-3 lg:py-2 shadow-[0_12px_30px_rgba(0,0,0,0.45)]"
+          >
+            <dt className="font-display text-[13px] lg:text-sm font-extrabold leading-none text-cyan">{item.value}</dt>
+            <dd className="mt-1 text-[9px] lg:text-[10px] uppercase tracking-[0.08em] leading-snug text-white/75">{item.label}</dd>
+          </div>
+        ))}
+      </dl>
+    </>
   );
 }
 
-function CtaButton({ className = '' }: { className?: string }) {
+function CtaButton({ className = '', heroCta = false }: { className?: string; heroCta?: boolean }) {
   return (
     <a
+      data-hero-cta={heroCta || undefined}
       href={whatsappUrl(MSG_OBJECTIVES)}
       target="_blank"
       rel="noopener noreferrer"
@@ -54,24 +61,22 @@ export default function HeroSection() {
               <span className="underline-cyan">o corpo que deseja?</span>
             </h1>
 
-            {/* Celular: foto de corpo inteiro, credenciais e CTA logo abaixo do título, sem precisar rolar */}
+            {/* Celular: foto em largura total com as credenciais dentro dela, e o CTA logo abaixo */}
             <div className="lg:hidden mb-10">
               <figure className="relative mb-6">
-                <div className="relative w-[60%] aspect-[2/3]">
+                <div className="relative w-full aspect-[2/3]">
                   <Image
                     src="/images/hero.jpeg"
                     alt="Icaro Andrade, nutricionista"
                     fill
                     loading="eager"
-                    sizes="(min-width: 1024px) 1px, 60vw"
+                    sizes="(min-width: 1024px) 1px, 100vw"
                     className="object-cover"
                   />
                 </div>
-                <CredentialTags
-                  positions={['left-[50%] top-[10%]', 'left-[56%] top-[42%]', 'left-[48%] bottom-[8%] !max-w-[50%]']}
-                />
+                <CredentialTags className="inset-x-2 bottom-2" />
               </figure>
-              <CtaButton />
+              <CtaButton heroCta />
             </div>
 
             <div className="max-w-2xl space-y-5 text-lg text-text-secondary leading-relaxed mb-10">
@@ -93,7 +98,7 @@ export default function HeroSection() {
           </div>
 
           {/* Desktop: a foto ocupa a altura da coluna do texto, sem cortes (proporção 2:3),
-              e as credenciais ficam como selos separados sobre as bordas */}
+              com as credenciais em linha na parte de baixo */}
           <div className="hidden lg:block lg:col-span-5 relative">
             <figure className="absolute inset-y-0 right-0 h-full max-w-full aspect-[2/3]">
               <Image
@@ -104,7 +109,7 @@ export default function HeroSection() {
                 sizes="(min-width: 1024px) 480px, 1px"
                 className="object-cover"
               />
-              <CredentialTags positions={['-left-10 top-[14%]', '-right-4 top-[46%]', '-left-12 bottom-[10%]']} />
+              <CredentialTags className="inset-x-3 bottom-3" />
             </figure>
           </div>
         </div>

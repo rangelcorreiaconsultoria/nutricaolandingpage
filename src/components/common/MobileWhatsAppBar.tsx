@@ -4,16 +4,16 @@ import { useEffect, useState } from 'react';
 import NewTabHint from '@/components/common/NewTabHint';
 import { MSG_OBJECTIVES, whatsappUrl } from '@/lib/contact';
 
-// Botão fixo de WhatsApp no celular. Aparece só depois que o hero sai da tela,
-// para não repetir o CTA que já está visível no topo.
+// Botão fixo de WhatsApp no celular. Aparece sempre que o botão do hero não está na tela,
+// para nunca ficar sem um CTA visível e nunca mostrar dois ao mesmo tempo.
 export default function MobileWhatsAppBar() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    const hero = document.getElementById('inicio');
-    if (!hero || typeof IntersectionObserver === 'undefined') return;
+    const heroCta = document.querySelector('[data-hero-cta]');
+    if (!heroCta || typeof IntersectionObserver === 'undefined') return;
     const io = new IntersectionObserver(([entry]) => setVisible(!entry.isIntersecting));
-    io.observe(hero);
+    io.observe(heroCta);
     return () => io.disconnect();
   }, []);
 
