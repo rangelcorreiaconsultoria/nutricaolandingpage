@@ -40,7 +40,7 @@ export default function ScaleSection() {
             </a>
           </div>
 
-          <div className="lg:col-span-6 bg-raise p-5 md:p-8">
+          <div className="lg:col-span-6 min-w-0 overflow-hidden bg-raise p-5 md:p-8">
             <p className="font-display text-base font-bold uppercase tracking-[0.2em] mb-8">
               Mesmo peso na balança
             </p>

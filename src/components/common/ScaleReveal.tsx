@@ -3,45 +3,76 @@
 import Image from 'next/image';
 import { useState } from 'react';
 
-// Posição (em % da imagem) das três etiquetas "60kg - X%" desenhadas em balanca.png.
-const LABELS = [9.4, 38, 67.8];
+const people = [
+  { fat: 15, src: '/images/balanca-15.png' },
+  { fat: 20, src: '/images/balanca-20.png' },
+  { fat: 30, src: '/images/balanca-30.png' },
+];
 
-// Cobre o percentual de gordura de cada etiqueta até a pessoa tocar.
+// Três mulheres com o mesmo peso: o percentual de gordura de cada uma
+// fica escondido até a pessoa tocar no card.
 export default function ScaleReveal() {
   const [revealed, setRevealed] = useState([false, false, false]);
+  const [focus, setFocus] = useState<number | null>(null);
 
   const toggle = (i: number) => setRevealed((r) => r.map((v, j) => (j === i ? !v : v)));
 
   return (
-    <div className="relative">
-      <Image
-        src="/images/balanca.png"
-        alt="Três mulheres com o mesmo peso, 60 kg, e percentuais de gordura diferentes: 15%, 20% e 30%"
-        width={1145}
-        height={912}
-        sizes="(min-width: 1024px) 540px, 100vw"
-        className="w-full h-auto"
-      />
-      {LABELS.map((left, i) => (
-        <button
-          key={left}
-          type="button"
-          onClick={() => toggle(i)}
-          aria-pressed={revealed[i]}
-          aria-label={`Percentual de gordura da pessoa ${i + 1}`}
-          style={{ left: `${left}%`, top: '84%', width: '26.6%', height: '11.4%' }}
-          className={`absolute rounded-full flex items-center justify-center gap-[0.35em] font-display font-extrabold uppercase text-[clamp(0.8rem,2.6vw,1.35rem)] lg:text-[clamp(0.8rem,1.35vw,1.35rem)] transition-all duration-500 ${
-            revealed[i]
-              ? 'bg-transparent border-2 border-transparent text-transparent scale-95'
-              : 'bg-deep border-2 border-cyan text-white hover:bg-raise'
-          }`}
-        >
-          <span>60kg</span>
-          <span className={`grid place-items-center w-[1.4em] h-[1.4em] rounded-full ${revealed[i] ? '' : 'bg-cyan text-ink animate-pulse-soft'}`}>
-            ?
-          </span>
-        </button>
-      ))}
-    </div>
+    <ul
+      className="-mx-5 px-5 md:mx-0 md:px-0 flex md:grid md:grid-cols-3 gap-3 overflow-x-auto md:overflow-visible snap-x snap-mandatory pb-2 md:pb-0"
+      onMouseLeave={() => setFocus(null)}
+    >
+      {people.map((p, i) => {
+        const open = revealed[i];
+        const dimmed = focus !== null && focus !== i;
+        return (
+          <li
+            key={p.fat}
+            data-reveal
+            style={{ '--reveal-delay': `${i * 140}ms` } as React.CSSProperties}
+            className="shrink-0 w-[64%] sm:w-[40%] md:w-auto snap-center"
+          >
+            <button
+              type="button"
+              onClick={() => toggle(i)}
+              onMouseEnter={() => setFocus(i)}
+              onFocus={() => setFocus(i)}
+              onBlur={() => setFocus(null)}
+              aria-pressed={open}
+              aria-label={`Mulher ${i + 1}: 60 kg${open ? `, ${p.fat}% de gordura` : ''}`}
+              className={`group w-full text-left bg-deep border-2 transition-all duration-500 ${
+                open ? 'border-cyan' : 'border-transparent hover:border-white/30'
+              } ${dimmed ? 'opacity-50' : 'opacity-100'}`}
+            >
+              <span className="relative block aspect-[3/5] overflow-hidden">
+                <Image
+                  src={p.src}
+                  alt=""
+                  fill
+                  sizes="(min-width: 1024px) 360px, (min-width: 768px) 60vw, 130vw"
+                  className="object-cover object-top transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+                />
+              </span>
+              <span className="flex items-center justify-between gap-2 px-3 py-3 border-t border-line">
+                <span className="font-display text-xl md:text-2xl font-extrabold uppercase leading-none">60kg</span>
+                <span
+                  className={`grid place-items-center min-w-[3.2rem] h-9 px-2 font-display text-xl md:text-2xl font-extrabold leading-none transition-all duration-500 ${
+                    open ? 'bg-cyan text-ink' : 'bg-raise text-cyan'
+                  }`}
+                >
+                  {open ? (
+                    <span key="v" style={{ animation: 'bubble-in 0.45s cubic-bezier(0.22, 1, 0.36, 1)' }}>
+                      {p.fat}%
+                    </span>
+                  ) : (
+                    <span className="animate-pulse-soft">?</span>
+                  )}
+                </span>
+              </span>
+            </button>
+          </li>
+        );
+      })}
+    </ul>
   );
 }
