@@ -8,25 +8,21 @@ const credentials = [
   { value: 'Professor', label: 'USP · UNIT · IBRAS · Uniguaçu' },
 ];
 
-// Cartão de credenciais sobreposto à foto (vidro escuro com filete ciano).
-function CredentialsCard({ className = '' }: { className?: string }) {
+// Credenciais como selos separados, flutuando sobre as bordas da foto.
+// `positions` traz a posição de cada selo (mesma ordem de `credentials`).
+function CredentialTags({ positions }: { positions: string[] }) {
   return (
-    <div
-      className={`absolute z-10 border border-white/15 border-l-2 border-l-cyan bg-canvas/75 backdrop-blur-md shadow-[0_20px_50px_rgba(0,0,0,0.5)] ${className}`}
-    >
-      <p className="flex items-center gap-2 px-4 pt-3 pb-2 font-display text-xs font-bold uppercase tracking-[0.14em]">
-        <span className="block w-4 h-px bg-cyan" aria-hidden="true" />
-        Icaro Andrade
-      </p>
-      <dl className="divide-y divide-white/10">
-        {credentials.map((item) => (
-          <div key={item.value} className="px-4 py-2.5">
-            <dt className="font-display text-lg lg:text-xl font-extrabold leading-none text-cyan">{item.value}</dt>
-            <dd className="mt-1 text-[11px] uppercase tracking-[0.1em] leading-snug text-white/75">{item.label}</dd>
-          </div>
-        ))}
-      </dl>
-    </div>
+    <dl>
+      {credentials.map((item, i) => (
+        <div
+          key={item.value}
+          className={`absolute z-10 max-w-[60%] border border-white/15 border-l-2 border-l-cyan bg-canvas/80 backdrop-blur-md px-3 py-2 shadow-[0_12px_30px_rgba(0,0,0,0.45)] ${positions[i]}`}
+        >
+          <dt className="font-display text-sm font-extrabold leading-none text-cyan">{item.value}</dt>
+          <dd className="mt-1 text-[10px] uppercase tracking-[0.1em] leading-snug text-white/75">{item.label}</dd>
+        </div>
+      ))}
+    </dl>
   );
 }
 
@@ -71,7 +67,9 @@ export default function HeroSection() {
                     className="object-cover"
                   />
                 </div>
-                <CredentialsCard className="right-0 bottom-6 w-[52%]" />
+                <CredentialTags
+                  positions={['left-[50%] top-[10%]', 'left-[56%] top-[42%]', 'left-[48%] bottom-[8%] !max-w-[50%]']}
+                />
               </figure>
               <CtaButton />
             </div>
@@ -95,7 +93,7 @@ export default function HeroSection() {
           </div>
 
           {/* Desktop: a foto ocupa a altura da coluna do texto, sem cortes (proporção 2:3),
-              e o cartão de credenciais fica sobreposto ao canto inferior esquerdo */}
+              e as credenciais ficam como selos separados sobre as bordas */}
           <div className="hidden lg:block lg:col-span-5 relative">
             <figure className="absolute inset-y-0 right-0 h-full max-w-full aspect-[2/3]">
               <Image
@@ -106,7 +104,7 @@ export default function HeroSection() {
                 sizes="(min-width: 1024px) 480px, 1px"
                 className="object-cover"
               />
-              <CredentialsCard className="-left-12 bottom-10 w-60" />
+              <CredentialTags positions={['-left-10 top-[14%]', '-right-4 top-[46%]', '-left-12 bottom-[10%]']} />
             </figure>
           </div>
         </div>
