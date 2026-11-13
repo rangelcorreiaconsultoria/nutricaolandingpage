@@ -8,6 +8,28 @@ const credentials = [
   { value: 'Professor', label: 'USP · UNIT · IBRAS · Uniguaçu' },
 ];
 
+// Cartão de credenciais sobreposto à foto (vidro escuro com filete ciano).
+function CredentialsCard({ className = '' }: { className?: string }) {
+  return (
+    <div
+      className={`absolute z-10 border border-white/15 border-l-2 border-l-cyan bg-canvas/75 backdrop-blur-md shadow-[0_20px_50px_rgba(0,0,0,0.5)] ${className}`}
+    >
+      <p className="flex items-center gap-2 px-4 pt-3 pb-2 font-display text-xs font-bold uppercase tracking-[0.14em]">
+        <span className="block w-4 h-px bg-cyan" aria-hidden="true" />
+        Icaro Andrade
+      </p>
+      <dl className="divide-y divide-white/10">
+        {credentials.map((item) => (
+          <div key={item.value} className="px-4 py-2.5">
+            <dt className="font-display text-lg lg:text-xl font-extrabold leading-none text-cyan">{item.value}</dt>
+            <dd className="mt-1 text-[11px] uppercase tracking-[0.1em] leading-snug text-white/75">{item.label}</dd>
+          </div>
+        ))}
+      </dl>
+    </div>
+  );
+}
+
 function CtaButton({ className = '' }: { className?: string }) {
   return (
     <a
@@ -38,30 +60,19 @@ export default function HeroSection() {
 
             {/* Celular: foto de corpo inteiro, credenciais e CTA logo abaixo do título, sem precisar rolar */}
             <div className="lg:hidden mb-10">
-              <div className="grid grid-cols-[minmax(0,2fr)_minmax(0,3fr)] gap-4 items-end mb-6">
-                <figure>
-                  <div className="relative aspect-[2/3]">
-                    <Image
-                      src="/images/hero.jpeg"
-                      alt="Icaro Andrade, nutricionista"
-                      fill
-                      loading="eager"
-                      sizes="(min-width: 1024px) 1px, 40vw"
-                      className="object-contain object-bottom"
-                    />
-                  </div>
-                </figure>
-                <dl className="grid gap-px bg-white/10 text-white">
-                  {credentials.map((item) => (
-                    <div key={item.value} className="bg-surface px-3 py-3">
-                      <dt className="font-display text-lg font-extrabold leading-none text-cyan">{item.value}</dt>
-                      <dd className="mt-1.5 text-[11px] uppercase tracking-[0.1em] leading-snug text-white/75">
-                        {item.label}
-                      </dd>
-                    </div>
-                  ))}
-                </dl>
-              </div>
+              <figure className="relative mb-6">
+                <div className="relative w-[60%] aspect-[2/3]">
+                  <Image
+                    src="/images/hero.jpeg"
+                    alt="Icaro Andrade, nutricionista"
+                    fill
+                    loading="eager"
+                    sizes="(min-width: 1024px) 1px, 60vw"
+                    className="object-cover"
+                  />
+                </div>
+                <CredentialsCard className="right-0 bottom-6 w-[52%]" />
+              </figure>
               <CtaButton />
             </div>
 
@@ -83,35 +94,20 @@ export default function HeroSection() {
             <CtaButton className="hidden lg:inline-flex" />
           </div>
 
-          {/* Desktop: a altura da foto acompanha a coluna do texto (a foto absorve a diferença) */}
+          {/* Desktop: a foto ocupa a altura da coluna do texto, sem cortes (proporção 2:3),
+              e o cartão de credenciais fica sobreposto ao canto inferior esquerdo */}
           <div className="hidden lg:block lg:col-span-5 relative">
-            <div className="absolute inset-0 flex flex-col">
-              <figure className="flex flex-col flex-1 min-h-0">
-                <div className="relative flex-1 min-h-0 overflow-hidden">
-                  <Image
-                    src="/images/hero.jpeg"
-                    alt="Icaro Andrade, nutricionista"
-                    fill
-                    priority
-                    sizes="(min-width: 1024px) 480px, 1px"
-                    className="object-contain object-center"
-                  />
-                </div>
-                <figcaption className="mt-3 flex items-start gap-3 font-display text-sm font-bold uppercase tracking-[0.12em] leading-snug">
-                  <span className="block w-6 h-px bg-cyan mt-2.5 shrink-0" />
-                  <span>Icaro Andrade</span>
-                </figcaption>
-              </figure>
-
-              <dl className="mt-4 grid grid-cols-3 gap-px bg-white/10 text-white">
-                {credentials.map((item) => (
-                  <div key={item.value} className="bg-surface px-4 py-4">
-                    <dt className="font-display text-xl font-extrabold leading-none text-cyan">{item.value}</dt>
-                    <dd className="mt-2 text-[11px] uppercase tracking-[0.1em] leading-snug text-white/75">{item.label}</dd>
-                  </div>
-                ))}
-              </dl>
-            </div>
+            <figure className="absolute inset-y-0 right-0 h-full max-w-full aspect-[2/3]">
+              <Image
+                src="/images/hero.jpeg"
+                alt="Icaro Andrade, nutricionista"
+                fill
+                priority
+                sizes="(min-width: 1024px) 480px, 1px"
+                className="object-cover"
+              />
+              <CredentialsCard className="-left-12 bottom-10 w-60" />
+            </figure>
           </div>
         </div>
       </div>
