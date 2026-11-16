@@ -86,6 +86,22 @@
   }
 }
 
+/* Degradê da cor da seção anterior no topo da seção (ver SectionBlend) */
+.section-blend {
+  position: relative;
+  isolation: isolate;
+}
+
+.section-blend::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: clamp(96px, 14vw, 180px);
+  background: linear-gradient(to bottom, var(--prev-bg), transparent);
+  pointer-events: none;
+  z-index: -1;
+}
+
 [data-reveal] {
   transition-property: opacity, transform;
   transition-duration: 0.5s;

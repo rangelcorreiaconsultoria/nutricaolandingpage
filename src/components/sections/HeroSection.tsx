@@ -91,9 +91,6 @@ export default function HeroSection() {
               </p>
             </div>
 
-            <p className="font-display text-2xl font-semibold uppercase tracking-tight leading-tight lg:mb-6 border-l-2 border-cyan pl-5">
-              Atendimento presencial na Pajuçara, em Maceió.
-            </p>
             <CtaButton className="hidden lg:inline-flex" />
           </div>
 
