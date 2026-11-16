@@ -66,7 +66,7 @@ export default function HeroSection() {
               <figure className="relative mb-6">
                 <div className="relative w-full aspect-[2/3]">
                   <Image
-                    src="/images/hero.jpeg"
+                    src="/images/hero.webp"
                     alt="Icaro Andrade, nutricionista"
                     fill
                     loading="eager"
@@ -102,7 +102,7 @@ export default function HeroSection() {
           <div className="hidden lg:block lg:col-span-5 relative">
             <figure className="absolute inset-y-0 right-0 h-full max-w-full aspect-[2/3]">
               <Image
-                src="/images/hero.jpeg"
+                src="/images/hero.webp"
                 alt="Icaro Andrade, nutricionista"
                 fill
                 priority
