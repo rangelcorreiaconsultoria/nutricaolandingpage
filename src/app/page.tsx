@@ -13,7 +13,6 @@ import FaqSection from '@/components/sections/FaqSection';
 import ScrollTape from '@/components/common/ScrollTape';
 import RevealObserver from '@/components/common/RevealObserver';
 import MobileWhatsAppBar from '@/components/common/MobileWhatsAppBar';
-import SectionBlend from '@/components/common/SectionBlend';
 
 export default function Home() {
   return (
@@ -39,7 +38,6 @@ export default function Home() {
       </main>
       <Footer />
       <MobileWhatsAppBar />
-      <SectionBlend />
       <ScrollTape />
       <RevealObserver />
     </>
