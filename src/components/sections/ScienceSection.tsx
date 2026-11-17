@@ -34,16 +34,16 @@ export default function ScienceSection() {
             A mesma ciência. <span className="highlight">Diferentes objetivos.</span>
           </h2>
           <div className="lg:col-span-6 space-y-6 text-lg text-text-secondary leading-relaxed">
-            <p>
+            <p data-reveal>
               A experiência que construí acompanhando atletas de alto rendimento também orienta meu trabalho com pessoas que desejam emagrecer, ganhar massa muscular ou cuidar melhor da saúde.
             </p>
-            <p className="border-l-2 border-cyan pl-6 text-fg font-medium">
+            <p data-reveal className="border-l-2 border-cyan pl-6 text-fg font-medium">
               O que muda são as necessidades e as estratégias. O rigor por trás de cada decisão permanece.
             </p>
           </div>
         </div>
 
-        <p className="flex items-center gap-3 font-display text-base font-bold uppercase tracking-[0.2em] mb-8">
+        <p data-reveal className="flex items-center gap-3 font-display text-base font-bold uppercase tracking-[0.2em] mb-8">
           Atletas que já confiaram no meu trabalho
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00B9CF" strokeWidth="2.5" aria-hidden="true">
             <path d="M12 5v14M6 13l6 6 6-6" />
@@ -51,15 +51,10 @@ export default function ScienceSection() {
         </p>
 
         <ul className="grid grid-cols-2 lg:grid-cols-4 gap-x-4 gap-y-10 lg:gap-x-6">
-          {athletes.map((athlete, i) => (
-            <li
-              key={athlete.name}
-              data-reveal
-              style={{ '--reveal-delay': `${i * 120}ms` } as React.CSSProperties}
-              className="group"
-            >
+          {athletes.map((athlete) => (
+            <li key={athlete.name} className="group">
               <figure>
-                <div className="relative aspect-[4/5] bg-deep overflow-hidden">
+                <div data-reveal="cortina" className="relative aspect-[4/5] bg-deep overflow-hidden">
                   <Image
                     src={athlete.src}
                     alt={`${athlete.name}, ${athlete.role}`}
@@ -72,7 +67,7 @@ export default function ScienceSection() {
                     className="absolute inset-x-0 bottom-0 h-1 w-0 bg-cyan transition-[width] duration-500 group-hover:w-full"
                   />
                 </div>
-                <figcaption className="mt-4">
+                <figcaption data-reveal className="mt-4">
                   <span className="block font-display text-xl md:text-2xl font-extrabold uppercase tracking-tight leading-none transition-colors duration-300 group-hover:text-cyan">
                     {athlete.name}
                   </span>

@@ -15,13 +15,13 @@ export default function ScaleSection() {
               <span className="highlight">Não conta toda a história.</span>
             </h2>
             <div className="space-y-6 text-lg text-text-secondary leading-relaxed max-w-2xl">
-              <p>
+              <p data-reveal>
                 Duas pessoas com o mesmo peso podem apresentar composições corporais completamente diferentes. E nem toda evolução aparece na balança.
               </p>
-              <p>
+              <p data-reveal>
                 Por isso, a avaliação da composição corporal é uma parte importante do acompanhamento.
               </p>
-              <p className="border-l-2 border-cyan pl-6 text-fg font-medium">
+              <p data-reveal className="border-l-2 border-cyan pl-6 text-fg font-medium">
                 Por meio de medidas padronizadas e uma interpretação criteriosa dos resultados, conseguimos acompanhar com maior precisão as mudanças na composição corporal, tomar decisões mais fundamentadas e ajustar continuamente a estratégia para acelerar a sua evolução.
               </p>
             </div>
@@ -30,6 +30,7 @@ export default function ScaleSection() {
               href={whatsappUrl(MSG_EVALUATION)}
               target="_blank"
               rel="noopener noreferrer"
+              data-reveal
               className="btn btn-primary mt-10 w-full sm:w-auto"
             >
               Desejo realizar uma avaliação
@@ -41,7 +42,7 @@ export default function ScaleSection() {
           </div>
 
           <div className="lg:col-span-6 min-w-0 overflow-hidden bg-raise p-5 md:p-8">
-            <p className="font-display text-base font-bold uppercase tracking-[0.2em] mb-8">
+            <p data-reveal className="font-display text-base font-bold uppercase tracking-[0.2em] mb-8">
               Mesmo peso na balança
             </p>
             <ScaleReveal />

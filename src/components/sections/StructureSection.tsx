@@ -12,13 +12,15 @@ export default function StructureSection() {
               <span className="highlight">o que precisa mudar.</span>
             </h2>
           </div>
-          <p className="lg:col-span-5 text-text-secondary text-lg leading-relaxed border-l-2 border-cyan pl-6">
+          <p data-reveal className="lg:col-span-5 text-text-secondary text-lg leading-relaxed border-l-2 border-cyan pl-6">
             Meu trabalho é construir uma estratégia para você, acompanhar sua execução e realizar os ajustes necessários ao longo do processo.
           </p>
         </div>
 
-        <WorkflowAccordion />
-        <WorkflowRuler />
+        <div data-reveal>
+          <WorkflowAccordion />
+          <WorkflowRuler />
+        </div>
       </div>
     </section>
   );

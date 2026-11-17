@@ -26,11 +26,11 @@ export default function StartSection() {
             </h2>
           </div>
 
-          <div className="lg:col-span-6 lg:col-start-7 lg:row-start-1 lg:row-span-2">
+          <div data-reveal className="lg:col-span-6 lg:col-start-7 lg:row-start-1 lg:row-span-2">
             <ChatPhone onGoalChange={onGoalChange} />
           </div>
 
-          <div className="lg:col-span-6 lg:self-start">
+          <div data-reveal className="lg:col-span-6 lg:self-start">
             <a
               href={whatsappUrl(message)}
               target="_blank"

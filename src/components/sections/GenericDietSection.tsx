@@ -13,31 +13,33 @@ export default function GenericDietSection() {
           </h2>
 
           <div className="lg:col-span-6 space-y-6 text-lg text-text-secondary leading-relaxed">
-            <p>
+            <p data-reveal>
               Hoje, qualquer pessoa consegue pedir uma dieta à inteligência artificial. E talvez você já tenha uma boa noção do que precisa comer para emagrecer ou ganhar massa muscular.
             </p>
-            <p className="text-white font-medium">Mas saber o que comer é apenas uma parte do processo.</p>
-            <p>
+            <p data-reveal className="text-white font-medium">Mas saber o que comer é apenas uma parte do processo.</p>
+            <p data-reveal>
               Como saber se a estratégia está funcionando? Quando aumentar ou reduzir as calorias? Quando mudar a distribuição dos nutrientes? E o que fazer quando os resultados deixam de aparecer?
             </p>
-            <p className="text-white font-medium">
+            <p data-reveal className="text-white font-medium">
               É nesse momento que o acompanhamento profissional faz diferença.
             </p>
-            <p>
+            <p data-reveal>
               Uma boa estratégia nutricional não é estática. Ela precisa ser constantemente avaliada e ajustada de acordo com sua evolução, seus treinos, sua rotina e seus objetivos.
             </p>
-            <p>Porque o que funciona para você hoje pode não ser a melhor estratégia daqui a algumas semanas.</p>
+            <p data-reveal>Porque o que funciona para você hoje pode não ser a melhor estratégia daqui a algumas semanas.</p>
           </div>
         </div>
 
         <div className="mt-16 flex flex-col items-center">
-          <p className="font-display text-2xl md:text-3xl font-bold uppercase tracking-tight text-white mb-8 text-center">
+          <p data-reveal className="font-display text-2xl md:text-3xl font-bold uppercase tracking-tight text-white mb-8 text-center">
             O que eu considero antes de cada decisão?
           </p>
-          <ConvergenceDiagram />
+          <div data-reveal className="w-full flex justify-center">
+            <ConvergenceDiagram />
+          </div>
         </div>
 
-        <p className="mt-16 md:mt-20 mx-auto max-w-4xl text-center font-display text-2xl md:text-4xl font-bold uppercase tracking-tight leading-tight">
+        <p data-reveal className="mt-16 md:mt-20 mx-auto max-w-4xl text-center font-display text-2xl md:text-4xl font-bold uppercase tracking-tight leading-tight">
           Esses fatores não são avaliados apenas na primeira consulta.{' '}
           <span className="text-cyan">Eles orientam cada ajuste ao longo do seu acompanhamento.</span>
         </p>
