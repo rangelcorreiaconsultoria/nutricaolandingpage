@@ -1,5 +1,3 @@
-import ScaleReveal from '@/components/common/ScaleReveal';
-import Tilt3D from '@/components/common/Tilt3D';
 import NewTabHint from '@/components/common/NewTabHint';
 import { MSG_EVALUATION, whatsappUrl } from '@/lib/contact';
 
@@ -9,13 +7,14 @@ export default function ScaleSection() {
       <div className="container">
         <p className="section-label mb-8">Composição corporal</p>
 
-        <div className="grid lg:grid-cols-12 gap-x-12 gap-y-12 items-start">
+        <div className="grid lg:grid-cols-12 gap-x-12 gap-y-8 items-start">
+          <h2 className="lg:col-span-6">
+            A balança mostra seu peso.{' '}
+            <span className="highlight">Não conta toda a história.</span>
+          </h2>
+
           <div className="lg:col-span-6">
-            <h2 className="mb-10">
-              A balança mostra seu peso.{' '}
-              <span className="highlight">Não conta toda a história.</span>
-            </h2>
-            <div className="space-y-6 text-lg text-text-secondary leading-relaxed max-w-2xl">
+            <div className="space-y-6 text-lg text-text-secondary leading-relaxed">
               <p>
                 Duas pessoas com o mesmo peso podem apresentar composições corporais completamente diferentes. E nem toda evolução aparece na balança.
               </p>
@@ -40,15 +39,6 @@ export default function ScaleSection() {
               <NewTabHint />
             </a>
           </div>
-
-          <Tilt3D enter="flip-up" max={5} className="lg:col-span-6 min-w-0">
-          <div className="overflow-hidden bg-raise p-5 md:p-8">
-            <p className="font-display text-base font-bold uppercase tracking-[0.2em] mb-8">
-              Mesmo peso na balança
-            </p>
-            <ScaleReveal />
-          </div>
-          </Tilt3D>
         </div>
       </div>
     </section>
