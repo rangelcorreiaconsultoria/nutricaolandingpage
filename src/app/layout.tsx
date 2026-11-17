@@ -6,7 +6,8 @@ import './globals.css';
 
 const barlow = Barlow({
   subsets: ['latin'],
-  weight: ['400', '500', '600'],
+  weight: ['400', '500', '600', '700'],
+  style: ['normal', 'italic'],
   variable: '--font-barlow',
 });
 

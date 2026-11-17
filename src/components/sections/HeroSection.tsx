@@ -1,37 +1,7 @@
-import Image from 'next/image';
 import Tilt3D from '@/components/common/Tilt3D';
+import HeroPhoto from '@/components/common/HeroPhoto';
 import NewTabHint from '@/components/common/NewTabHint';
 import { MSG_OBJECTIVES, whatsappUrl } from '@/lib/contact';
-
-const credentials = [
-  { value: 'CRN-6 37419', label: 'Nutricionista' },
-  { value: 'ACSM', label: 'Nutrição esportiva' },
-  { value: 'Professor', label: 'USP · UNIT · IBRAS · Uniguaçu' },
-];
-
-// Credenciais como três selos separados, em linha na parte de baixo da foto,
-// sobre um degradê escuro que integra os selos à imagem.
-function CredentialTags({ className = '' }: { className?: string }) {
-  return (
-    <>
-      <div
-        aria-hidden="true"
-        className="absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-canvas/95 via-canvas/60 to-transparent pointer-events-none"
-      />
-      <dl className={'absolute z-10 grid grid-cols-3 gap-1.5 lg:gap-2 ' + className}>
-        {credentials.map((item) => (
-          <div
-            key={item.value}
-            className="border border-white/15 border-l-2 border-l-cyan bg-canvas/80 backdrop-blur-md px-2 py-1.5 lg:px-3 lg:py-2 shadow-[0_12px_30px_rgba(0,0,0,0.45)]"
-          >
-            <dt className="font-display text-[13px] lg:text-sm font-extrabold leading-none text-cyan">{item.value}</dt>
-            <dd className="mt-1 text-[9px] lg:text-[10px] uppercase tracking-[0.08em] leading-snug text-white/75">{item.label}</dd>
-          </div>
-        ))}
-      </dl>
-    </>
-  );
-}
 
 function CtaButton({ className = '', heroCta = false }: { className?: string; heroCta?: boolean }) {
   return (
@@ -62,21 +32,11 @@ export default function HeroSection() {
               <span className="underline-cyan">o corpo que deseja?</span>
             </h1>
 
-            {/* Celular: foto em largura total com as credenciais dentro dela, e o CTA logo abaixo */}
+            {/* Celular: foto em largura total com as credenciais à direita, e o CTA logo abaixo */}
             <div className="lg:hidden mb-10">
-              <figure className="relative mb-6">
-                <div className="relative w-full aspect-[2/3]">
-                  <Image
-                    src="/images/hero.webp"
-                    alt="Icaro Andrade, nutricionista"
-                    fill
-                    loading="eager"
-                    sizes="(min-width: 1024px) 1px, 100vw"
-                    className="object-cover"
-                  />
-                </div>
-                <CredentialTags className="inset-x-2 bottom-2" />
-              </figure>
+              <div className="relative w-full aspect-[4/5] mb-6">
+                <HeroPhoto sizes="(min-width: 1024px) 1px, 100vw" />
+              </div>
               <CtaButton heroCta />
             </div>
 
@@ -95,22 +55,11 @@ export default function HeroSection() {
             <CtaButton className="hidden lg:inline-flex" />
           </div>
 
-          {/* Desktop: a foto ocupa a altura da coluna do texto, sem cortes (proporção 2:3),
-              como um card 3D que inclina com o mouse e as credenciais flutuando à frente */}
+          {/* Desktop: a foto ocupa a altura da coluna do texto, como um card 3D que
+              inclina com o mouse, com as credenciais flutuando à frente */}
           <div className="hidden lg:block lg:col-span-5 relative">
-            <Tilt3D max={10} className="absolute inset-y-0 right-0 h-full max-w-full aspect-[2/3]">
-            <figure className="relative h-full w-full [transform-style:preserve-3d]">
-              <Image
-                src="/images/hero.webp"
-                alt="Icaro Andrade, nutricionista"
-                fill
-                priority
-                sizes="(min-width: 1024px) 480px, 1px"
-                className="object-cover"
-              />
-              {/* Selos à frente da foto, em profundidade, quando o card inclina */}
-              <CredentialTags className="inset-x-3 bottom-3 [transform:translateZ(70px)]" />
-            </figure>
+            <Tilt3D max={10} className="absolute inset-y-0 right-0 h-full max-w-full aspect-[4/5]">
+              <HeroPhoto priority sizes="(min-width: 1024px) 480px, 1px" />
             </Tilt3D>
           </div>
         </div>
