@@ -1,5 +1,4 @@
 import ConvergenceDiagram from '@/components/common/ConvergenceDiagram';
-import Tilt3D from '@/components/common/Tilt3D';
 
 export default function GenericDietSection() {
   return (
@@ -31,13 +30,11 @@ export default function GenericDietSection() {
           </div>
         </div>
 
-        <div className="mt-16 flex flex-col items-center">
+        <div className="mt-16 flex flex-col items-center overflow-x-clip">
           <p className="font-display text-2xl md:text-3xl font-bold uppercase tracking-tight text-white mb-8 text-center">
             O que eu considero antes de cada decisão?
           </p>
-          <Tilt3D enter="depth" max={6} className="w-full" innerClassName="flex justify-center">
-            <ConvergenceDiagram />
-          </Tilt3D>
+          <ConvergenceDiagram />
         </div>
 
         <p className="mt-16 md:mt-20 mx-auto max-w-4xl text-center font-display text-2xl md:text-4xl font-bold uppercase tracking-tight leading-tight">
