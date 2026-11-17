@@ -10,6 +10,14 @@
     color-scheme: dark;
   }
 
+  /* Nada passa da largura da tela: os cards 3D giram e saem um pouco para os
+     lados, mas sem criar rolagem lateral. "clip" (e não "hidden") mantém o
+     position: sticky funcionando. */
+  html,
+  body {
+    overflow-x: clip;
+  }
+
   body {
     @apply font-sans antialiased bg-canvas text-fg;
     font-weight: 400;

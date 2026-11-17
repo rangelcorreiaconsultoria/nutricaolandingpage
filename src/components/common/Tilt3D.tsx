@@ -8,7 +8,7 @@ type Enter = 'swing-left' | 'swing-right' | 'flip-up' | 'depth';
 const ENTER: Record<Enter, { transform: string; origin: string }> = {
   'swing-left': { transform: 'rotateY(-70deg) translateZ(-160px)', origin: 'left center' },
   'swing-right': { transform: 'rotateY(70deg) translateZ(-160px)', origin: 'right center' },
-  'flip-up': { transform: 'rotateX(-75deg) translateY(40px)', origin: 'center bottom' },
+  'flip-up': { transform: 'rotateX(-50deg) translateY(40px) scale(0.92)', origin: 'center bottom' },
   depth: { transform: 'translateZ(-520px) rotateX(18deg) rotateZ(-5deg)', origin: 'center center' },
 };
 

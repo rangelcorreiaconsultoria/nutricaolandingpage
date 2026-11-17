@@ -88,10 +88,10 @@ export default function AthleteCarousel({ athletes }: { athletes: Athlete[] }) {
             <li
               key={a.name}
               aria-hidden={!front}
-              className="absolute left-1/2 top-0 w-[58%] sm:w-[300px]"
+              className="absolute left-1/2 top-0 w-[52%] sm:w-[300px]"
               style={{
                 zIndex: 10 - Math.abs(d),
-                transform: `translateX(calc(-50% + ${d * 80}%)) translateZ(${-Math.abs(d) * 200}px) rotateY(${-d * 32}deg)`,
+                transform: `translateX(calc(-50% + ${d * 72}%)) translateZ(${-Math.abs(d) * 200}px) rotateY(${-d * 32}deg)`,
                 opacity: far ? 0 : front ? 1 : 0.7,
                 transition: 'transform 0.9s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.6s ease-out, filter 0.6s ease-out',
                 filter: front ? 'none' : 'grayscale(0.8) brightness(0.7)',
@@ -109,11 +109,12 @@ export default function AthleteCarousel({ athletes }: { athletes: Athlete[] }) {
                     alt={`${a.name}, ${a.role}`}
                     fill
                     draggable={false}
-                    sizes="(min-width: 640px) 300px, 58vw"
+                    sizes="(min-width: 640px) 300px, 52vw"
                     className="object-cover object-top"
                   />
                 </div>
-                <figcaption className="mt-4">
+                {/* Só o atleta da frente mostra a legenda: as laterais se sobrepõem no celular */}
+                <figcaption className={`mt-4 transition-opacity duration-500 ${front ? 'opacity-100' : 'opacity-0'}`}>
                   <span className="block font-display text-xl md:text-2xl font-extrabold uppercase tracking-tight leading-none">
                     {a.name}
                   </span>
