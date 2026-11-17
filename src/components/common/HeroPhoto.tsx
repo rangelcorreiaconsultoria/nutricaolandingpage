@@ -8,28 +8,27 @@ type Props = {
 
 // Foto do topo com as credenciais à direita, no estilo da arte de divulgação:
 // número do CRN grande, faixas ciano inclinadas e o bloco de professor. A foto
-// esmaece para o fundo à direita e cada peça entra em sequência (ver .cred-* no
-// globals.css). Tudo é medido em cqw, então a composição é a mesma em qualquer
+// já vem com o lado direito escurecido, onde cada peça entra em sequência (ver
+// .cred-* no globals.css). Tudo é medido em cqw, então a composição é a mesma em qualquer
 // largura, do celular ao desktop.
 export default function HeroPhoto({ priority = false, sizes }: Props) {
   return (
     <figure className="hero-photo relative h-full w-full overflow-hidden [container-type:inline-size]">
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 bg-[radial-gradient(circle_at_85%_30%,rgba(0,185,207,0.28),transparent_55%),linear-gradient(160deg,#0f3a44_0%,#0c2129_55%,#0b1113_100%)]"
-      />
-
-      <div className="cred-photo absolute bottom-0 -left-[12%] h-[96%] aspect-[2/3]">
+      <div className="cred-photo absolute inset-0">
         <Image
-          src="/images/hero-foto.webp"
+          src="/images/hero.webp"
           alt="Icaro Andrade, nutricionista"
           fill
           priority={priority}
           loading={priority ? undefined : 'eager'}
           sizes={sizes}
-          className="object-cover"
+          className="object-cover object-left"
         />
       </div>
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 bg-[radial-gradient(circle_at_82%_38%,rgba(0,185,207,0.22),transparent_50%)]"
+      />
 
       {/* Duas listras diagonais no canto, como na arte */}
       <svg
@@ -42,7 +41,7 @@ export default function HeroPhoto({ priority = false, sizes }: Props) {
         <line x1="104" y1="42" x2="58" y2="104" stroke="currentColor" strokeWidth="7" vectorEffect="non-scaling-stroke" />
       </svg>
 
-      <dl className="absolute right-[4%] top-[27%] w-[48%] text-white">
+      <dl className="absolute right-[3%] top-[24%] w-[42%] text-white">
         <div>
           <dt className="sr-only">Registro profissional</dt>
           <dd>

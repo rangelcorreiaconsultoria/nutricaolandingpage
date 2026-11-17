@@ -94,11 +94,9 @@
   }
 }
 
-/* Foto do topo (HeroPhoto): a foto esmaece para o fundo à direita, onde
-   as credenciais entram uma a uma logo que a página abre */
+/* Foto do topo (HeroPhoto): as credenciais entram uma a uma, sobre o lado
+   escuro da foto, logo que a página abre */
 .cred-photo {
-  -webkit-mask-image: linear-gradient(to right, #000 45%, transparent 92%);
-  mask-image: linear-gradient(to right, #000 45%, transparent 92%);
   animation: cred-photo-in 1.2s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 

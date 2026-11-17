@@ -4,7 +4,7 @@ import { useEffect, useRef } from 'react';
 import * as THREE from 'three';
 
 const PHOTOS = [
-  '/images/hero-foto.webp',
+  '/images/hero.webp',
   '/images/edsonaguiar.jpeg',
   '/images/viniciusbelo.jpeg',
   '/images/trecho7.jpeg',

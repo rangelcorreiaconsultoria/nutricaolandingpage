@@ -34,7 +34,7 @@ export default function HeroSection() {
 
             {/* Celular: foto em largura total com as credenciais à direita, e o CTA logo abaixo */}
             <div className="lg:hidden mb-10">
-              <div className="relative w-full aspect-[4/5] mb-6">
+              <div className="relative w-full aspect-square mb-6">
                 <HeroPhoto sizes="(min-width: 1024px) 1px, 100vw" />
               </div>
               <CtaButton heroCta />
@@ -55,11 +55,11 @@ export default function HeroSection() {
             <CtaButton className="hidden lg:inline-flex" />
           </div>
 
-          {/* Desktop: a foto ocupa a altura da coluna do texto, como um card 3D que
-              inclina com o mouse, com as credenciais flutuando à frente */}
-          <div className="hidden lg:block lg:col-span-5 relative">
-            <Tilt3D max={10} className="absolute inset-y-0 right-0 h-full max-w-full aspect-[4/5]">
-              <HeroPhoto priority sizes="(min-width: 1024px) 480px, 1px" />
+          {/* Desktop: a foto quadrada ao lado do texto, como um card 3D que
+              inclina com o mouse */}
+          <div className="hidden lg:flex lg:col-span-5 items-center">
+            <Tilt3D max={10} className="w-full aspect-square">
+              <HeroPhoto priority sizes="(min-width: 1024px) 520px, 1px" />
             </Tilt3D>
           </div>
         </div>
