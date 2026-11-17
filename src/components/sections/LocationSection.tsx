@@ -1,9 +1,10 @@
+import Tilt3D from '@/components/common/Tilt3D';
 import NewTabHint from '@/components/common/NewTabHint';
 import { ADDRESS, MAPS_EMBED_URL, MAPS_SEARCH_URL } from '@/lib/contact';
 
 export default function LocationSection() {
   return (
-    <section id="local" className="md:py-28 py-20 bg-canvas">
+    <section id="local" className="md:py-28 py-20">
       <div className="container">
         <p className="section-label mb-8">O local</p>
 
@@ -13,20 +14,20 @@ export default function LocationSection() {
             <span className="highlight">sua evolução.</span>
           </h2>
           <div className="lg:col-span-5 space-y-5 text-lg text-text-secondary leading-relaxed">
-            <p data-reveal>
+            <p>
               Seu atendimento acontece presencialmente na Academia Gaviões, na Pajuçara, em Maceió.
             </p>
-            <p data-reveal>
+            <p>
               Um ambiente dedicado à avaliação, ao planejamento nutricional e ao acompanhamento sob medida.
             </p>
-            <p data-reveal className="border-l-2 border-cyan pl-6 text-fg font-medium">
+            <p className="border-l-2 border-cyan pl-6 text-fg font-medium">
               Aqui, cada consulta é uma oportunidade de compreender sua evolução e definir os próximos passos.
             </p>
           </div>
         </div>
 
         <div className="grid lg:grid-cols-12 gap-6 items-stretch">
-          <div data-reveal className="lg:col-span-7 border border-line min-h-80">
+          <div className="lg:col-span-7 border border-line min-h-80">
             <iframe
               src={MAPS_EMBED_URL}
               title="Mapa: Academia Gaviões, Pajuçara, Maceió"
@@ -36,7 +37,8 @@ export default function LocationSection() {
             />
           </div>
 
-          <div data-reveal className="lg:col-span-5 bg-surface p-8 md:p-10 flex flex-col justify-between gap-8">
+          <Tilt3D enter="depth" className="lg:col-span-5">
+          <div className="h-full bg-surface p-8 md:p-10 flex flex-col justify-between gap-8">
             <div>
               <p className="font-display text-base font-bold uppercase tracking-[0.2em] mb-4">Endereço</p>
               <p className="font-display text-2xl font-semibold uppercase tracking-tight leading-snug mb-2">
@@ -59,6 +61,7 @@ export default function LocationSection() {
               <NewTabHint />
             </a>
           </div>
+          </Tilt3D>
         </div>
 
       </div>

@@ -18,16 +18,16 @@ const specialties = [
 
 const bio = (
   <div className="space-y-4 text-white/75 text-base lg:text-[17px] leading-relaxed">
-    <p data-reveal>
+    <p>
       Nutricionista especializado em Nutrição Esportiva pelo American College of Sports Medicine (ACSM) e em avaliação da composição corporal pela metodologia internacional ISAK.
     </p>
-    <p data-reveal>
+    <p>
       Professor e palestrante, já contribuiu para a formação de centenas de profissionais por meio de cursos presenciais e online, além de ministrar aulas em instituições como USP, Uniguaçu, UNIT e IBRAS.
     </p>
-    <p data-reveal>
+    <p>
       Sua trajetória reúne experiência acadêmica, rigor científico e prática clínica, com anos de atuação no acompanhamento nutricional de atletas de alto rendimento. Ao longo desse período, participou da preparação de atletas com conquistas nacionais e internacionais, incluindo representantes do atletismo brasileiro no Campeonato Mundial de Marcha Atlética.
     </p>
-    <p data-reveal className="text-white">
+    <p className="text-white">
       Hoje, aplica esse mesmo compromisso com a ciência e a personalização ao acompanhamento de pessoas que buscam melhorar a composição corporal, a saúde e o desempenho físico.
     </p>
   </div>
@@ -38,7 +38,7 @@ const specs = (
     <p className="font-display text-base font-bold uppercase tracking-[0.2em] text-cyan mb-4">Especialidades</p>
     <ul className="border-t border-line">
       {specialties.map((item) => (
-        <li key={item.title} data-reveal className="border-b border-line">
+        <li key={item.title} className="border-b border-line">
           <a
             href={whatsappUrl(`Olá, Icaro! Tenho interesse em: ${item.title}.`)}
             target="_blank"
@@ -98,7 +98,7 @@ export default function ProfessionalSection() {
         </p>
 
         <figure className={`w-full ${pinned ? 'flex flex-col flex-1 min-h-0' : 'max-w-md'}`}>
-          <div data-reveal="cortina" className={`relative bg-deep overflow-hidden ${pinned ? 'flex-1 min-h-[200px]' : 'aspect-[4/5]'}`}>
+          <div className={`relative bg-deep overflow-hidden ${pinned ? 'flex-1 min-h-[200px]' : 'aspect-[4/5]'}`}>
             <Image
               src="/images/trecho7.jpeg"
               alt="Icaro Andrade, nutricionista, professor e palestrante"
@@ -107,7 +107,7 @@ export default function ProfessionalSection() {
               className="object-cover object-top"
             />
           </div>
-          <figcaption data-reveal className="mt-3 flex items-start gap-3 font-display text-sm font-bold uppercase tracking-[0.12em] leading-snug">
+          <figcaption className="mt-3 flex items-start gap-3 font-display text-sm font-bold uppercase tracking-[0.12em] leading-snug">
             <span className="block w-6 h-px bg-cyan mt-2.5 shrink-0" />
             <span>
               Icaro Andrade <span className="text-cyan">│</span> Nutricionista, Professor e Palestrante
@@ -157,7 +157,7 @@ export default function ProfessionalSection() {
   const bar = <div className="absolute inset-y-0 left-0 w-2 bg-cyan" />;
 
   return (
-    <section id="icaro" className="md:py-28 py-20 bg-canvas">
+    <section id="icaro" className="md:py-28 py-20">
       <div className="container">
         {pinned ? (
           <div ref={outerRef} style={{ height: 'calc(100vh - 6rem + 110vh)' }}>

@@ -36,14 +36,12 @@ export default function ScaleReveal() {
         return (
           <div
             key={p.fat}
-            data-reveal
             className="absolute bottom-[4%] aspect-[1145/912]"
             style={
               {
                 left: `${p.center - IMG_WIDTH / 2}%`,
                 width: `${IMG_WIDTH}%`,
                 zIndex: isFocus ? 4 : i === 1 ? 2 : 1,
-                '--reveal-delay': `${i * 160}ms`,
               } as React.CSSProperties
             }
           >

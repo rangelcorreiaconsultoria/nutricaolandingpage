@@ -17,20 +17,19 @@ export default function FaqSection() {
   const [open, setOpen] = useState<number | null>(null);
 
   return (
-    <section id="duvidas" className="md:py-28 py-20 bg-canvas border-t border-line">
+    <section id="duvidas" className="md:py-28 py-20 border-t border-line">
       <div className="container">
 
         <div className="grid lg:grid-cols-12 gap-x-12 gap-y-10 items-start">
         <div className="lg:col-span-4 lg:sticky lg:top-28">
           <h2 className="mb-8">Dúvidas frequentes</h2>
-          <p data-reveal className="text-lg text-text-secondary leading-relaxed mb-8 max-w-sm">
+          <p className="text-lg text-text-secondary leading-relaxed mb-8 max-w-sm">
             Não encontrou a sua dúvida? Pergunte direto para mim pelo WhatsApp.
           </p>
           <a
             href={whatsappUrl(MSG_GENERAL)}
             target="_blank"
             rel="noopener noreferrer"
-            data-reveal
             className="btn btn-secondary w-full sm:w-auto"
           >
             Falar pelo WhatsApp
@@ -43,7 +42,7 @@ export default function FaqSection() {
             const isOpen = open === i;
             const id = `faq-${i}`;
             return (
-              <div key={question} data-reveal className="border-b border-line">
+              <div key={question} className="border-b border-line">
                 <h3 className="text-xl md:text-2xl">
                   <button
                     id={`${id}-btn`}

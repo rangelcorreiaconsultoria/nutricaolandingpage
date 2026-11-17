@@ -11,8 +11,8 @@ import PlansSection from '@/components/sections/PlansSection';
 import LocationSection from '@/components/sections/LocationSection';
 import FaqSection from '@/components/sections/FaqSection';
 import ScrollTape from '@/components/common/ScrollTape';
-import RevealObserver from '@/components/common/RevealObserver';
 import MobileWhatsAppBar from '@/components/common/MobileWhatsAppBar';
+import ImmersiveBackdrop from '@/components/common/ImmersiveBackdrop';
 
 export default function Home() {
   return (
@@ -23,8 +23,9 @@ export default function Home() {
       >
         Pular para o conteúdo
       </a>
+      <ImmersiveBackdrop />
       <Header />
-      <main id="main" tabIndex={-1} className="flex-grow focus:outline-none">
+      <main id="main" tabIndex={-1} className="relative z-10 flex-grow focus:outline-none">
         <HeroSection />
         <ScienceSection />
         <GenericDietSection />
@@ -39,7 +40,6 @@ export default function Home() {
       <Footer />
       <MobileWhatsAppBar />
       <ScrollTape />
-      <RevealObserver />
     </>
   );
 }

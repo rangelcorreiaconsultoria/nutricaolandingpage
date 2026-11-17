@@ -1,3 +1,4 @@
+import Tilt3D from '@/components/common/Tilt3D';
 import NewTabHint from '@/components/common/NewTabHint';
 import { MSG_AVAILABILITY, msgPlan, whatsappUrl } from '@/lib/contact';
 
@@ -38,7 +39,7 @@ const plans = [
 
 export default function PlansSection() {
   return (
-    <section id="formatos" className="md:py-28 py-20 bg-deep">
+    <section id="formatos" className="md:py-28 py-20 bg-deep/55">
       <div className="container">
         <div className="max-w-4xl mb-16">
           <p className="section-label mb-6">Planos</p>
@@ -46,8 +47,8 @@ export default function PlansSection() {
         </div>
 
         <div className="grid md:grid-cols-2 gap-6 mb-14">
-          {plans.map((plan) => (
-            <div key={plan.name} data-reveal className="flex">
+          {plans.map((plan, i) => (
+            <Tilt3D key={plan.name} enter={i === 0 ? 'swing-left' : 'swing-right'} delay={i * 120} max={6} className="flex" innerClassName="flex">
             <article className="flex-1 bg-raise p-8 md:p-10 border-t-2 border-fg hover:border-cyan transition-colors flex flex-col">
               <h3 className="text-5xl mb-5">{plan.name}</h3>
               <p className="mb-6 pb-6 border-b border-line">
@@ -78,11 +79,11 @@ export default function PlansSection() {
                 </a>
               </div>
             </article>
-            </div>
+            </Tilt3D>
           ))}
         </div>
 
-        <div data-reveal className="grid lg:grid-cols-[1fr_auto] gap-8 items-center bg-raise border border-line text-white p-8 md:p-12">
+        <div className="grid lg:grid-cols-[1fr_auto] gap-8 items-center bg-raise border border-line text-white p-8 md:p-12">
           <p className="text-lg leading-relaxed text-white/80 max-w-3xl">
             A minha prioridade é manter um excelente nível de serviço prestado aos meus pacientes. Por isso, opto por atender um número limitado de pessoas.
           </p>

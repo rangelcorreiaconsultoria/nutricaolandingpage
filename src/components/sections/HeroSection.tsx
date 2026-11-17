@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Tilt3D from '@/components/common/Tilt3D';
 import NewTabHint from '@/components/common/NewTabHint';
 import { MSG_OBJECTIVES, whatsappUrl } from '@/lib/contact';
 
@@ -52,7 +53,7 @@ function CtaButton({ className = '', heroCta = false }: { className?: string; he
 
 export default function HeroSection() {
   return (
-    <section id="inicio" className="relative bg-canvas overflow-hidden">
+    <section id="inicio" className="relative overflow-hidden">
       <div className="container pt-24 pb-20 md:pt-36 md:pb-28">
         <div className="grid lg:grid-cols-12 gap-x-12 gap-y-12 items-stretch">
           <div className="lg:col-span-7">
@@ -95,9 +96,10 @@ export default function HeroSection() {
           </div>
 
           {/* Desktop: a foto ocupa a altura da coluna do texto, sem cortes (proporção 2:3),
-              com as credenciais em linha na parte de baixo */}
+              como um card 3D que inclina com o mouse e as credenciais flutuando à frente */}
           <div className="hidden lg:block lg:col-span-5 relative">
-            <figure className="absolute inset-y-0 right-0 h-full max-w-full aspect-[2/3]">
+            <Tilt3D max={10} className="absolute inset-y-0 right-0 h-full max-w-full aspect-[2/3]">
+            <figure className="relative h-full w-full [transform-style:preserve-3d]">
               <Image
                 src="/images/hero.webp"
                 alt="Icaro Andrade, nutricionista"
@@ -106,8 +108,10 @@ export default function HeroSection() {
                 sizes="(min-width: 1024px) 480px, 1px"
                 className="object-cover"
               />
-              <CredentialTags className="inset-x-3 bottom-3" />
+              {/* Selos à frente da foto, em profundidade, quando o card inclina */}
+              <CredentialTags className="inset-x-3 bottom-3 [transform:translateZ(70px)]" />
             </figure>
+            </Tilt3D>
           </div>
         </div>
       </div>

@@ -1,10 +1,11 @@
 import ScaleReveal from '@/components/common/ScaleReveal';
+import Tilt3D from '@/components/common/Tilt3D';
 import NewTabHint from '@/components/common/NewTabHint';
 import { MSG_EVALUATION, whatsappUrl } from '@/lib/contact';
 
 export default function ScaleSection() {
   return (
-    <section className="md:py-28 py-20 bg-surface">
+    <section className="md:py-28 py-20 bg-surface/45">
       <div className="container">
         <p className="section-label mb-8">Composição corporal</p>
 
@@ -15,13 +16,13 @@ export default function ScaleSection() {
               <span className="highlight">Não conta toda a história.</span>
             </h2>
             <div className="space-y-6 text-lg text-text-secondary leading-relaxed max-w-2xl">
-              <p data-reveal>
+              <p>
                 Duas pessoas com o mesmo peso podem apresentar composições corporais completamente diferentes. E nem toda evolução aparece na balança.
               </p>
-              <p data-reveal>
+              <p>
                 Por isso, a avaliação da composição corporal é uma parte importante do acompanhamento.
               </p>
-              <p data-reveal className="border-l-2 border-cyan pl-6 text-fg font-medium">
+              <p className="border-l-2 border-cyan pl-6 text-fg font-medium">
                 Por meio de medidas padronizadas e uma interpretação criteriosa dos resultados, conseguimos acompanhar com maior precisão as mudanças na composição corporal, tomar decisões mais fundamentadas e ajustar continuamente a estratégia para acelerar a sua evolução.
               </p>
             </div>
@@ -30,7 +31,6 @@ export default function ScaleSection() {
               href={whatsappUrl(MSG_EVALUATION)}
               target="_blank"
               rel="noopener noreferrer"
-              data-reveal
               className="btn btn-primary mt-10 w-full sm:w-auto"
             >
               Desejo realizar uma avaliação
@@ -41,12 +41,14 @@ export default function ScaleSection() {
             </a>
           </div>
 
-          <div className="lg:col-span-6 min-w-0 overflow-hidden bg-raise p-5 md:p-8">
-            <p data-reveal className="font-display text-base font-bold uppercase tracking-[0.2em] mb-8">
+          <Tilt3D enter="flip-up" max={5} className="lg:col-span-6 min-w-0">
+          <div className="overflow-hidden bg-raise p-5 md:p-8">
+            <p className="font-display text-base font-bold uppercase tracking-[0.2em] mb-8">
               Mesmo peso na balança
             </p>
             <ScaleReveal />
           </div>
+          </Tilt3D>
         </div>
       </div>
     </section>

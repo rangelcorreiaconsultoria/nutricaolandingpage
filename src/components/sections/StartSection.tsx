@@ -2,6 +2,7 @@
 
 import { useCallback, useState } from 'react';
 import ChatPhone, { type ChatGoal } from '@/components/common/ChatPhone';
+import Tilt3D from '@/components/common/Tilt3D';
 import NewTabHint from '@/components/common/NewTabHint';
 import { MSG_CASE, whatsappUrl } from '@/lib/contact';
 
@@ -15,7 +16,7 @@ export default function StartSection() {
     : MSG_CASE;
 
   return (
-    <section id="como-comecar" className="md:py-28 py-20 bg-surface">
+    <section id="como-comecar" className="md:py-28 py-20 bg-surface/45">
       <div className="container">
         <div className="grid lg:grid-cols-12 gap-x-12 gap-y-12 items-center">
           <div className="lg:col-span-6 lg:self-end">
@@ -26,11 +27,13 @@ export default function StartSection() {
             </h2>
           </div>
 
-          <div data-reveal className="lg:col-span-6 lg:col-start-7 lg:row-start-1 lg:row-span-2">
-            <ChatPhone onGoalChange={onGoalChange} />
+          <div className="lg:col-span-6 lg:col-start-7 lg:row-start-1 lg:row-span-2">
+            <Tilt3D enter="depth" max={5}>
+              <ChatPhone onGoalChange={onGoalChange} />
+            </Tilt3D>
           </div>
 
-          <div data-reveal className="lg:col-span-6 lg:self-start">
+          <div className="lg:col-span-6 lg:self-start">
             <a
               href={whatsappUrl(message)}
               target="_blank"
