@@ -33,7 +33,7 @@ export default function AthleteGrid({ athletes }: { athletes: Athlete[] }) {
   }, []);
 
   return (
-    <ul ref={listRef} className="grid grid-cols-2 lg:grid-cols-4 gap-x-4 gap-y-10 lg:gap-x-6">
+    <ul ref={listRef} className="grid grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-10 lg:gap-x-6">
       {athletes.map((athlete, i) => {
         const on = focused.has(i);
         return (
@@ -44,7 +44,7 @@ export default function AthleteGrid({ athletes }: { athletes: Athlete[] }) {
                   src={athlete.src}
                   alt={`${athlete.name}, ${athlete.role}`}
                   fill
-                  sizes="(min-width: 1024px) 280px, 50vw"
+                  sizes="(min-width: 1024px) 380px, 50vw"
                   className={`object-cover object-top transition duration-700 ease-out group-hover:grayscale-0 group-hover:scale-105 ${
                     on ? 'grayscale-0 scale-105' : 'grayscale-[0.75]'
                   }`}

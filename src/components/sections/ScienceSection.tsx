@@ -21,6 +21,16 @@ const athletes = [
     role: 'Capitão AdidasRunners SÃO PAULO',
     src: '/images/andrejesus.jpeg',
   },
+  {
+    name: 'Fernando Costa',
+    role: 'Atleta de fisiculturismo, vice-campeão Sul-Americano',
+    src: '/images/fernandocosta.jpeg',
+  },
+  {
+    name: 'João Paulo Silva',
+    role: 'Vice-campeão da Meia Maratona do Recife',
+    src: '/images/joaopaulo.jpeg',
+  },
 ];
 
 export default function ScienceSection() {
