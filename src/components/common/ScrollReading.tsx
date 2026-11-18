@@ -3,8 +3,8 @@
 import { useEffect } from 'react';
 
 const SELECTOR = '[data-read] p, p[data-read]';
-const START = 0.9; // o parágrafo começa a acender quando o topo chega a 90% da tela
-const END = 0.6; // e termina de acender quando o fim chega a 60% da tela
+const START = 0.95; // o parágrafo começa a acender quando o topo chega a 95% da tela
+const END = 0.75; // e termina de acender quando o fim chega a 75% da tela
 
 // Texto que acende palavra por palavra conforme a pessoa rola: os parágrafos
 // marcados com data-read (neles ou num pai) começam apagados e cada palavra

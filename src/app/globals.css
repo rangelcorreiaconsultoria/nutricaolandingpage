@@ -164,7 +164,7 @@
 
 /* Texto que acende palavra por palavra com a rolagem (ScrollReading) */
 .read-word {
-  opacity: 0.18;
+  opacity: 0.42;
   transition: opacity 0.35s ease;
 }
 .read-word.is-lit {
