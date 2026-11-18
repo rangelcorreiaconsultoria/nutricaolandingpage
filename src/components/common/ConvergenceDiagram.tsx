@@ -17,14 +17,14 @@ export default function ConvergenceDiagram() {
       setLit(true);
       return;
     }
+    // Acende ao entrar na tela e apaga ao sair, para a entrada se repetir
+    // também quando a pessoa volta rolando para cima
     const io = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          setLit(true);
-          io.disconnect();
-        }
+        if (entry.isIntersecting) setLit(true);
+        else if (entry.intersectionRatio === 0) setLit(false);
       },
-      { threshold: 0.4 },
+      { threshold: [0, 0.4] },
     );
     io.observe(el);
     return () => io.disconnect();
@@ -32,8 +32,11 @@ export default function ConvergenceDiagram() {
 
   // Depois que a animação de entrada termina, o hover responde sem atraso.
   useEffect(() => {
-    if (!lit) return;
-    const t = setTimeout(() => setSettled(true), 2200);
+    if (!lit) {
+      setSettled(false);
+      return;
+    }
+    const t = setTimeout(() => setSettled(true), 1600);
     return () => clearTimeout(t);
   }, [lit]);
 
@@ -77,21 +80,18 @@ export default function ConvergenceDiagram() {
           const d = `M0 ${y} C 55 ${y}, 45 50, 100 50`;
           return (
             <g key={factor}>
-              <path d={d} fill="none" vectorEffect="non-scaling-stroke" strokeWidth={1.5} stroke="rgba(255,255,255,0.14)" />
-              {/* Linha que se desenha da esquerda para o centro quando o diagrama entra na tela */}
+              {/* Linha bem fina e tracejada, que aparece em sequência ao entrar na tela */}
               <path
                 d={d}
                 fill="none"
-                pathLength={1}
-                strokeDasharray="1 1"
-                strokeDashoffset={lit ? 0 : 1}
+                pathLength={100}
+                strokeDasharray="0.8 1.6"
                 vectorEffect="non-scaling-stroke"
-                strokeWidth={active ? 3.5 : 1.5}
-                stroke={active ? '#FFFFFF' : '#00B9CF'}
-                strokeOpacity={anyHover && !active ? 0.25 : 1}
+                strokeWidth={1}
+                stroke="#00B9CF"
+                strokeOpacity={!lit ? 0 : anyHover && !active ? 0.2 : active ? 0.9 : 0.5}
                 style={{
-                  transition:
-                    'stroke-dashoffset 0.9s cubic-bezier(0.22, 1, 0.36, 1), stroke 0.4s ease, stroke-width 0.3s ease, stroke-opacity 0.3s ease',
+                  transition: 'stroke-opacity 0.6s ease',
                   transitionDelay: lit && !settled ? `${i * 120}ms` : '0ms',
                 }}
               />
@@ -108,7 +108,8 @@ export default function ConvergenceDiagram() {
                   stroke="#E5FBFD"
                   strokeOpacity={anyHover && !active ? 0.15 : 0.95}
                   className="conn-light"
-                  style={{ animationDelay: `${-((i * 0.37) % 1) * 2.4}s` }}
+                  // Ao passar o mouse no fator, a luz dele corre mais rápido
+                  style={{ animationDelay: `${-((i * 0.37) % 1) * 2.4}s`, animationDuration: active ? '0.8s' : '2.4s' }}
                 />
               )}
             </g>
@@ -116,17 +117,18 @@ export default function ConvergenceDiagram() {
         })}
       </svg>
 
+      {/* "Sua estratégia" só como palavra, com brilho neon quando acende */}
       <div style={{ height: total * ROW }} className="flex items-center">
-        <div
-          className={`px-4 py-3 sm:px-6 sm:py-4 font-display text-base sm:text-xl font-extrabold uppercase tracking-[0.08em] leading-tight text-center border-2 transition-all duration-500 ${
-            lit ? 'bg-cyan text-ink border-cyan' : 'bg-transparent text-white border-white/30'
-          } ${anyHover ? 'scale-105 shadow-[0_0_28px_rgba(0,185,207,0.55)]' : ''}`}
-          style={{ transitionDelay: lit && !settled ? '1200ms' : '0ms' }}
+        <p
+          className={`pl-2 font-display text-xl sm:text-3xl font-extrabold uppercase tracking-[0.08em] leading-tight text-center transition-all duration-700 ${
+            lit ? 'text-cyan-light conv-neon' : 'text-white/40'
+          } ${anyHover ? 'conv-neon-strong scale-105' : ''}`}
+          style={{ transitionDelay: lit && !settled ? '1100ms' : '0ms' }}
         >
           Sua
           <br />
           estratégia
-        </div>
+        </p>
       </div>
     </div>
   );

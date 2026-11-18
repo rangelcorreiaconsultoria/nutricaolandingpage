@@ -28,37 +28,51 @@ type Props = {
 // profundidade (ex.: as credenciais na foto do topo). Em telas de toque não
 // inclina, e com "reduzir movimento" não anima nada.
 export default function Tilt3D({ children, className = '', innerClassName = '', enter, max = 8, delay = 0 }: Props) {
+  const outerRef = useRef<HTMLDivElement>(null);
   const moverRef = useRef<HTMLDivElement>(null);
   const tiltRef = useRef<HTMLDivElement>(null);
   const glareRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    const outer = outerRef.current;
     const mover = moverRef.current;
     const tilt = tiltRef.current;
     const glare = glareRef.current;
-    if (!mover || !tilt || !glare) return;
+    if (!outer || !mover || !tilt || !glare) return;
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
-    let io: IntersectionObserver | undefined;
-    if (enter && mover.getBoundingClientRect().top > window.innerHeight) {
+    // A entrada se repete sempre que o card volta à tela, rolando para baixo ou
+    // para cima: ao sair totalmente da tela ele volta à pose de partida, sem
+    // transição, e ao entrar de novo anima até o lugar. Observa o contêiner de
+    // fora, que não se move, para a pose não atrapalhar a detecção.
+    const observers: IntersectionObserver[] = [];
+    if (enter) {
       const pose = ENTER[enter];
-      mover.style.transformOrigin = pose.origin;
-      mover.style.transform = pose.transform;
-      mover.style.opacity = '0';
-      io = new IntersectionObserver(
-        ([entry]) => {
-          if (!entry.isIntersecting) return;
-          mover.style.transition = `transform 1.3s cubic-bezier(0.16, 1, 0.3, 1) ${delay}ms, opacity 0.8s ease-out ${delay}ms`;
-          mover.style.transform = '';
-          mover.style.opacity = '';
-          io?.disconnect();
-        },
-        { rootMargin: '0px 0px -12% 0px' }
-      );
-      io.observe(mover);
-    }
+      const hide = () => {
+        mover.style.transition = 'none';
+        mover.style.transformOrigin = pose.origin;
+        mover.style.transform = pose.transform;
+        mover.style.opacity = '0';
+      };
+      const show = () => {
+        mover.style.transition = `transform 1.3s cubic-bezier(0.16, 1, 0.3, 1) ${delay}ms, opacity 0.8s ease-out ${delay}ms`;
+        mover.style.transform = '';
+        mover.style.opacity = '';
+      };
+      const r = outer.getBoundingClientRect();
+      if (r.top > window.innerHeight || r.bottom < 0) hide();
 
-    if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return () => io?.disconnect();
+      const enterIo = new IntersectionObserver(([e]) => e.isIntersecting && show(), {
+        rootMargin: '-12% 0px -12% 0px',
+      });
+      const leaveIo = new IntersectionObserver(([e]) => !e.isIntersecting && hide());
+      enterIo.observe(outer);
+      leaveIo.observe(outer);
+      observers.push(enterIo, leaveIo);
+    }
+    const disconnect = () => observers.forEach((o) => o.disconnect());
+
+    if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return disconnect;
 
     let raf = 0;
     const onMove = (e: PointerEvent) => {
@@ -83,7 +97,7 @@ export default function Tilt3D({ children, className = '', innerClassName = '', 
     tilt.addEventListener('pointerleave', onLeave);
 
     return () => {
-      io?.disconnect();
+      disconnect();
       cancelAnimationFrame(raf);
       tilt.removeEventListener('pointermove', onMove);
       tilt.removeEventListener('pointerleave', onLeave);
@@ -91,7 +105,7 @@ export default function Tilt3D({ children, className = '', innerClassName = '', 
   }, [enter, max, delay]);
 
   return (
-    <div className={className} style={{ perspective: '1100px' }}>
+    <div ref={outerRef} className={className} style={{ perspective: '1100px' }}>
       <div ref={moverRef} className="h-full w-full [transform-style:preserve-3d]">
         <div ref={tiltRef} className={`relative h-full w-full [transform-style:preserve-3d] ${innerClassName}`}>
           {children}

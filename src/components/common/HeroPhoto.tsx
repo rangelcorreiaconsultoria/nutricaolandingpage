@@ -1,4 +1,7 @@
+'use client';
+
 import Image from 'next/image';
+import { useEffect, useRef, useState } from 'react';
 
 type Props = {
   /** Foto principal da página: carrega com prioridade (só uma das versões, celular ou desktop). */
@@ -12,8 +15,23 @@ type Props = {
 // .cred-* no globals.css). Tudo é medido em cqw, então a composição é a mesma em qualquer
 // largura, do celular ao desktop.
 export default function HeroPhoto({ priority = false, sizes }: Props) {
+  // As credenciais animam ao abrir a página e de novo sempre que a foto volta
+  // à tela (inclusive rolando de volta para o topo)
+  const ref = useRef<HTMLElement>(null);
+  const [inView, setInView] = useState(true);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const io = new IntersectionObserver(([e]) => setInView(e.isIntersecting));
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+
   return (
-    <figure className="hero-photo relative h-full w-full overflow-hidden [container-type:inline-size]">
+    <figure
+      ref={ref}
+      className={`hero-photo relative h-full w-full overflow-hidden [container-type:inline-size] ${inView ? 'is-in' : ''}`}
+    >
       <div className="cred-photo absolute inset-0">
         <Image
           src="/images/hero.webp"
@@ -25,11 +43,6 @@ export default function HeroPhoto({ priority = false, sizes }: Props) {
           className="object-cover object-left"
         />
       </div>
-      {/* Escurece o lado direito para as credenciais ficarem legíveis em qualquer foto */}
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 bg-[linear-gradient(to_left,rgba(11,24,30,0.94)_0%,rgba(11,24,30,0.82)_38%,rgba(11,24,30,0.3)_62%,transparent_78%)]"
-      />
       <div
         aria-hidden="true"
         className="absolute inset-0 bg-[radial-gradient(circle_at_82%_38%,rgba(0,185,207,0.22),transparent_50%)]"
@@ -77,7 +90,7 @@ export default function HeroPhoto({ priority = false, sizes }: Props) {
 
         <div aria-hidden="true" className="cred-line mt-[4cqw] h-[0.6cqw] min-h-[2px] w-[12cqw] bg-cyan origin-left" />
 
-        <div className="cred-prof mt-[4cqw] border-l-[0.6cqw] border-cyan pl-[2cqw]">
+        <div className="cred-prof mt-[4cqw] border-l-[0.6cqw] border-cyan pl-[2cqw] [text-shadow:0_2px_12px_rgba(0,0,0,0.6)]">
           <dt className="font-sans font-bold leading-none text-[4.4cqw]">Professor</dt>
           <dd className="mt-[1.2cqw] font-sans leading-snug text-white/90 text-[max(10px,2.5cqw)]">
             USP · UNIT · IBRAS · Uniguaçu
