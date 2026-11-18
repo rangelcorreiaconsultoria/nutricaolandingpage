@@ -16,7 +16,7 @@ export default function StartSection() {
     : MSG_CASE;
 
   return (
-    <section id="como-comecar" className="md:py-28 py-20 bg-surface/45">
+    <section id="como-comecar" className="md:py-20 py-14 bg-surface/45">
       <div className="container">
         <div className="grid lg:grid-cols-12 gap-x-12 gap-y-12 items-center">
           <div className="lg:col-span-6 lg:self-end">

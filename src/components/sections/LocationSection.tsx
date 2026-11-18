@@ -4,11 +4,11 @@ import { ADDRESS, MAPS_EMBED_URL, MAPS_SEARCH_URL } from '@/lib/contact';
 
 export default function LocationSection() {
   return (
-    <section id="local" className="md:py-28 py-20">
+    <section id="local" className="md:py-20 py-14">
       <div className="container">
         <p className="section-label mb-8">O local</p>
 
-        <div className="grid lg:grid-cols-12 gap-x-12 gap-y-8 items-start mb-14">
+        <div className="grid lg:grid-cols-12 gap-x-12 gap-y-8 items-start mb-10">
           <h2 className="lg:col-span-7">
             Um espaço pensado para cuidar da{' '}
             <span className="highlight">sua evolução.</span>

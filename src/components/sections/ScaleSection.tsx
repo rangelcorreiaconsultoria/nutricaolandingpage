@@ -3,7 +3,7 @@ import { MSG_EVALUATION, whatsappUrl } from '@/lib/contact';
 
 export default function ScaleSection() {
   return (
-    <section className="md:py-28 py-20 bg-surface/45">
+    <section className="md:py-20 py-14 bg-surface/45">
       <div className="container">
         <p className="section-label mb-8">Composição corporal</p>
 

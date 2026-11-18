@@ -1,4 +1,4 @@
-import AthleteCarousel from '@/components/common/AthleteCarousel';
+import AthleteGrid from '@/components/common/AthleteGrid';
 
 const athletes = [
   {
@@ -25,11 +25,11 @@ const athletes = [
 
 export default function ScienceSection() {
   return (
-    <section className="md:py-28 py-20 bg-surface/45 overflow-x-clip">
+    <section className="md:py-20 py-14 bg-surface/45">
       <div className="container">
         <p className="section-label mb-8">Rigor em cada decisão</p>
 
-        <div className="grid lg:grid-cols-12 gap-x-12 gap-y-8 items-start mb-16">
+        <div className="grid lg:grid-cols-12 gap-x-12 gap-y-8 items-start mb-12">
           <h2 className="lg:col-span-6">
             A mesma ciência. <span className="highlight">Diferentes objetivos.</span>
           </h2>
@@ -50,7 +50,7 @@ export default function ScienceSection() {
           </svg>
         </p>
 
-        <AthleteCarousel athletes={athletes} />
+        <AthleteGrid athletes={athletes} />
       </div>
     </section>
   );

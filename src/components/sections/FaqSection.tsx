@@ -17,7 +17,7 @@ export default function FaqSection() {
   const [open, setOpen] = useState<number | null>(null);
 
   return (
-    <section id="duvidas" className="md:py-28 py-20 border-t border-line">
+    <section id="duvidas" className="md:py-20 py-14 border-t border-line">
       <div className="container">
 
         <div className="grid lg:grid-cols-12 gap-x-12 gap-y-10 items-start">

@@ -24,7 +24,7 @@ function CtaButton({ className = '', heroCta = false }: { className?: string; he
 export default function HeroSection() {
   return (
     <section id="inicio" className="relative overflow-hidden">
-      <div className="container pt-24 pb-20 md:pt-36 md:pb-28">
+      <div className="container pt-24 pb-14 md:pt-32 md:pb-20">
         <div className="grid lg:grid-cols-12 gap-x-12 gap-y-12 items-stretch">
           <div className="lg:col-span-7">
             <h1 className="mb-8 lg:mb-10 text-4xl sm:text-5xl lg:text-6xl xl:text-7xl">

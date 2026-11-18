@@ -2,7 +2,7 @@ import ConvergenceDiagram from '@/components/common/ConvergenceDiagram';
 
 export default function GenericDietSection() {
   return (
-    <section className="md:py-28 py-20 bg-deep/55">
+    <section className="md:py-20 py-14 bg-deep/55">
       <div className="container">
         <p className="section-label mb-8">Estratégia sob medida</p>
 
@@ -30,14 +30,14 @@ export default function GenericDietSection() {
           </div>
         </div>
 
-        <div className="mt-16 flex flex-col items-center overflow-x-clip">
+        <div className="mt-12 flex flex-col items-center">
           <p className="font-display text-2xl md:text-3xl font-bold uppercase tracking-tight text-white mb-8 text-center">
             O que eu considero antes de cada decisão?
           </p>
           <ConvergenceDiagram />
         </div>
 
-        <p className="mt-16 md:mt-20 mx-auto max-w-4xl text-center font-display text-2xl md:text-4xl font-bold uppercase tracking-tight leading-tight">
+        <p className="mt-12 md:mt-16 mx-auto max-w-4xl text-center font-display text-2xl md:text-4xl font-bold uppercase tracking-tight leading-tight">
           Esses fatores não são avaliados apenas na primeira consulta.{' '}
           <span className="text-cyan">Eles orientam cada ajuste ao longo do seu acompanhamento.</span>
         </p>

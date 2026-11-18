@@ -157,7 +157,7 @@ export default function ProfessionalSection() {
   const bar = <div className="absolute inset-y-0 left-0 w-2 bg-cyan" />;
 
   return (
-    <section id="icaro" className="md:py-28 py-20">
+    <section id="icaro" className="md:py-20 py-14">
       <div className="container">
         {pinned ? (
           <div ref={outerRef} style={{ height: 'calc(100vh - 6rem + 110vh)' }}>

@@ -39,14 +39,14 @@ const plans = [
 
 export default function PlansSection() {
   return (
-    <section id="formatos" className="md:py-28 py-20 bg-deep/55">
+    <section id="formatos" className="md:py-20 py-14 bg-deep/55">
       <div className="container">
-        <div className="max-w-4xl mb-16">
+        <div className="max-w-4xl mb-12">
           <p className="section-label mb-6">Planos</p>
           <h2>Formatos de acompanhamento</h2>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6 mb-14">
+        <div className="grid md:grid-cols-2 gap-6 mb-10">
           {plans.map((plan, i) => (
             <Tilt3D key={plan.name} enter={i === 0 ? 'swing-left' : 'swing-right'} delay={i * 120} max={6} className="flex" innerClassName="flex">
             <article className="flex-1 bg-raise p-8 md:p-10 border-t-2 border-fg hover:border-cyan transition-colors flex flex-col">
