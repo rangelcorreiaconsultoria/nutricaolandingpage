@@ -13,7 +13,7 @@ export default function LocationSection() {
             Um espaço pensado para cuidar da{' '}
             <span className="highlight">sua evolução.</span>
           </h2>
-          <div className="lg:col-span-5 space-y-5 text-lg text-text-secondary leading-relaxed">
+          <div data-read className="lg:col-span-5 space-y-5 text-lg text-text-secondary leading-relaxed">
             <p>
               Seu atendimento acontece presencialmente na Academia Gaviões, na Pajuçara, em Maceió.
             </p>

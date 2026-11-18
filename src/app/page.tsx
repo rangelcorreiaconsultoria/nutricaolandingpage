@@ -13,6 +13,7 @@ import FaqSection from '@/components/sections/FaqSection';
 import ScrollTape from '@/components/common/ScrollTape';
 import MobileWhatsAppBar from '@/components/common/MobileWhatsAppBar';
 import ImmersiveBackdrop from '@/components/common/ImmersiveBackdrop';
+import ScrollReading from '@/components/common/ScrollReading';
 
 export default function Home() {
   return (
@@ -40,6 +41,7 @@ export default function Home() {
       <Footer />
       <MobileWhatsAppBar />
       <ScrollTape />
+      <ScrollReading />
     </>
   );
 }

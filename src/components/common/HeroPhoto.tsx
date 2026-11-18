@@ -25,6 +25,11 @@ export default function HeroPhoto({ priority = false, sizes }: Props) {
           className="object-cover object-left"
         />
       </div>
+      {/* Escurece o lado direito para as credenciais ficarem legíveis em qualquer foto */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 bg-[linear-gradient(to_left,rgba(11,24,30,0.94)_0%,rgba(11,24,30,0.82)_38%,rgba(11,24,30,0.3)_62%,transparent_78%)]"
+      />
       <div
         aria-hidden="true"
         className="absolute inset-0 bg-[radial-gradient(circle_at_82%_38%,rgba(0,185,207,0.22),transparent_50%)]"

@@ -23,7 +23,7 @@ export default function FaqSection() {
         <div className="grid lg:grid-cols-12 gap-x-12 gap-y-10 items-start">
         <div className="lg:col-span-4 lg:sticky lg:top-28">
           <h2 className="mb-8">Dúvidas frequentes</h2>
-          <p className="text-lg text-text-secondary leading-relaxed mb-8 max-w-sm">
+          <p data-read className="text-lg text-text-secondary leading-relaxed mb-8 max-w-sm">
             Não encontrou a sua dúvida? Pergunte direto para mim pelo WhatsApp.
           </p>
           <a

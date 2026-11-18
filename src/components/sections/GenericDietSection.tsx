@@ -12,7 +12,7 @@ export default function GenericDietSection() {
             <span className="underline-cyan">Precisa saber o que fazer com ela.</span>
           </h2>
 
-          <div className="lg:col-span-6 space-y-6 text-lg text-text-secondary leading-relaxed">
+          <div data-read className="lg:col-span-6 space-y-6 text-lg text-text-secondary leading-relaxed">
             <p>
               Hoje, qualquer pessoa consegue pedir uma dieta à inteligência artificial. E talvez você já tenha uma boa noção do que precisa comer para emagrecer ou ganhar massa muscular.
             </p>
@@ -37,7 +37,7 @@ export default function GenericDietSection() {
           <ConvergenceDiagram />
         </div>
 
-        <p className="mt-12 md:mt-16 mx-auto max-w-4xl text-center font-display text-2xl md:text-4xl font-bold uppercase tracking-tight leading-tight">
+        <p data-read className="mt-12 md:mt-16 mx-auto max-w-4xl text-center font-display text-2xl md:text-4xl font-bold uppercase tracking-tight leading-tight">
           Esses fatores não são avaliados apenas na primeira consulta.{' '}
           <span className="text-cyan">Eles orientam cada ajuste ao longo do seu acompanhamento.</span>
         </p>

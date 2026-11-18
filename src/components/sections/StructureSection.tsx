@@ -47,15 +47,22 @@ export default function StructureSection() {
           </div>
         </div>
 
-        <ol className="lg:col-span-7 relative border-l border-dashed border-white/30 ml-5 pl-10 sm:pl-14 flex flex-col gap-6">
+        {/* Etapas soltas, sem cards: número gigante vazado em ciano ao lado de cada uma */}
+        <ol className="lg:col-span-7 flex flex-col gap-12 md:gap-16">
           {steps.map((step, i) => (
-            <li key={step.title} className="relative group">
-              <span className="absolute -left-[3.75rem] sm:-left-[4.75rem] top-6 grid place-items-center w-10 h-10 bg-canvas border border-white font-display text-lg font-extrabold text-white group-hover:bg-cyan group-hover:border-cyan group-hover:text-ink transition-colors">
+            <li key={step.title} className="group grid grid-cols-[auto_1fr] gap-x-5 md:gap-x-8">
+              <span
+                aria-hidden="true"
+                className="font-display font-extrabold leading-[0.8] text-[4.5rem] md:text-[7.5rem] text-transparent [-webkit-text-stroke:2px_#00B9CF] transition-colors duration-500 group-hover:text-cyan"
+              >
                 {String(i + 1).padStart(2, '0')}
               </span>
-              <div className="bg-surface/80 p-6 md:p-8 border-t-2 border-transparent group-hover:border-cyan transition-colors">
-                <h3 className="text-2xl md:text-3xl mb-4">{step.title}</h3>
-                <div className="space-y-3 text-text-secondary leading-relaxed">
+              <div className="pt-1 md:pt-2">
+                <h3 className="text-2xl md:text-3xl mb-4">
+                  <span className="sr-only">Etapa {i + 1}: </span>
+                  {step.title}
+                </h3>
+                <div data-read className="space-y-3 text-lg text-text-secondary leading-relaxed">
                   {step.paragraphs.map((p) => (
                     <p key={p}>{p}</p>
                   ))}

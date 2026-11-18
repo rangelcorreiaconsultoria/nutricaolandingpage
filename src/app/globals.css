@@ -136,6 +136,26 @@
   from { opacity: 0; translate: 30% 30%; }
 }
 
+/* Luz correndo pelos conectores dos fatores (ConvergenceDiagram) */
+.conn-light {
+  animation: conn-light 2.4s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+  filter: drop-shadow(0 0 3px #00b9cf);
+}
+
+@keyframes conn-light {
+  from { stroke-dashoffset: 0.07; }
+  to { stroke-dashoffset: -0.93; }
+}
+
+/* Texto que acende palavra por palavra com a rolagem (ScrollReading) */
+.read-word {
+  opacity: 0.18;
+  transition: opacity 0.35s ease;
+}
+.read-word.is-lit {
+  opacity: 1;
+}
+
 @keyframes typing-dot {
   0%, 60%, 100% { opacity: 0.25; transform: translateY(0); }
   30% { opacity: 1; transform: translateY(-3px); }

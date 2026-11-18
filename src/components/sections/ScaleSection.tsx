@@ -14,7 +14,7 @@ export default function ScaleSection() {
           </h2>
 
           <div className="lg:col-span-6">
-            <div className="space-y-6 text-lg text-text-secondary leading-relaxed">
+            <div data-read className="space-y-6 text-lg text-text-secondary leading-relaxed">
               <p>
                 Duas pessoas com o mesmo peso podem apresentar composições corporais completamente diferentes. E nem toda evolução aparece na balança.
               </p>

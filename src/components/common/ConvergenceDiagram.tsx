@@ -95,6 +95,22 @@ export default function ConvergenceDiagram() {
                   transitionDelay: lit && !settled ? `${i * 120}ms` : '0ms',
                 }}
               />
+              {/* Ponto de luz que corre sem parar do fator até "Sua estratégia" */}
+              {settled && (
+                <path
+                  d={d}
+                  fill="none"
+                  pathLength={1}
+                  strokeDasharray="0.07 0.93"
+                  strokeLinecap="round"
+                  vectorEffect="non-scaling-stroke"
+                  strokeWidth={active ? 5 : 3.5}
+                  stroke="#E5FBFD"
+                  strokeOpacity={anyHover && !active ? 0.15 : 0.95}
+                  className="conn-light"
+                  style={{ animationDelay: `${-((i * 0.37) % 1) * 2.4}s` }}
+                />
+              )}
             </g>
           );
         })}

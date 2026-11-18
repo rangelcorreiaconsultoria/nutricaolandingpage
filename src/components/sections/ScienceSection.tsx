@@ -33,7 +33,7 @@ export default function ScienceSection() {
           <h2 className="lg:col-span-6">
             A mesma ciência. <span className="highlight">Diferentes objetivos.</span>
           </h2>
-          <div className="lg:col-span-6 space-y-6 text-lg text-text-secondary leading-relaxed">
+          <div data-read className="lg:col-span-6 space-y-6 text-lg text-text-secondary leading-relaxed">
             <p>
               A experiência que construí acompanhando atletas de alto rendimento também orienta meu trabalho com pessoas que desejam emagrecer, ganhar massa muscular ou cuidar melhor da saúde.
             </p>
