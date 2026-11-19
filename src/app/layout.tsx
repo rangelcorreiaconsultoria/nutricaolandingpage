@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next';
-import { Barlow, Barlow_Condensed } from 'next/font/google';
+import { Barlow, Barlow_Condensed, Manrope } from 'next/font/google';
 import Analytics from '@/components/common/Analytics';
 import { MAPS_SEARCH_URL, WHATSAPP_NUMBER } from '@/lib/contact';
 import './globals.css';
@@ -17,7 +17,14 @@ const barlowCondensed = Barlow_Condensed({
   variable: '--font-barlow-condensed',
 });
 
-const TITLE = 'Icaro Andrade | Nutricionista em Maceió';
+// Manrope: tipografia do topo (cabeçalho e hero), mais limpa e editorial
+const manrope = Manrope({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-manrope',
+});
+
+const TITLE ='Icaro Andrade | Nutricionista em Maceió';
 const DESCRIPTION =
   'Acompanhamento nutricional personalizado, baseado em ciência e avaliação da composição corporal pela metodologia ISAK. Atendimento presencial na Pajuçara, em Maceió.';
 
@@ -96,7 +103,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="pt-BR" className={`${barlow.variable} ${barlowCondensed.variable}`}>
+    <html lang="pt-BR" className={`${barlow.variable} ${barlowCondensed.variable} ${manrope.variable}`}>
       <body className="bg-canvas text-fg">
         <script
           type="application/ld+json"

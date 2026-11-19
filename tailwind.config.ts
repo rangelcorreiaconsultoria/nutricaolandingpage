@@ -20,6 +20,13 @@ const config: Config = {
           light: '#E5FBFD',
         },
         line: 'rgba(255, 255, 255, 0.14)',
+        // Paleta do topo (cabeçalho e hero)
+        premium: {
+          bg: '#101518',
+          title: '#F4F4F2',
+          accent: '#24B4C7',
+          muted: '#AEB5BA',
+        },
         text: {
           secondary: 'rgba(255, 255, 255, 0.74)',
           tertiary: 'rgba(255, 255, 255, 0.58)',
@@ -28,6 +35,7 @@ const config: Config = {
       fontFamily: {
         sans: ['var(--font-barlow)', 'system-ui', 'sans-serif'],
         display: ['var(--font-barlow-condensed)', 'Impact', 'sans-serif'],
+        premium: ['var(--font-manrope)', 'system-ui', 'sans-serif'],
       },
       animation: {
         'pulse-soft': 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
